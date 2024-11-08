@@ -1,6 +1,6 @@
-# AI-Assisted Project Planning Templates
+# AI-Assisted Project Planning and Scaffolding Templates
 
-Welcome to the **AI-Assisted Project Planning** repository! This collection of templates helps you rapidly build and deploy applications using AI assistance. These templates are part of a structured workflow designed to enhance your development process and help you code more efficiently.
+This collection of templates helps you rapidly build and deploy applications using AI assistance. These templates are part of a structured workflow designed to enhance your development process and help you code more efficiently.
 
 ## Overview
 
