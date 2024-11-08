@@ -1,0 +1,12 @@
+graph TD
+    A[Data Models & Schema] --> B[Authentication System]
+    A --> C[Core API Layer]
+    B --> D[User Management]
+    C --> D
+    C --> E[Feature Module 1]
+    D --> E
+    C --> F[Feature Module 2]
+    D --> F
+    E --> G[Integration Layer]
+    F --> G
+    G --> H[Final Validation]
