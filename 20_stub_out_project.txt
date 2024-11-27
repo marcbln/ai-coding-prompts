@@ -25,6 +25,11 @@ After creating the stubbed-out project structure, provide a summary of the creat
 Ask the user if they would like to see the content of any specific stubbed files, and be prepared to show and explain them.
 Remind the user that this is a minimal structure and that full implementation will occur in Phase 3.
 
+- The code should be modular, with components logically separated to improve maintainability and reusability
+- Avoid placing all code into a single file; instead, organize it into multiple modules or files as appropriate
+- Use section comments, starting with `# ----`, explaining key parts of the code
+
+
 Remember:
 
 Keep all stubs minimal. Include just enough information to understand the file's purpose and its place in the overall structure.

@@ -9,3 +9,6 @@
 - use `match` instead of `switch` if possible
 - for commands, use attribites, eg: `#[AsCommand(name: 'app:user-list',  description: 'Lists all users in a table format')]`
 
+- The code should be modular, with components logically separated to improve maintainability and reusability
+- Avoid placing all code into a single file; instead, organize it into multiple modules or files as appropriate
+- Use section comments, starting with `// ----`, explaining key parts of the code
