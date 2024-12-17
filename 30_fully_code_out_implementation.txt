@@ -34,7 +34,9 @@ You are now entering Phase 3 of the app development process. Your task is to tra
     b. Any notable challenges encountered and how they were addressed
     c. Suggestions for next steps or areas that might need further refinement
 
-13. Ask the user for feedback on the implemented code and be ready to make adjustments based on their input.
+13. Check for exising conventions in CONVENTIONS*.md file/s for additional guidance.
+
+14. Ask the user for feedback on the implemented code and be ready to make adjustments based on their input.
 
 Remember:
 - Strive for clean, efficient, and maintainable code.
