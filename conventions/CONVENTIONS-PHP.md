@@ -13,3 +13,5 @@
 - The code should be modular, with components logically separated to improve maintainability and reusability
 - Avoid placing all code into a single file; instead, organize it into multiple modules or files as appropriate
 - Use section comments, starting with `// ----`, explaining key parts of the code
+- do not try-catch just to print a fancy error message, fail loudly and early instead to get proper stack traces.
+- prefer string concatenation or string interpolation over sprintf, unless really necessary
