@@ -4,6 +4,7 @@
 
 import json
 import html  # For escaping HTML special characters
+import argparse
 
 JSON_FILE = '/home/marc/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/custom_modes.json'
 HTML_FILE = '/home/marc/Desktop/roomodes-to-html.html'
@@ -110,7 +111,7 @@ def generate_html_report(data, output_filename):
 </head>
 <body>
     <h1>Custom AI Assistant Modes Report</h1>
-    <p style="text-align: center; color: #666;">Source file: {html.escape(JSON_FILE)}</p>
+    <p style="text-align: center; color: #666;">Source file: {html.escape(args.input)}</p>
     <table>
         <thead>
             <tr>
@@ -171,14 +172,28 @@ def generate_html_report(data, output_filename):
 
 # --- Main Execution ---
 if __name__ == "__main__":
+    # Set up command line arguments
+    parser = argparse.ArgumentParser(
+        description='Generate HTML report from custom modes JSON data',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument('-i', '--input', 
+                        default=JSON_FILE,
+                        help='Path to input JSON file')
+    parser.add_argument('-o', '--output',
+                        default=HTML_FILE,
+                        help='Path for output HTML file')
+    
+    args = parser.parse_args()
+    
     try:
-        with open(JSON_FILE, 'r', encoding='utf-8') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             json_data = json.load(f)
-        generate_html_report(json_data, HTML_FILE)
+        generate_html_report(json_data, args.output)
     except FileNotFoundError:
-        print(f"Error: JSON file not found at {JSON_FILE}")
+        print(f"Error: JSON file not found at {args.input}")
     except json.JSONDecodeError as e:
-        print(f"Error parsing JSON file {JSON_FILE}: {e}")
+        print(f"Error parsing JSON file {args.input}: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
