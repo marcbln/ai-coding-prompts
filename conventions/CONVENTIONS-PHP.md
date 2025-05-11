@@ -15,3 +15,6 @@
 - Use section comments, starting with `// ----`, explaining key parts of the code
 - do not try-catch just to print a fancy error message, fail loudly and early instead to get proper stack traces.
 - prefer string concatenation or string interpolation over sprintf, unless really necessary
+
+- Avoid returning $this in setters, no fluent interface / method chaining!
+

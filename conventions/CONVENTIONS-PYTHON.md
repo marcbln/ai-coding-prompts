@@ -78,20 +78,24 @@ A minimal working example:
 ```toml
 # pyproject.toml
 [project]
-name = "your-package-name"
+name = "topdata-package-release-builder"
 version = "0.1.0"
-description = "Short description of your package"
-requires-python = ">=3.10"
+description = "Build and package Shopware 6 plugins for release"
+requires-python = ">=3.8"
 dependencies = [
-    "typer>=0.6.1",
     "rich>=13.0.0",
+    "click>=8.0.0",
+    "pytz",
+    "python-dotenv",
+    "InquirerPy>=0.3.4",
+    "requests",
 ]
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project.scripts]
-your-command = "your_package.cli:app"
-
-[tool.setuptools]
-packages = ["your_package"]
+sw-build = "topdata_package_release_builder.cli:main"
 ```
-
 
