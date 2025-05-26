@@ -2,7 +2,7 @@
 
 ## General
 
-- **Python version**: 3.10+
+- **Python version**: 3.12+
 - **Type hints**: Mandatory for functions and class methods
 - **Style**: Follow [PEP8](https://peps.python.org/pep-0008/) and [PEP257](https://peps.python.org/pep-0257/)
 - **Documentation**: Use docstrings for modules, classes, and functions
@@ -27,6 +27,7 @@
   ├── cli.py          # Command-line interface
   ├── core/           # Core business logic
   ├── utils/          # Utility functions
+  ├── commands/        # Subcommands for CLI applications, each in files ending with _cmd.py
   └── config.py       # Configuration handling
   ```
 - Avoid placing all code into a single file; organize into multiple modules
@@ -53,6 +54,7 @@
 ## CLI Development
 
 - Use Typer for all CLI functionality
+- CLI subcommands should be placed in separate files under the commands/ directory with filenames ending in _cmd.py (e.g., generate_cmd.py, list_cmd.py)
 - Implement comprehensive `--help` documentation
 - Provide meaningful error messages
 - Support configuration via both CLI arguments and config files
