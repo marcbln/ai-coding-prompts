@@ -43,3 +43,83 @@
 
 ## Twig Templates
 - Use `path('some.action-name')` when referencing controller actions
+
+
+
+
+
+## Storefront JavaScript Conventions
+
+### Handling Core Libraries (like Bootstrap)
+
+**NEVER** import JavaScript libraries that are already provided globally by the Shopware Storefront.
+
+#### The Reason
+
+The Shopware storefront bundles essential third-party libraries (most notably **Bootstrap**) into its main compiled JavaScript file (`all.js`). If your plugin's JavaScript also `import`s Bootstrap, the build system (webpack) will bundle a **second, conflicting copy** of the library into your plugin's final JS file.
+
+This leads to two versions of Bootstrap running on the same page, causing unpredictable conflicts that are very difficult to debug. Symptoms include:
+- Core functionality breaking (e.g., account dropdowns, off-canvas menus).
+- Modals or popups not working correctly.
+- Increased page load size.
+
+#### The Wrong Way
+
+This code will cause conflicts because it creates a separate, competing instance of Bootstrap's code.
+
+```javascript
+// ❌ WRONG: This bundles a second copy of Bootstrap into your plugin's JS file.
+
+import { Modal } from 'bootstrap';
+import { Toast } from 'bootstrap';
+import Plugin from 'src/plugin-system/plugin.class';
+
+export default class MyPlugin extends Plugin {
+    init() {
+        // ...
+        // This 'Modal' comes from your plugin's bundled copy, not Shopware's.
+        this.bsModal = new Modal(this.modalElement);
+    }
+}
+```
+
+#### The Correct Way
+
+Always access the global instance of the library that Shopware provides on the `window` object. This ensures your plugin and the Shopware core are using the exact same code.
+
+```javascript
+// ✅ CORRECT: Access the global instance provided by Shopware.
+
+import Plugin from 'src/plugin-system/plugin.class';
+// Note: There is NO "import from 'bootstrap'".
+
+export default class MyPlugin extends Plugin {
+    showMyModal() {
+        // First, check if Bootstrap is available on the window object as a safeguard.
+        if (typeof window.bootstrap === 'undefined' || typeof window.bootstrap.Modal === 'undefined') {
+            console.error('Bootstrap or its Modal component is not available on the window object!');
+            return;
+        }
+
+        // Destructure the Modal class from the global `window.bootstrap` object.
+        const { Modal } = window.bootstrap;
+
+        // Now, create the instance. This uses Shopware's own version of Bootstrap.
+        const myModalInstance = new Modal(this.modalElement);
+        myModalInstance.show();
+    }
+}
+```
+
+### Rule of Thumb: `import` vs. `window`
+
+- **Third-Party Libraries (Bootstrap, Popper.js, etc.):**
+  - Assume Shopware provides it globally. **Do not `import` it.** Access it via `window.bootstrap`, `window.Popper`, etc.
+
+- **Shopware-Specific Modules (`Plugin`, `HttpClient`, etc.):**
+  - These are part of the plugin system's internal structure and are designed to be imported. You **MUST `import` them** from their `src/` path (e.g., `import Plugin from 'src/plugin-system/plugin.class';`).
+
+
+
+
+
