@@ -44,8 +44,43 @@
 ## Twig Templates
 - Use `path('some.action-name')` when referencing controller actions
 
+## Snippet Files
+- **Always use a flat file structure** for storefront snippets, with the locale as part of the filename. This avoids unnecessary subdirectories and keeps all translation files in one place.
+- Snippet files must be placed in `src/Resources/snippet/`.
+- The naming convention is `storefront.<locale>.json` (e.g., `storefront.de-DE.json`).
 
+#### Correct Directory Structure
 
+```
+src/
+└── Resources/
+    └── snippet/
+        ├── storefront.de-DE.json
+        └── storefront.en-GB.json
+```
+
+#### Snippet Key Namespacing
+
+- To prevent conflicts with other plugins or the Shopware core, **always namespace your snippet keys** with the full plugin name (PascalCase).
+
+#### Example: `storefront.de-DE.json`
+
+```json
+{
+    "TopdataPrivateShopSW6": {
+        "myFirstSnippet": "Mein deutscher Text.",
+        "anotherSnippet": "Ein weiterer Text."
+    }
+}
+```
+
+#### Usage in Twig
+
+- Reference the namespaced key when using the `trans` filter in a template.
+
+```twig
+<p>{{ "TopdataPrivateShopSW6.myFirstSnippet"|trans|sw_sanitize }}</p>
+```
 
 
 ## Storefront JavaScript Conventions
@@ -118,8 +153,5 @@ export default class MyPlugin extends Plugin {
 
 - **Shopware-Specific Modules (`Plugin`, `HttpClient`, etc.):**
   - These are part of the plugin system's internal structure and are designed to be imported. You **MUST `import` them** from their `src/` path (e.g., `import Plugin from 'src/plugin-system/plugin.class';`).
-
-
-
 
 
