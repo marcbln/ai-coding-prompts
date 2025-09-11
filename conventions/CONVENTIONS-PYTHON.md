@@ -105,6 +105,20 @@ Use these commands for day-to-day development.
 - Use Typer for all CLI functionality.
 - CLI subcommands should be placed in separate files under the `commands/` directory with filenames ending in `_cmd.py` (e.g., `generate_cmd.py`, `list_cmd.py`).
 - Implement comprehensive `--help` documentation.
+- **Add `-h` as a short option for `--help` for all commands.** This is achieved by passing `context_settings` to the `typer.Typer` constructor. It's best practice to define these settings in a central location (e.g., `config.py`) and import them.
+
+  ```python
+  # In config.py
+  CLI_CONTEXT_SETTINGS = {
+      "help_option_names": ["-h", "--help"],
+  }
+
+  # In cli.py or command modules
+  import typer
+  from .config import CLI_CONTEXT_SETTINGS
+
+  app = typer.Typer(context_settings=CLI_CONTEXT_SETTINGS)
+  ```
 - Provide meaningful error messages.
 - Support configuration via both CLI arguments and config files.
 - Follow the pattern established in `cli.py` with the app object.
@@ -171,4 +185,3 @@ strict = true
 [tool.black]
 line-length = 88
 ```
-

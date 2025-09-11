@@ -1,3 +1,16 @@
+<instruction>
+Please create two detailed multi phased implementation plans in markdown format - one for the topdata-topfinder-pro-sw6 plugin and another for topdata-webservice-connector-sw6 plugin.
+The plans should also include an update of the user documentation, if needed.
+The two plans will be implemented by two AI coding agents independently. 
+</instruction>
+
+
+
+<instruction>
+Please create a detailed multi phased implementation plan in markdown format. 
+The plan will be implemented by an AI coding agent. 
+</instruction>
+
 
 
 
@@ -6,6 +19,7 @@ Please create a detailed multi phased implementation plan in markdown format.
 The plan should also include an update of the user documentation.
 The plan will be implemented by an AI coding agent. 
 </instruction>
+
 
 
 Note: 
