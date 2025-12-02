@@ -1,5 +1,9 @@
+"Please follow SOLID principles"
+
+
+
 <instruction>
-Please create two detailed multi phased implementation plans in markdown format - one for the topdata-topfinder-pro-sw6 plugin and another for topdata-webservice-connector-sw6 plugin.
+Please create two detailed multi phased implementation plans in markdown format 
 The plans should also include an update of the user documentation, if needed.
 The two plans will be implemented by two AI coding agents independently. 
 </instruction>
@@ -8,7 +12,19 @@ The two plans will be implemented by two AI coding agents independently.
 
 <instruction>
 Please create a detailed multi phased implementation plan in markdown format. 
+The plan should also include an update of the user documentation, if needed.
 The plan will be implemented by an AI coding agent. 
+</instruction>
+
+
+<instruction>
+Please create a detailed multi phased implementation plan in markdown format. 
+The plan will be implemented by an AI coding agent, so please provide full source code of files to be created by the agent.
+</instruction>
+
+<instruction>
+Please create a detailed multi phased implementation plan in markdown format. 
+The plan will be implemented by an AI coding agent.
 </instruction>
 
 
