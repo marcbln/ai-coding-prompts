@@ -66,3 +66,4 @@ docker exec cm-www     /www/scripts/migrate-all-tenant-dbs.sh  -x 1
 
 
 
+
