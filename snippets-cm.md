@@ -1,9 +1,15 @@
+"Please follow SOLID principles"
+
+
+
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
-The plan will be implemented by an AI coding agent. 
+Please create a **detailed** multi phased implementation plan in markdown format. 
+The first section of the plan briefly describes the problem to be solved.
+The plan will be implemented by an AI coding agent. Include source code in the plan.
+Include source code in the plan.
 
-# NOTE:
+NOTE:
 - Frontend root is vol/www/assets
 - Backend root is vol/www/src
 - the app runs in container `cm-www`, you need to consider this when running commands (use `docker exec -it cm-www /www/bin/console`)
