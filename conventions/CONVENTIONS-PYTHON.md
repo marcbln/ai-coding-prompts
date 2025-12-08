@@ -78,6 +78,7 @@ Use these commands for day-to-day development.
   └── config.py         # Configuration handling
   ```
 - Avoid placing all code into a single file; organize into multiple modules.
+- Avoid writing code into a `__init__.py` file.
 
 ## Testing and Quality
 
