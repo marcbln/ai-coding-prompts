@@ -5,9 +5,10 @@
 
 <instruction>
 Please create a **detailed** multi phased implementation plan in markdown format. 
-The First line of the plan should be the filename of the plan in format `{TTMMDD}__PLAN__{name-of-the-plan}.md`
+The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
 The first section of the plan briefly describes the problem to be solved.
 The plan will be implemented by an AI coding agent. Include source code in the plan.
+The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md` directory.
 Include source code in the plan. 
 
 NOTE:
@@ -16,6 +17,7 @@ NOTE:
 - the app runs in container `cm-www`, you need to consider this when running commands (use `docker exec -it cm-www /www/bin/console`)
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
+- follow SOLID principles
 </instruction>
 
 
@@ -31,11 +33,11 @@ Before writing the plan please check @ai-docs if anything is unclear.  or ask me
 
 <instruction>
 Create a detailed multi-phased implementation plan in markdown format for execution by an AI coding agent. Before drafting the plan:
-1. Thoroughly review all relevant @ai-docs sections (including CONVENTIONS-PHP.md, CONVENTIONS-VUE.md, PROJECT_SUMMARY.md, and HOWTO/) to ensure alignment with current standards
-2. Explicitly identify any outdated/incomplete documentation sections requiring updates
-3. Flag all uncertainties or missing information that need user clarification before proceeding
-4. Verify technical constraints and dependencies through existing documentation
-5. Never assume unspecified requirements - explicitly request user input for ambiguous elements
+- Thoroughly review all relevant @ai-docs sections (including CONVENTIONS-PHP.md, CONVENTIONS-VUE.md, PROJECT_SUMMARY.md, and HOWTO/) to ensure alignment with current standards
+- Explicitly identify any outdated/incomplete documentation sections requiring updates
+- Flag all uncertainties or missing information that need user clarification before proceeding
+- Verify technical constraints and dependencies through existing documentation
+- Never assume unspecified requirements - explicitly request user input for ambiguous elements
 
 The plan must include:
 - Phase-wise breakdown with clear objectives and success criteria

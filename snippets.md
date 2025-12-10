@@ -7,6 +7,7 @@ Please create a **detailed** multi phased implementation plan in markdown format
 - The plan will be implemented by an AI coding agent. 
 - Include source code in the plan.
 - The plan should also include an update of the user documentation, if needed.
+- Please follow SOLID principles
 </instruction>
 
 

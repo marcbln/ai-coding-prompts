@@ -23,7 +23,8 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
 2. Create the symbolic link to this repo:
    ```bash
    # Adjust the path to where you cloned ai-coding-prompts
-   ln -s ~/path/to/ai-coding-prompts/windsurf-global-workflows ~/.codeium/windsurf/global_workflows
+   ln -s ~/devel/ai-coding-prompts/windsurf-global-workflows ~/.codeium/windsurf/global_workflows
+   ln -s ~/devel/ai-coding-prompts/windsurf-global-workflows ~/.codeium/windsurf-next/global_workflows
    ```
 
 3. Restart Windsurf. You can now reference these files in Cascade Chat (e.g., type `@architect`).

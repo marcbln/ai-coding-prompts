@@ -2,12 +2,6 @@
 
 
 
-<instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
-The plan should also include an update of the user documentation, if needed.
-The plan will be implemented by an AI coding agent. 
-</instruction>
-
 
 <instruction>
 Please create a detailed multi phased implementation plan in markdown format. 
