@@ -9,7 +9,8 @@ The First line of the plan should be the filename of the plan in format `ai-plan
 The first section of the plan briefly describes the problem to be solved.
 The plan will be implemented by an AI coding agent. Include source code in the plan.
 The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md` directory.
-Include source code in the plan. 
+Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
+
 
 NOTE:
 - Frontend root is vol/www/assets
