@@ -4,20 +4,20 @@
 
 
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
-The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
-The first section of the plan briefly describes the problem to be solved.
-The plan will be implemented by an AI coding agent. Include source code in the plan.
-The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md` directory.
-Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
-
-
-NOTE:
+- Create a **detailed** multi phased implementation plan in markdown format. 
+- The first line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
+- The first section of the plan briefly describes the problem to be solved.
+- The second section contains generic implementation notes:
+```
 - Frontend root is vol/www/assets
 - Backend root is vol/www/src
 - the app runs in container `cm-www`, you need to consider this when running commands (use `docker exec -it cm-www /www/bin/console`)
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
+```
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md` directory.
+- The plan will be implemented by an AI coding agent. Include source code in the plan.
+- Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - follow SOLID principles
 </instruction>
 
