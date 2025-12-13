@@ -2,7 +2,139 @@
 
 
 
+## --------------- CREATE PLAN V3 -----------------
 
+<instruction>
+Create a **detailed** multi phased implementation plan in markdown format. 
+
+## Plan Structure
+- Include YAML frontmatter with the following fields:
+```yaml
+  ---
+  filename: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
+  title: "Descriptive title of the plan"
+  date: YYYY-MM-DD
+  status: draft|in-progress|completed
+  priority: low|medium|high|critical
+  tags: [tag1, tag2, tag3]
+  estimated_complexity: simple|moderate|complex
+  ---
+```
+- The first section of the plan briefly describes the problem to be solved.
+- The second section contains generic implementation notes:
+```
+  - Frontend root is vol/www/assets
+  - Backend root is vol/www/src
+  - the app runs in container `cm-www`, you need to consider this when running commands (use `docker exec -it cm-www /www/bin/console`)
+  - migrations for the main database are created with `bin/console make:migration` (inside the container)
+  - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
+```
+- The plan will be implemented by an AI coding agent. Include source code in the plan.
+- Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
+- Follow SOLID principles
+
+## Report Structure
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md`
+
+Include YAML frontmatter with the following fields:
+```yaml
+---
+filename: "ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md"
+title: "Report: {plan title}"
+date: YYYY-MM-DD
+plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
+status: completed|partial|blocked
+files_created: 0
+files_modified: 0
+files_deleted: 0
+tags: [tag1, tag2, tag3]
+---
+```
+
+The report content should include:
+1. **Summary**: Brief overview of what was accomplished (2-3 sentences)
+2. **Files Changed**: 
+   - List of new files created with brief descriptions
+   - List of modified files with summary of changes
+   - List of deleted files (if any)
+3. **Key Changes**: Bullet points of the main technical changes made
+4. **Technical Decisions**: Important design decisions or trade-offs made during implementation
+5. **Testing Notes**: How the changes can be verified or tested
+6. **Documentation Updates**: Summary of any documentation changes made
+7. **Next Steps** (optional): Any follow-up work or improvements that could be made
+</instruction>
+
+
+
+
+
+
+
+## --------------- CREATE PLAN V2 -----------------
+<Instruction>
+Create A **Detailed** Multi Phased Implementation Plan In Markdown Format. 
+
+## Plan Structure
+- The First Line Of The Plan Should Be The Filename Of The Plan In Format `Ai-Plans/{Yymmdd}__Plan__{Name-Of-The-Plan}.Md`
+- Include Yaml Frontmatter With The Following Fields:
+```Yaml
+  ---
+  Title: "Descriptive Title Of The Plan"
+  Date: Yyyy-Mm-Dd
+  Status: Draft|In-Progress|Completed
+  Priority: Low|Medium|High|Critical
+  Tags: [Tag1, Tag2, Tag3]
+  Estimated_Complexity: Simple|Moderate|Complex
+  ---
+```
+- The First Section Of The Plan Briefly Describes The Problem To Be Solved.
+- The Second Section Contains Generic Implementation Notes:
+```
+  - Frontend Root Is Vol/Www/Assets
+  - Backend Root Is Vol/Www/Src
+  - The App Runs In Container `Cm-Www`, You Need To Consider This When Running Commands (Use `Docker Exec -It Cm-Www /Www/Bin/Console`)
+  - Migrations For The Main Database Are Created With `Bin/Console Make:Migration` (Inside The Container)
+  - Migrations For The Tenant Database Are Created With `Bin/Console App:Sys:Mt:Migrations:Diff 2` (Inside The Container)
+```
+- The Plan Will Be Implemented By An Ai Coding Agent. Include Source Code In The Plan.
+- Include Source Code In The Plan, Mark Each Code Block As [New File], [Modify], Or [Delete] To Show The Type Of Change
+- Follow Solid Principles
+
+## Report Structure
+The Last Phase Of The Plan Should Be To Write A Report To `Ai-Plans/{Yymmdd}__Report__{Name-Of-The-Plan}.Md`
+
+Include Yaml Frontmatter With The Following Fields:
+```Yaml
+---
+Title: "Report: {Plan Title}"
+Date: Yyyy-Mm-Dd
+Plan_File: "Ai-Plans/{Yymmdd}__Plan__{Name-Of-The-Plan}.Md"
+Status: Completed|Partial|Blocked
+Files_Created: 0
+Files_Modified: 0
+Files_Deleted: 0
+Tags: [Tag1, Tag2, Tag3]
+---
+```
+
+The Report Content Should Include:
+1. **Summary**: Brief Overview Of What Was Accomplished (2-3 Sentences)
+2. **Files Changed**: 
+   - List Of New Files Created With Brief Descriptions
+   - List Of Modified Files With Summary Of Changes
+   - List Of Deleted Files (If Any)
+3. **Key Changes**: Bullet Points Of The Main Technical Changes Made
+4. **Technical Decisions**: Important Design Decisions Or Trade-Offs Made During Implementation
+5. **Testing Notes**: How The Changes Can Be Verified Or Tested
+6. **Documentation Updates**: Summary Of Any Documentation Changes Made
+7. **Next Steps** (Optional): Any Follow-Up Work Or Improvements That Could Be Made
+</Instruction>
+
+
+
+
+
+## --------------- CREATE PLAN V1 -----------------
 <instruction>
 - Create a **detailed** multi phased implementation plan in markdown format. 
 - The first line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
@@ -20,6 +152,17 @@
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - follow SOLID principles
 </instruction>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
