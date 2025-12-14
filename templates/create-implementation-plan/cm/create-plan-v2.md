@@ -13,11 +13,11 @@ Create A **Detailed** Multi Phased Implementation Plan In Markdown Format.
 ```Yaml
   ---
   Title: "Descriptive Title Of The Plan"
-  Date: Yyyy-Mm-Dd
+  createdAt: YYYY-MM-DD HH:mm
   Status: Draft|In-Progress|Completed
   Priority: Low|Medium|High|Critical
   Tags: [Tag1, Tag2, Tag3]
-  Estimated_Complexity: Simple|Moderate|Complex
+  estimatedComplexity: Simple|Moderate|Complex
   ---
 ```
 - The First Section Of The Plan Briefly Describes The Problem To Be Solved.
@@ -40,7 +40,7 @@ Include Yaml Frontmatter With The Following Fields:
 ```Yaml
 ---
 Title: "Report: {Plan Title}"
-Date: Yyyy-Mm-Dd
+createdAt: YYYY-MM-DD HH:mm
 Plan_File: "Ai-Plans/{Yymmdd}__IMPLEMENTATION-PLAN__{Name-Of-The-Plan}.Md"
 Status: Completed|Partial|Blocked
 Files_Created: 0

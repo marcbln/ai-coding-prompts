@@ -18,7 +18,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
   status: draft|in-progress|completed
   priority: low|medium|high|critical
   tags: [tag1, tag2, tag3]
-  estimated_complexity: simple|moderate|complex
+  estimatedComplexity: simple|moderate|complex
   documentType: IMPLEMENTATION_PLAN
   ---
 ```

@@ -20,11 +20,11 @@ Create a **detailed** multi phased implementation plan in markdown format.
   ---
   filename: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
   title: "Descriptive title of the plan"
-  date: YYYY-MM-DD
+  createdAt: YYYY-MM-DD HH:mm
   status: draft|in-progress|completed
   priority: low|medium|high|critical
   tags: [tag1, tag2, tag3]
-  estimated_complexity: simple|moderate|complex
+  estimatedComplexity: simple|moderate|complex
   ---
 ```
 - The first section of the plan briefly describes the problem to be solved.
@@ -48,7 +48,7 @@ Include YAML frontmatter with the following fields:
 ---
 filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
-date: YYYY-MM-DD
+createdAt: YYYY-MM-DD HH:mm
 plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 files_created: 0
@@ -87,11 +87,11 @@ Create A **Detailed** Multi Phased Implementation Plan In Markdown Format.
 ```Yaml
   ---
   Title: "Descriptive Title Of The Plan"
-  Date: Yyyy-Mm-Dd
+  createdAt: YYYY-MM-DD HH:mm
   Status: Draft|In-Progress|Completed
   Priority: Low|Medium|High|Critical
   Tags: [Tag1, Tag2, Tag3]
-  Estimated_Complexity: Simple|Moderate|Complex
+  estimatedComplexity: Simple|Moderate|Complex
   ---
 ```
 - The First Section Of The Plan Briefly Describes The Problem To Be Solved.
@@ -114,7 +114,7 @@ Include Yaml Frontmatter With The Following Fields:
 ```Yaml
 ---
 Title: "Report: {Plan Title}"
-Date: Yyyy-Mm-Dd
+createdAt: YYYY-MM-DD HH:mm
 Plan_File: "Ai-Plans/{Yymmdd}__Plan__{Name-Of-The-Plan}.Md"
 Status: Completed|Partial|Blocked
 Files_Created: 0
