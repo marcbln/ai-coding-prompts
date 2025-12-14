@@ -1,3 +1,10 @@
+---
+description: "SCHEMA DEFINITION INSTRUCTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [schema, definition, typescript, instructions]
+documentType: INSTRUCTIONS
+---
 # Phase 1.75: Schema Definition
 
 ## Purpose

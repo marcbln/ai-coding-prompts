@@ -1,4 +1,12 @@
 
+---
+description: "CODE SNIPPETS TEMPLATES"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [snippets, templates, code, plans]
+documentType: PROMPT_TEMPLATE
+---
+
 ## --------------- CREATE PLAN V3 -----------------
 
 <instruction>

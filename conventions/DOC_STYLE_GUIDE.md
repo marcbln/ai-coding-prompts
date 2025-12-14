@@ -1,3 +1,10 @@
+---
+description: "DOCUMENTATION STYLE GUIDE"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [documentation, style, guide, writing]
+documentType: CONVENTIONS
+---
 # Documentation Style Guide
 
 ## General Writing Principles

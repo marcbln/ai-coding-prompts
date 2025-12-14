@@ -1,3 +1,10 @@
+---
+description: "VUE CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [vue, conventions, typescript, scss]
+documentType: CONVENTIONS
+---
 # VUE code conventions
 
 - always use Vue's option API, unless told otherwise

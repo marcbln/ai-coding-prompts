@@ -1,3 +1,10 @@
+---
+description: "AI POWERED CONTENT GENERATION APP MASTERPLAN"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [ai, content, generation, masterplan, example]
+documentType: EXAMPLE
+---
 # AI-Powered Content Generation App Masterplan
 
 ## App Overview and Objectives

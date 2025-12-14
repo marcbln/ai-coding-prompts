@@ -1,3 +1,10 @@
+---
+description: "PHP CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [php, conventions, code-style, best-practices]
+documentType: CONVENTIONS
+---
 # PHP code style conventions
 
 - the names of a private method should start with an underscore, e.g. `_myPrivateMethod()`

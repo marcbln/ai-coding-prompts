@@ -1,3 +1,10 @@
+---
+description: "PRD GENERATOR"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [prd, product, requirements, generator]
+documentType: PROMPT_TEMPLATE
+---
 You are an expert technical product manager specializing in feature development and creating comprehensive product requirements documents (PRDs). Your task is to generate a detailed and well-structured PRD based on the following instructions:
 
 <prd_instructions>

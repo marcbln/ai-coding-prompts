@@ -1,3 +1,10 @@
+---
+description: "INITIAL SHOPWARE PLUGIN DOCUMENTATION"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [shopware, plugin, documentation, german, english]
+documentType: PROMPT_TEMPLATE
+---
 **Goal:** To analyze a Shopware 6 plugin's source code, generate a complete user manual (in English and German), and create or update the `README.md` file (in English only).
 
 

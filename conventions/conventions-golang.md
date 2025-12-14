@@ -1,3 +1,10 @@
+---
+description: "GOLANG CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [golang, conventions, code-style, best-practices]
+documentType: CONVENTIONS
+---
 # Go Coding Conventions
 
 ## General

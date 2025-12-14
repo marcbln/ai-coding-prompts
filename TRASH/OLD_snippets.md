@@ -1,4 +1,12 @@
 
+---
+description: "OLD SNIPPETS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [snippets, old, trash]
+documentType: PROMPT_TEMPLATE
+---
+
 ## --------------- CREATE PLAN V3 -----------------
 
 <instruction>

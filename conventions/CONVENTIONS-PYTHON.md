@@ -1,3 +1,10 @@
+---
+description: "PYTHON CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [python, conventions, code-style, pep8]
+documentType: CONVENTIONS
+---
 # Python Coding Conventions
 
 ## General

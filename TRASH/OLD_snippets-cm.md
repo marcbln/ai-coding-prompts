@@ -1,4 +1,11 @@
-"Please follow SOLID principles"
+"---
+description: "OLD SNIPPETS CM"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [snippets, old, trash, cm]
+documentType: PROMPT_TEMPLATE
+---
+"Please follow SOLID principles""
 
 
 

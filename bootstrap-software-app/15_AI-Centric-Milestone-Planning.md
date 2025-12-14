@@ -1,3 +1,10 @@
+---
+description: "AI-CENTRIC MILESTONE PLANNING"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [ai, milestone, planning, bootstrap]
+documentType: PROMPT_TEMPLATE
+---
 # Phase 1.5: AI-Centric Milestone Planning
 
 ## Overview

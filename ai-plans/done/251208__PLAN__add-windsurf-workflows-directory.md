@@ -1,3 +1,10 @@
+---
+description: "ADD WINDSURF WORKFLOWS DIRECTORY"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [windsurf, workflows, directory, structure]
+documentType: PLAN
+---
 # 251208__PLAN__add_windsurf_workflows.md
 
 ## Problem Statement

@@ -1,3 +1,10 @@
+---
+description: "UPDATE SHOPWARE PLUGIN DOCUMENTATION AND CHANGELOG"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [shopware, plugin, documentation, changelog, git]
+documentType: PROMPT_TEMPLATE
+---
 **Goal:** To analyze new git commits, update the existing English and German manual files, and generate a new `CHANGELOG.md` entry in English only.
 
 

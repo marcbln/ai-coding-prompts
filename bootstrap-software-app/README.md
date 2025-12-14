@@ -1,3 +1,10 @@
+---
+description: "AI ASSISTED PROJECT PLANNING AND SCAFFOLDING TEMPLATES"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [ai, planning, scaffolding, templates, bootstrap]
+documentType: DOCUMENTATION
+---
 # AI-Assisted Project Planning and Scaffolding Templates
 
 This collection of templates helps you rapidly build and deploy applications using AI assistance. These templates are part of a structured workflow designed to enhance your development process and help you code more efficiently.

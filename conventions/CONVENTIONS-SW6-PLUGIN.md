@@ -1,3 +1,10 @@
+---
+description: "SHOPWARE 6 PLUGIN CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [shopware, plugin, conventions, php]
+documentType: CONVENTIONS
+---
 # Shopware 6 Plugin Development Conventions
 
 ## PHP Standards

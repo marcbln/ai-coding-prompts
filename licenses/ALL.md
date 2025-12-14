@@ -1,3 +1,10 @@
+---
+description: "ANIMAL LIBERATION LICENSE"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [license, animal, liberation, legal]
+documentType: LICENSE
+---
 # Animal Liberation License (ALL)
 
 Version 1.0, November 2024

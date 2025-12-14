@@ -1,7 +1,7 @@
 ---
 description: "CREATE PLAN V3"
 createdAt: 2025-12-14
-createdBy: <agent-machine-name>
+createdBy: Cascade
 tags: [common]
 documentType: PROMPT_TEMPLATE
 ---

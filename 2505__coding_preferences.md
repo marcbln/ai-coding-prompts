@@ -1,3 +1,10 @@
+---
+description: "CODING PREFERENCES"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [coding, standards, preferences, best-practices]
+documentType: PROMPT_TEMPLATE
+---
 # Coding pattern preferences
 
 - Always prefer simple solutions

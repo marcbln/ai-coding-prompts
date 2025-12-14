@@ -1,3 +1,10 @@
+---
+description: "COMPREHENSIVE DOCUMENTATION GENERATION FOR A SOFTWARE PROJECT"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [documentation, manual, generation, multilingual]
+documentType: PROMPT_TEMPLATE
+---
 **Goal:** To analyze a software project's source code, generate a complete user manual (in a primary and a target language), and create or update the main `README.md` file.
 
 **Persona:**

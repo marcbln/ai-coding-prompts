@@ -1,3 +1,10 @@
+---
+description: "SHADCNUI TAILWIND V4 CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [shadcn, tailwind, ui, design, conventions]
+documentType: CONVENTIONS
+---
 # shadcn/ui with Tailwind v4 Design System Guidelines
 
 This document outlines design principles and implementation guidelines for applications using shadcn/ui with Tailwind v4. These guidelines ensure consistency, accessibility, and best practices throughout the UI development process.

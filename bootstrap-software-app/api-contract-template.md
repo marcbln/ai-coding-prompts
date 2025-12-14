@@ -1,3 +1,10 @@
+---
+description: "API CONTRACT TEMPLATE"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [api, contract, template, documentation]
+documentType: TEMPLATE
+---
 # API Contract Documentation
 
 ## Endpoint Template

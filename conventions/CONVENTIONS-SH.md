@@ -1,3 +1,10 @@
+---
+description: "BASH CONVENTIONS"
+createdAt: 2025-12-14
+createdBy: Cascade
+tags: [bash, shell, conventions, scripting]
+documentType: CONVENTIONS
+---
 # CONVENTIONS_SH.md
 
 ## Overview
