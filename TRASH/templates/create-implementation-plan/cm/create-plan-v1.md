@@ -36,7 +36,7 @@ tags: [cm]
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan will be implemented by an AI coding agent. 
 Before writing the plan please check @ai-docs if anything is unclear.  or ask me. Do not make bold assumptions! 
 </instruction>
@@ -77,7 +77,7 @@ Format each phase with:
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan should also include an update of the user documentation.
 The plan will be implemented by an AI coding agent. 
 </instruction>
@@ -92,7 +92,7 @@ Note:
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format in @ai-docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai-docs/plans.
+Create a detailed multi phased implementation plan in markdown format in @ai-docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai-docs/plans.
 The plan will be implemented by an AI coding agent.
 </instruction>
 <hints>

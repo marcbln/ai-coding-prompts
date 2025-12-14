@@ -5,7 +5,7 @@ updatedAt: 2025-12-14
 tags: [common]
 ---
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 - The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md`
 - The first section of the plan briefly describes the problem to be solved.
 - The plan will be implemented by an AI coding agent. 

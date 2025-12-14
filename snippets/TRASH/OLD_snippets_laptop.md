@@ -11,12 +11,12 @@ documentType: PROMPT_TEMPLATE
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan will be implemented by an AI coding agent, so please provide full source code of files to be created by the agent.
 </instruction>
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan will be implemented by an AI coding agent.
 </instruction>
 
@@ -24,7 +24,7 @@ The plan will be implemented by an AI coding agent.
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan should also include an update of the user documentation.
 The plan will be implemented by an AI coding agent. 
 </instruction>
@@ -39,7 +39,7 @@ Note:
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format in @ai_docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai_docs/plans.
+Create a detailed multi phased implementation plan in markdown format in @ai_docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai_docs/plans.
 The plan will be implemented by an AI coding agent.
 </instruction>
 <hints>

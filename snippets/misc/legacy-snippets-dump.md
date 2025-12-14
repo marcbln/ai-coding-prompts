@@ -10,7 +10,7 @@ documentType: PROMPT_TEMPLATE
 ## --------------- CREATE PLAN V3 -----------------
 
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
 - Include YAML frontmatter with the following fields:
@@ -76,7 +76,7 @@ The report content should include:
 
 
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
 - The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
@@ -131,7 +131,7 @@ The report content should include:
 
 ## --------------- CREATE PLAN V1 -----------------
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 - The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
 - The first section of the plan briefly describes the problem to be solved.
 - The plan will be implemented by an AI coding agent. 
@@ -151,7 +151,7 @@ Please create a **detailed** multi phased implementation plan in markdown format
 ## --------------- CREATE PLAN TRASH-01 -----------------
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan will be implemented by an AI coding agent. 
 Before writing the plan please check @ai-docs if anything is unclear.  or ask me. Do not make bold assumptions! 
 </instruction>
@@ -190,7 +190,7 @@ Format each phase with:
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format. 
+Create a detailed multi phased implementation plan in markdown format. 
 The plan should also include an update of the user documentation.
 The plan will be implemented by an AI coding agent. 
 </instruction>
@@ -205,7 +205,7 @@ Note:
 
 
 <instruction>
-Please create a detailed multi phased implementation plan in markdown format in @ai-docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai-docs/plans.
+Create a detailed multi phased implementation plan in markdown format in @ai-docs/plans. The last phase pf the plan should be to write a report of the changes that were made in @ai-docs/plans.
 The plan will be implemented by an AI coding agent.
 </instruction>
 <hints>

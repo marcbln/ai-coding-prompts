@@ -6,7 +6,7 @@ tags: [common]
 documentType: PROMPT_TEMPLATE
 ---
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
 - Include YAML frontmatter with the following fields:

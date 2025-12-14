@@ -3,7 +3,7 @@ description: Generate a detailed implementation plan and save it to ai-plans/
 auto_execution_mode: 1
 ---
 
-Please create a **detailed** multi-phased implementation plan in markdown format that will be implemented by an AI coding agent.
+Create a **detailed** multi-phased implementation plan in markdown format that will be implemented by an AI coding agent.
 
 ## Requirements:
 1. **First Line of Plan**: Must be the filename in format: `ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md`

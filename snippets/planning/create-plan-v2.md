@@ -5,7 +5,7 @@ updatedAt: 2025-12-14
 tags: [common]
 ---
 <instruction>
-Please create a **detailed** multi phased implementation plan in markdown format. 
+Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
 - The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md`

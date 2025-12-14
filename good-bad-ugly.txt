@@ -1,5 +1,5 @@
 inspect the code that I've given you. What is good, what is bad, and what is ugly?
-please create a TODO list for making the code better. make it a checklist with `[ ]` for each unchecked item please
+Create a TODO list for making the code better. make it a checklist with `[ ]` for each unchecked item please
 
 
 
