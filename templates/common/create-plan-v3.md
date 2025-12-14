@@ -1,8 +1,9 @@
 ---
 description: "CREATE PLAN V3"
 createdAt: 2025-12-14
-updatedAt: 2025-12-14
+createdBy: <agent-machine-name>
 tags: [common]
+documentType: PROMPT_TEMPLATE
 ---
 <instruction>
 Please create a **detailed** multi phased implementation plan in markdown format. 
