@@ -8,7 +8,7 @@ tags: [common]
 Please create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
-- The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md`
+- The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md`
 - Include YAML frontmatter with the following fields:
 ```yaml
   ---
@@ -27,14 +27,14 @@ Please create a **detailed** multi phased implementation plan in markdown format
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
 title: "Report: {plan title}"
 date: YYYY-MM-DD
-plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
+plan_file: "ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 files_created: 0
 files_modified: 0

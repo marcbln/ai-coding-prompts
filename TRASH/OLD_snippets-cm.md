@@ -34,12 +34,12 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md"
+filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 date: YYYY-MM-DD
 plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
@@ -101,7 +101,7 @@ Create A **Detailed** Multi Phased Implementation Plan In Markdown Format.
 - Follow Solid Principles
 
 ## Report Structure
-The Last Phase Of The Plan Should Be To Write A Report To `Ai-Plans/{Yymmdd}__Report__{Name-Of-The-Plan}.Md`
+The Last Phase Of The Plan Should Be To Write A Report To `Ai-Plans/{Yymmdd}__IMPLEMENTATION-REPORT__{Name-Of-The-Plan}.Md`
 
 Include Yaml Frontmatter With The Following Fields:
 ```Yaml
@@ -147,7 +147,7 @@ The Report Content Should Include:
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
 ```
-- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md` directory.
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md` directory.
 - The plan will be implemented by an AI coding agent. Include source code in the plan.
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - follow SOLID principles

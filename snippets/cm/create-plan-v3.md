@@ -11,13 +11,15 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
   ---
-  filename: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
+  filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md"
   title: "Descriptive title of the plan"
-  date: YYYY-MM-DD
+  createdAt: YYYY-MM-DD
+  updatedAt: YYYY-MM-DD
   status: draft|in-progress|completed
   priority: low|medium|high|critical
   tags: [tag1, tag2, tag3]
   estimated_complexity: simple|moderate|complex
+  documentType: IMPLEMENTATION_PLAN
   ---
 ```
 - The first section of the plan briefly describes the problem to be solved.
@@ -34,20 +36,22 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-plans/{YYMMDD}__REPORT__{name-of-the-plan}.md"
+filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
-date: YYYY-MM-DD
-plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
+createdAt: YYYY-MM-DD
+updatedAt: YYYY-MM-DD
+plan_file: "ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 files_created: 0
 files_modified: 0
 files_deleted: 0
 tags: [tag1, tag2, tag3]
+documentType: IMPLEMENTATION_REPORT
 ---
 ```
 
