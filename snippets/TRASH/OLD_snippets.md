@@ -32,12 +32,12 @@ estimatedComplexity: simple|moderate|complex
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md"
+filename: "ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 plan_file: "ai-plans/{YYMMDD}__PLAN__{name-of-the-plan}.md"
@@ -98,7 +98,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
@@ -137,7 +137,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - The plan will be implemented by an AI coding agent. 
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - The plan should also include an update of the user documentation, if needed.
-- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md` directory.
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
 - Please follow SOLID principles
 </instruction>
 

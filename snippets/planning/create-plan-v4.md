@@ -1,10 +1,9 @@
-Here is the updated prompt template. I have added Item 6 to the Report Structure section to handle CLI usage examples.
-
-```markdown
 ---
 description: "CREATE PLAN V3"
 createdAt: 2025-12-14
 createdBy: Cascade
+updatedAt: 2025-12-14
+updatedBy: Gemini3
 tags: [common]
 documentType: PROMPT_TEMPLATE
 ---
@@ -15,10 +14,10 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md"
+filename: "ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 title: "Descriptive title of the plan"
-createdAt: YYYY-MM-DD
-updatedAt: YYYY-MM-DD
+createdAt: YYYY-MM-DD HH:mm
+updatedAt: YYYY-MM-DD HH:mm
 status: draft|in-progress|completed
 priority: low|medium|high|critical
 tags: [tag1, tag2, tag3]
@@ -33,16 +32,17 @@ documentType: IMPLEMENTATION_PLAN
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-plans/{YYMMDD}__IMPLEMENTATION-REPORT__{name-of-the-plan}.md"
+filename: "ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
-createdAt: YYYY-MM-DD
-updatedAt: YYYY-MM-DD
-plan_file: "ai-plans/{YYMMDD}__IMPLEMENTATION-PLAN__{name-of-the-plan}.md"
+createdAt: YYYY-MM-DD HH:mm
+updatedAt: YYYY-MM-DD HH:mm
+plan_file: "ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+project: "{project-name}"
 status: completed|partial|blocked
 files_created: 0
 files_modified: 0
@@ -64,5 +64,4 @@ The report content should include:
 6. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementation involved command-line interfaces
 7. **Documentation Updates**: Summary of any documentation changes made
 8. **Next Steps** (optional): Any follow-up work or improvements that could be made
-   </instruction>
-```
+</instruction>
