@@ -1,4 +1,4 @@
----
+**---
 description: "CREATE PLAN V3"
 createdAt: 2025-12-14
 createdBy: Cascade
@@ -64,4 +64,4 @@ The report content should include:
 6. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementation involved command-line interfaces
 7. **Documentation Updates**: Summary of any documentation changes made
 8. **Next Steps** (optional): Any follow-up work or improvements that could be made
-</instruction>
+</instruction>**
