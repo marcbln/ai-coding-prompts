@@ -2,7 +2,7 @@
 description: "CREATE PLAN V3 FOR CM"
 createdAt: 2025-12-14
 createdBy: Cascade
-tags: [common]
+tags: [cm]
 documentType: PROMPT_TEMPLATE
 ---
 <instruction>
@@ -17,7 +17,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
   createdAt: YYYY-MM-DD HH:mm
   status: draft|in-progress|completed
   priority: low|medium|high|critical
-  tags: [tag1, tag2, tag3]
+  tags: [cm, create-plan]
   estimatedComplexity: simple|moderate|complex
   ---
 ```
