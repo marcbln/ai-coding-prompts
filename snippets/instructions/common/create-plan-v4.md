@@ -1,4 +1,4 @@
-**---
+---
 description: "CREATE PLAN V3"
 createdAt: 2025-12-14
 createdBy: Cascade
@@ -26,6 +26,12 @@ documentType: IMPLEMENTATION_PLAN
 ---
 ```
 - The first section of the plan briefly describes the problem to be solved.
+{% if _implementation_notes is defined %}
+- The second section contains generic implementation notes:
+```
+{{ _implementation_notes }}
+```
+{% endif %}
 - The plan will be implemented by an AI coding agent.
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - The plan should also include an update of the user documentation, if needed.
@@ -64,4 +70,5 @@ The report content should include:
 6. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementation involved command-line interfaces
 7. **Documentation Updates**: Summary of any documentation changes made
 8. **Next Steps** (optional): Any follow-up work or improvements that could be made
-</instruction>**
+</instruction>
+
