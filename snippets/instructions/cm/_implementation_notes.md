@@ -6,3 +6,4 @@ description: CM Project Specific Context
 - the app runs in container `cm-www`, you need to consider this when running commands (use `docker exec -it cm-www /www/bin/console`)
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
+- check the context definitions in ai-context-defintions if they need to be updated
