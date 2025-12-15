@@ -2,7 +2,7 @@
 description: "SHADCNUI TAILWIND V4 CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade
-tags: [shadcn, tailwind, ui, design, conventions]
+tags: [shadcn, tailwind, ui, design, conventions, landing-page]
 documentType: CONVENTIONS
 ---
 # shadcn/ui with Tailwind v4 Design System Guidelines
