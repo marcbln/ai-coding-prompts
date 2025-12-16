@@ -41,11 +41,11 @@ Include Yaml Frontmatter With The Following Fields:
 ---
 Title: "Report: {Plan Title}"
 createdAt: YYYY-MM-DD HH:mm
-Plan_File: "Ai-Plans/{Yymmdd}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md"
+planFile: "Ai-Plans/{Yymmdd}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md"
 Status: Completed|Partial|Blocked
-Files_Created: 0
-Files_Modified: 0
-Files_Deleted: 0
+filesCreated: 0
+filesModified: 0
+filesDeleted: 0
 Tags: [Tag1, Tag2, Tag3]
 ---
 ```

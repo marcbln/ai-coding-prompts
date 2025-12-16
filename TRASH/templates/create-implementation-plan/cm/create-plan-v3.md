@@ -45,11 +45,11 @@ filename: "ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
-plan_file: "ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+planFile: "ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
-files_created: 0
-files_modified: 0
-files_deleted: 0
+filesCreated: 0
+filesModified: 0
+filesDeleted: 0
 tags: [tag1, tag2, tag3]
 documentType: IMPLEMENTATION_REPORT
 ---
