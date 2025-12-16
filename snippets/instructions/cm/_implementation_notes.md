@@ -1,5 +1,7 @@
 ---
-description: CM Project Specific Context
+description: TradeGuard Project Specific Context
+projectName: TradeGuard
+documentType: PROMPT_TEMPLATE_PARTIAL
 ---
 - Frontend root is vol/www/assets
 - Backend root is vol/www/src
@@ -7,4 +9,5 @@ description: CM Project Specific Context
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
 - check the context definitions in ai-context-defintions if they need to be updated
+- projectName is: TradeGuard
 - the container uses autowiring, registering services in `services.yaml` is not needed. 
