@@ -1,9 +1,9 @@
 ---
-description: "CREATE PLAN V3"
+description: "CREATE PLAN V4"
 createdAt: 2025-12-14
 createdBy: Cascade
-updatedAt: 2025-12-14
-updatedBy: Gemini3
+updatedAt: 2025-12-17
+updatedBy: Cascade
 tags: [common]
 documentType: PROMPT_TEMPLATE
 ---

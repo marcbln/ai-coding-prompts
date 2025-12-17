@@ -1,6 +1,11 @@
 ---
 description: "Master Implementation Plan Template"
+createdAt: 2025-12-14
+createdBy: Cascade
+updatedAt: 2025-12-17
+updatedBy: Cascade
 tags: [common, planning]
+documentType: PROMPT_TEMPLATE
 ---
 <instruction>
 Create a **detailed** multi-phased implementation plan in markdown format.

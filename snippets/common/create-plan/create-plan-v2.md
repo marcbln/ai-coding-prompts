@@ -1,9 +1,16 @@
 ---
 description: "CREATE PLAN V2"
 createdAt: 2025-12-14
-updatedAt: 2025-12-14
+createdBy: Cascade
+updatedAt: 2025-12-17
+updatedBy: Cascade
 tags: [common]
+documentType: PROMPT_TEMPLATE
+status: deprecated
+deprecatedAt: 2025-12-17
+deprecationNote: "Superseded by create-plan-v4.md"
 ---
+> **Deprecated:** This template is kept for historical reference. Use `create-plan-v4.md` instead.
 <instruction>
 Create a **detailed** multi phased implementation plan in markdown format. 
 
