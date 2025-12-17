@@ -1,4 +1,5 @@
 ---
+name: "Python Conventions"
 description: "PYTHON CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

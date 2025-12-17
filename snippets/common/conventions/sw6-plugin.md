@@ -1,4 +1,5 @@
 ---
+name: "Shopware 6 Plugin Conventions"
 description: "SHOPWARE 6 PLUGIN CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

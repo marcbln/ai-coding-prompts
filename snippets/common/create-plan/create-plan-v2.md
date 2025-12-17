@@ -1,4 +1,5 @@
 ---
+name: "Create Plan V2"
 description: "CREATE PLAN V2"
 createdAt: 2025-12-14
 createdBy: Cascade

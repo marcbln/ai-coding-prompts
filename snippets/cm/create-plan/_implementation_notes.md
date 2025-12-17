@@ -1,4 +1,5 @@
 ---
+name: TradeGuard Project Specific Context
 description: TradeGuard Project Specific Context
 projectName: TradeGuard
 documentType: PROMPT_TEMPLATE_PARTIAL

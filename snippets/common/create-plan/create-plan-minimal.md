@@ -1,4 +1,5 @@
 ---
+name: "Master Implementation Plan Template"
 description: "Master Implementation Plan Template"
 createdAt: 2025-12-14
 createdBy: Cascade

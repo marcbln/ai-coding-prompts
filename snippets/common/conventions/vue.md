@@ -1,4 +1,5 @@
 ---
+name: "Vue Conventions"
 description: "VUE CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

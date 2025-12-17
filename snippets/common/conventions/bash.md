@@ -1,4 +1,5 @@
 ---
+name: "Bash Conventions"
 description: "BASH CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

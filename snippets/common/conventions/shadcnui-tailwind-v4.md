@@ -1,4 +1,5 @@
 ---
+name: "shadcn/ui Tailwind v4 Conventions"
 description: "SHADCNUI TAILWIND V4 CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

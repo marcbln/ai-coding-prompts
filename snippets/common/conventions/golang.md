@@ -1,4 +1,5 @@
 ---
+name: "Golang Conventions"
 description: "GOLANG CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade

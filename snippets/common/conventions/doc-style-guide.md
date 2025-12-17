@@ -1,4 +1,5 @@
 ---
+name: "Documentation Style Guide"
 description: "DOCUMENTATION STYLE GUIDE"
 createdAt: 2025-12-14
 createdBy: Cascade

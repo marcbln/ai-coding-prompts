@@ -1,4 +1,5 @@
 ---
+name: "PHP Conventions"
 description: "PHP CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade
