@@ -108,6 +108,7 @@ Use these commands for day-to-day development.
   - **FastAPI**: For web APIs (if needed)
   - **Pydantic**: Data validation (recommended for OpenAI API interactions)
   - **SQLAlchemy**: For database interactions (if needed)
+  - **LiteLLM**: For LLM interactions (if needed)
 
 ## CLI Development
 
