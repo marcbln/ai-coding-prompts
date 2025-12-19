@@ -3,7 +3,7 @@ name: "Python Conventions"
 description: "PYTHON CONVENTIONS"
 createdAt: 2025-12-14
 createdBy: Cascade
-tags: [python, conventions, code-style, pep8]
+tags: [python, conventions, code-style, pep8, nicegui, streamlit, textual, tui]
 documentType: CONVENTIONS
 ---
 # Python Coding Conventions
@@ -101,14 +101,17 @@ Use these commands for day-to-day development.
 - Use `uv add <package>` to manage application dependencies in `[project.dependencies]`.
 - Use `uv add --dev <package>` to manage development dependencies in `[project.optional-dependencies.dev]`.
 - Keep dependencies minimal and justified. Use the specified libraries where appropriate:
-  - **Typer**: CLI interface with type hints (as used in project)
-  - **Rich**: Terminal output formatting (as used in project)
-  - **Inquirer**: Interactive CLI prompts (as used in project)
-  - **PyYAML**: Configuration file handling (as used in project)
-  - **FastAPI**: For web APIs (if needed)
-  - **Pydantic**: Data validation (recommended for OpenAI API interactions)
-  - **SQLAlchemy**: For database interactions (if needed)
-  - **LiteLLM**: For LLM interactions (if needed)
+    - **Typer**: CLI interface with type hints (as used in project).
+    - **Rich**: Terminal output formatting (as used in project).
+    - **Textual**: Modern framework for full TUI applications.
+    - **Trogon**: Auto-generate TUIs for Typer CLIs (`typer myapp utils trogon`).
+    - **Inquirer**: Interactive CLI prompts (as used in project).
+    - **PyYAML**: Configuration file handling (as used in project).
+    - **FastAPI**: For web APIs (if needed).
+    - **NiceGUI / Streamlit**: For web UI development.
+    - **Pydantic**: Data validation (recommended for OpenAI API interactions).
+    - **SQLAlchemy**: For database interactions (if needed).
+    - **LiteLLM**: For LLM interactions (if needed).
 
 ## CLI Development
 
@@ -132,6 +135,67 @@ Use these commands for day-to-day development.
 - Provide meaningful error messages.
 - Support configuration via both CLI arguments and config files.
 - Follow the pattern established in `cli.py` with the app object.
+
+## UI Development
+
+### NiceGUI Conventions
+
+- **Structure**:
+    - Use `ui.run()` only in `main.py` inside `if __name__ in {"__main__", "__mp_main__"}:`.
+    - Prefer decorators `@ui.page('/')` for routing over implicit routes.
+- **Styling**:
+    - Use Tailwind CSS utility classes via the `.classes()` method (e.g., `ui.label('Text').classes('text-lg font-bold')`) rather than raw CSS where possible.
+- **State Management**:
+    - Use `app.storage` for persistent state and standard Python classes/variables for memory state.
+    - Utilizing `.bind_value()` or `.bind_text()` is preferred for reactive UI updates.
+- **Async**:
+    - NiceGUI is inherently async. Define handlers with `async def` and use `await` for I/O operations (DB calls, API requests) to prevent blocking the UI loop.
+- **Dynamic UI**:
+    - Use the `@ui.refreshable` decorator for UI sections that need to be dynamically rebuilt based on state changes.
+
+### Streamlit Conventions
+
+- **Execution Model**:
+    - Streamlit scripts run from top to bottom on every interaction. Avoid side effects in the main body unless intended to run every time.
+- **State Management**:
+    - **ALWAYS** use `st.session_state` to persist variables across reruns.
+    - Initialize state variables at the top of the script using the pattern:
+      ```python
+      if 'key' not in st.session_state:
+          st.session_state.key = default_value
+      ```
+- **Caching**:
+    - Use `@st.cache_data` for data computations and loading (serializable objects).
+    - Use `@st.cache_resource` for global resources (database connections, ML models).
+- **Callbacks**:
+    - Prefer using `on_change` or `on_click` callbacks in widgets to handle logic *before* the script reruns.
+- **Layout**:
+    - Use `st.sidebar` for navigation and controls.
+    - Use `st.columns` or `st.tabs` for organizing the main content area.
+
+### Textual (TUI) Conventions
+
+- **Framework**: Use **Textual** for complex TUI applications.
+- **Structure**:
+    - Subclass `App` (from `textual.app`).
+    - Use the `compose()` method to yield widgets (Header, Footer, Static, etc.).
+- **Styling**:
+    - Use **TCSS** (Textual CSS) for styling. Prefer external `.tcss` files for larger apps, or the `CSS` class variable for small components.
+    - Stick to standard CSS-like property names provided by Textual.
+- **Interactivity**:
+    - Use message handlers (e.g., `def on_button_pressed(self, event):`) or the `@on` decorator for event handling.
+- **Async**:
+    - Textual is async-native. All event handlers and I/O bound methods should be `async def`.
+- **Typer Integration**:
+    - For existing Typer CLIs, use **Trogon** (`uv add trogon`) to auto-generate a TUI:
+      ```python
+      from trogon import Trogon
+      from typer.main import get_command
+      # ... inside your CLI setup
+      @app.command()
+      def tui(ctx: typer.Context):
+          Trogon(get_command(app), click_context=ctx).run()
+      ```
 
 ## API Interactions
 
@@ -168,6 +232,7 @@ dependencies = [
     "typer[all]>=0.9.0",
     "rich>=13.7.0",
     "inquirerpy>=0.3.4",
+    "textual>=0.50.0",
     "pyyaml>=6.0",
     "python-dotenv>=1.0.0",
 ]
@@ -195,3 +260,4 @@ strict = true
 [tool.black]
 line-length = 88
 ```
+
