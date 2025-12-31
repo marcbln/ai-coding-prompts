@@ -1,4 +1,4 @@
-# Report Generation Guidelines
+# Implementation Report Guidelines
 
 <!-- 
 Overview: This document defines the standard structure and format for implementation reports.
