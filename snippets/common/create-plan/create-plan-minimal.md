@@ -15,7 +15,7 @@ Create a **detailed** multi-phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+filename: "ai-backlog/plans/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 title: "Descriptive title of the plan"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
@@ -38,5 +38,5 @@ documentType: IMPLEMENTATION_PLAN
 - Follow SOLID principles.
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`.
+The last phase of the plan should be to write a report to `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`.
 </instruction>

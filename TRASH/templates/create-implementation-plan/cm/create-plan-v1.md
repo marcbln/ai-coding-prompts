@@ -6,7 +6,7 @@ tags: [cm]
 ---
 <instruction>
 - Create a **detailed** multi phased implementation plan in markdown format. 
-- The first line of the plan should be the filename of the plan in format `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
+- The first line of the plan should be the filename of the plan in format `ai-backlog/plans/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
 - The first section of the plan briefly describes the problem to be solved.
 - The second section contains generic implementation notes:
 ```
@@ -16,7 +16,7 @@ tags: [cm]
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
 ```
-- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
 - The plan will be implemented by an AI coding agent. Include source code in the plan.
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - follow SOLID principles

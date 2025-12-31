@@ -18,7 +18,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
   ---
-  filename: "ai-backlog/plans{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
+  filename: "ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
   title: "Descriptive title of the plan"
   createdAt: YYYY-MM-DD HH:mm
   status: draft|in-progress|completed
@@ -41,15 +41,15 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+filename: "ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
+planFile: "ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 filesCreated: 0
 filesModified: 0
@@ -82,7 +82,7 @@ The report content should include:
 Create A **Detailed** Multi Phased Implementation Plan In Markdown Format. 
 
 ## Plan Structure
-- The First Line Of The Plan Should Be The Filename Of The Plan In Format `ai-backlog/plans{YYMMDD_HHmm}__Plan__{Name-Of-The-Plan}.Md`
+- The First Line Of The Plan Should Be The Filename Of The Plan In Format `ai-backlog/plans/{YYMMDD_HHmm}__Plan__{Name-Of-The-Plan}.Md`
 - Include Yaml Frontmatter With The Following Fields:
 ```Yaml
   ---
@@ -108,14 +108,14 @@ Create A **Detailed** Multi Phased Implementation Plan In Markdown Format.
 - Follow Solid Principles
 
 ## Report Structure
-The Last Phase Of The Plan Should Be To Write A Report To `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{Name-Of-The-Plan}.Md`
+The Last Phase Of The Plan Should Be To Write A Report To `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{Name-Of-The-Plan}.Md`
 
 Include Yaml Frontmatter With The Following Fields:
 ```Yaml
 ---
 Title: "Report: {Plan Title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans{YYMMDD_HHmm}__Plan__{Name-Of-The-Plan}.Md"
+planFile: "ai-backlog/plans/{YYMMDD_HHmm}__Plan__{Name-Of-The-Plan}.Md"
 Status: Completed|Partial|Blocked
 filesCreated: 0
 filesModified: 0
@@ -144,7 +144,7 @@ The Report Content Should Include:
 ## --------------- CREATE PLAN V1 -----------------
 <instruction>
 - Create a **detailed** multi phased implementation plan in markdown format. 
-- The first line of the plan should be the filename of the plan in format `ai-backlog/plans{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
+- The first line of the plan should be the filename of the plan in format `ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
 - The first section of the plan briefly describes the problem to be solved.
 - The second section contains generic implementation notes:
 ```
@@ -154,7 +154,7 @@ The Report Content Should Include:
 - migrations for the main database are created with `bin/console make:migration` (inside the container)
 - migrations for the tenant database are created with `bin/console app:sys:mt:migrations:diff 2` (inside the container)
 ```
-- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
 - The plan will be implemented by an AI coding agent. Include source code in the plan.
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - follow SOLID principles
