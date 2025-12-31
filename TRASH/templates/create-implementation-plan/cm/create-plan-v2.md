@@ -8,7 +8,7 @@ tags: [cm]
 Create A **Detailed** Multi Phased Implementation Plan In Markdown Format. 
 
 ## Plan Structure
-- The First Line Of The Plan Should Be The Filename Of The Plan In Format `ai-backlog/plans{Yymmdd}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md`
+- The First Line Of The Plan Should Be The Filename Of The Plan In Format `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md`
 - Include Yaml Frontmatter With The Following Fields:
 ```Yaml
   ---
@@ -34,14 +34,14 @@ Create A **Detailed** Multi Phased Implementation Plan In Markdown Format.
 - Follow Solid Principles
 
 ## Report Structure
-The Last Phase Of The Plan Should Be To Write A Report To `ai-backlog/plans{Yymmdd}__IMPLEMENTATION_REPORT__{Name-Of-The-Plan}.Md`
+The Last Phase Of The Plan Should Be To Write A Report To `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{Name-Of-The-Plan}.Md`
 
 Include Yaml Frontmatter With The Following Fields:
 ```Yaml
 ---
 Title: "Report: {Plan Title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans{Yymmdd}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md"
+planFile: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{Name-Of-The-Plan}.Md"
 Status: Completed|Partial|Blocked
 filesCreated: 0
 filesModified: 0

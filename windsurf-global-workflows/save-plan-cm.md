@@ -6,14 +6,14 @@ auto_execution_mode: 1
 Create a **detailed** multi-phased implementation plan in markdown format that will be implemented by an AI coding agent.
 
 ## Requirements:
-1. **First Line of Plan**: Must be the filename in format: `ai-backlog/plans{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
+1. **First Line of Plan**: Must be the filename in format: `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
 2. **First Section**: Briefly describe the problem to be solved based on current context
 3. **Structure**:
    - Problem Statement
    - Multiple Phases (each with Objective, Tasks, Deliverables)
    - Source code blocks where applicable
    - Verification Steps
-4. **Last Phase**: Must include writing a report to `ai-backlog/plans{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+4. **Last Phase**: Must include writing a report to `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 5. **Follow SOLID principles**
 
 ## Important Environment Notes:
@@ -27,7 +27,7 @@ Create a **detailed** multi-phased implementation plan in markdown format that w
 ## Process:
 1. **Context Analysis**: Analyze current chat context to understand the problem
 2. **Drafting**: Create the plan with proper structure
-3. **Filename**: Use format `{YYMMDD}__IMPLEMENTATION_PLAN__{kebab-case-title}.md` (create directory if needed)
+3. **Filename**: Use format `{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-title}.md` (create directory if needed)
 4. **Verification**: Confirm the filename and location before saving
 
 The plan should be detailed enough for an AI coding agent to execute it step-by-step without additional context.
@@ -39,7 +39,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/plans{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+filename: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 title: "Descriptive title of the plan"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
@@ -70,16 +70,16 @@ documentType: IMPLEMENTATION_PLAN
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-backlog/plans{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/plans{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+filename: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+planFile: "ai-backlog/plans{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 project: "{project-name}"
 status: completed|partial|blocked
 filesCreated: 0
