@@ -18,7 +18,7 @@ It leverages the fact that the agent has codebase access by instructing it to cr
 ```markdown
 Act as a Senior Symfony/Vue Architect and Shopware 6 Integration Specialist. Your task is to perform a rigorous "Pre-Implementation Review" of the plan located at: 
 
-`ai-plans/251217__IMPLEMENTATION_PLAN__sw6_multilingual_categories.md`
+`ai-backlog/plans251217__IMPLEMENTATION_PLAN__sw6_multilingual_categories.md`
 
 You have full access to my codebase. Do not just read the text of the plan; you must cross-reference the plan's proposed steps against my existing implementation to ensure technical feasibility, correctness, and adherence to Shopware 6 data structures.
 

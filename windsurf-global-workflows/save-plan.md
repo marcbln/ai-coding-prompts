@@ -1,5 +1,5 @@
 ---
-description: Generate a detailed implementation plan and save it to ai-plans/
+description: Generate a detailed implementation plan and save it to ai-backlog/plans
 auto_execution_mode: 1
 ---
 

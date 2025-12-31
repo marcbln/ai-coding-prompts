@@ -7,7 +7,7 @@ This directory contains global system prompts (workflows) for the Windsurf IDE (
 | File | Trigger Command | Description |
 | :--- | :--- | :--- |
 | `architect.md` | `@architect` | Acts as a Product Manager to interview you and build a `requirements.md` file. |
-| `save-plan.md` | `@save-plan` | Generates a structured implementation plan and saves it to `ai-plans/`. |
+| `save-plan.md` | `@save-plan` | Generates a structured implementation plan and saves it to `ai-backlog/plans`. |
 
 ## Installation (Sync via Symlink)
 

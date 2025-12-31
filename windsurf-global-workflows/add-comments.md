@@ -24,6 +24,9 @@ Analyze the currently open file's extension and language, then apply the specifi
 5.  **If Python (`.py`):**
     Run the logic from `/add-comments-python`.
 
+6.  **If Bash (`.sh`):**
+    Run the logic from `/add-comments-bash`.
+
 **Execution Plan:**
 1.  Identify the language.
 2.  Strictly follow the rules defined for that language.

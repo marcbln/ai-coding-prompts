@@ -16,7 +16,7 @@ deprecationNote: "Superseded by create-plan-v4.md"
 Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
-- The First line of the plan should be the filename of the plan in format `ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
+- The First line of the plan should be the filename of the plan in format `ai-backlog/plans{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
 - Include YAML frontmatter with the following fields:
 ```yaml
   ---
@@ -35,14 +35,14 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-plans/{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `ai-backlog/plans{YYMMDD}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-plans/{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+planFile: "ai-backlog/plans{YYMMDD}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 filesCreated: 0
 filesModified: 0
