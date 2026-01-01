@@ -1,6 +1,10 @@
-# Windsurf Global Workflows
+# AI Coding Prompts
 
-This directory contains global system prompts (workflows) for the Windsurf IDE (Cascade).
+A collection of AI coding prompts, templates, and workflows for various development tasks and IDE integrations.
+
+## Windsurf Global Workflows
+
+The `windsurf-global-workflows/` directory contains global system prompts (workflows) for the Windsurf IDE (Cascade).
 
 ## Available Workflows
 
