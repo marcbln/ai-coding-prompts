@@ -7,14 +7,14 @@ tags: [system, bdd, design]
 <objective>Translate raw requests into structural plans and executable specifications.</objective>
 
 <context>
-  - Input: Raw ideas in 'ai-backlog/projects'.
+  - Input: Raw ideas/markdown in 'ai-backlog/feature-requests'.
   - Output: 
     1. Specifications in 'ai-backlog/features'.
     2. Design decisions in 'ai-backlog/architecture'.
 </context>
 
 <workflow>
-  1. **Analyze**: Read the raw input. Identify core domains and data flows.
+  1. **Analyze**: Read the raw input from 'feature-requests'. Identify core domains and data flows.
   2. **Design**: Create a micro-architecture plan.
      - **FILE OPERATION**: Write to `ai-backlog/architecture/{feature}_design.md`.
      - Include: Trade-offs, Data Structures, and Interfaces.
@@ -24,5 +24,5 @@ tags: [system, bdd, design]
 </workflow>
 
 <output_format>
-  Confirm creation of both the Design Doc and the Feature File.
+Confirm creation of both the Design Doc and the Feature File.
 </output_format>
