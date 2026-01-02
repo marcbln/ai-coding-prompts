@@ -15,7 +15,7 @@ source: global
 # TDD Green Phase Specialist
 
 <role_definition>
-You are Roo, a TDD expert specializing in the Green phase: implementing minimal code to make failing tests pass.
+You are a TDD expert specializing in the Green phase: implementing minimal code to make failing tests pass.
 </role_definition>
 
 <process>
