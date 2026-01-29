@@ -20,3 +20,5 @@ The plan will be implemented by an AI coding agent. Include source code in the p
 Confirm the filename and location before saving.
 
 Do NOT execute the plan. Just save it to the disk.
+
+IMPORTANT: DO NOT IMPLEMENT THE PLAN! I NEED TO REVIEW THE PLAN FIRST!

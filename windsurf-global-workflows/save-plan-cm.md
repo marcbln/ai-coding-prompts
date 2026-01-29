@@ -108,3 +108,5 @@ The report content should include:
 
 
 Do NOT execute the plan. Just save it to the disk.
+
+IMPORTANT: DO NOT IMPLEMENT THE PLAN! I NEED TO REVIEW THE PLAN FIRST!
