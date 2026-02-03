@@ -1,0 +1,176 @@
+/* Professional PDF Template - Clean and Business-Friendly */
+
+@page {
+    size: A4;
+    margin: 2.5cm;
+    @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+        color: #666;
+    }
+    @top-center {
+        content: "";
+        border-bottom: 1px solid #e0e0e0;
+        height: 1px;
+        margin-bottom: 1cm;
+    }
+}
+
+body {
+    font-family: 'Liberation Sans', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-size: 11pt;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Liberation Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.2em;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.3em;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #34495e;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    margin: 1.5em 0;
+    padding: 0.5em 1.5em;
+    background-color: #f8f9fa;
+    color: #555;
+    font-style: italic;
+}
+
+code {
+    background-color: #f8f9fa;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+pre {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1.2em;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #3498db, transparent);
+    margin: 2em 0;
+}
+
+/* Print-specific optimizations */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+    
+    h1 {
+        page-break-after: avoid;
+    }
+    
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+    
+    pre, blockquote {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+}

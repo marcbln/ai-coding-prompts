@@ -1,0 +1,269 @@
+/* Academic PDF Template - Formal and Scholarly */
+
+@page {
+    size: A4;
+    margin: 3cm 2.5cm 3cm 2.5cm;
+    @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+        color: #333;
+    }
+    @top-left {
+        content: "";
+        font-size: 9pt;
+        color: #666;
+        font-style: italic;
+    }
+}
+
+body {
+    font-family: 'Times New Roman', 'Liberation Serif', serif;
+    line-height: 1.8;
+    color: #000;
+    font-size: 12pt;
+    text-align: justify;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Times New Roman', 'Liberation Serif', serif;
+    font-weight: bold;
+    color: #000;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.4em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 2.5em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 2em;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin-top: 1.8em;
+}
+
+h5, h6 {
+    font-size: 1.1em;
+    margin-top: 1.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    text-indent: 0.5em;
+    text-align: justify;
+}
+
+p:first-of-type {
+    text-indent: 0;
+}
+
+.abstract {
+    margin: 2em 0;
+    padding: 1.5em;
+    background-color: #f5f5f5;
+    border-left: 3px solid #333;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+.abstract p {
+    text-indent: 0;
+    text-align: left;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+a:hover {
+    border-bottom: 1px solid #000;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.6em;
+    text-align: left;
+}
+
+blockquote {
+    border-left: 3px solid #333;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    background-color: #f9f9f9;
+    color: #333;
+    font-style: italic;
+}
+
+blockquote p {
+    text-indent: 0;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: #000;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 1em;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 0.85em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+caption {
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0.5em;
+    caption-side: bottom;
+}
+
+img {
+    max-width: 80%;
+    height: auto;
+    margin: 1.5em auto;
+    display: block;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+}
+
+.figure {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.figure img {
+    margin-bottom: 0.5em;
+}
+
+.figure-caption {
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #333;
+    margin: 2em 0;
+}
+
+/* Citations and references */
+.citation {
+    font-size: 0.8em;
+    vertical-align: super;
+    color: #000;
+}
+
+.references {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #333;
+}
+
+.references h2 {
+    font-size: 1.6em;
+    border: none;
+    margin-bottom: 1em;
+}
+
+.references ol {
+    padding-left: 1.5em;
+    font-size: 0.9em;
+}
+
+.references li {
+    margin-bottom: 0.8em;
+    text-align: left;
+}
+
+/* Academic sections */
+.section-number {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* Print-specific optimizations */
+@media print {
+    body {
+        font-size: 11pt;
+    }
+    
+    h1 {
+        page-break-after: avoid;
+    }
+    
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+    
+    pre, blockquote, table, img {
+        page-break-inside: avoid;
+    }
+    
+    .figure {
+        page-break-inside: avoid;
+    }
+}
