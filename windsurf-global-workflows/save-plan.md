@@ -1,24 +1,97 @@
 ---
-description: Generate a detailed implementation plan and save it to ai-backlog/plans
+description: Generate a detailed implementation plan and save it to _ai/backlog/active
 auto_execution_mode: 1
 ---
 
-Create a **detailed** multi-phased implementation plan in markdown format. 
-Please follow SOLID principles.
+Create a **detailed** multi-phased implementation plan in markdown format that will be implemented by an AI coding agent.
 
-The plan will be implemented by an AI coding agent. Include source code in the plan where applicable.
-
-1. **Context Analysis**: Briefly describe the problem to be solved based on the current chat context.
-2. **Drafting**: Write the plan to a new file in the `@ai_plans/` directory (create directory if it doesn't exist).
-   - **Filename Format**: `{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-title}.md` (e.g., `251208__IMPLEMENTATION_PLAN__implement-ftp-analyzer.md`).
+## Requirements:
+1. **First Line of Plan**: Must be the filename in format: `_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md`
+2. **First Section**: Briefly describe the problem to be solved based on current context
 3. **Structure**:
    - Problem Statement
-   - Phases (Objective, Tasks, Deliverables)
-   - Source Code blocks (if new files are needed)
+   - Implementation Notes (Context specific)
+   - Multiple Phases (each with Objective, Tasks, Deliverables)
+   - Source code blocks where applicable
    - Verification Steps
+4. **Last Phase**: Must include writing a report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+5. **Follow SOLID principles**
 
-Confirm the filename and location before saving.
+## Process:
+1. **Context Analysis**: Analyze current chat context to understand the problem and identifying relevant paths/technologies.
+2. **Drafting**: Create the plan with proper structure (detailed below).
+3. **Filename**: Use format `{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-title}.md` (create directory if needed).
+4. **Verification**: Confirm the filename and location before saving.
 
-Do NOT execute the plan. Just save it to the disk.
+The plan should be detailed enough for an AI coding agent to execute it step-by-step without additional context.
 
-IMPORTANT: DO NOT IMPLEMENT THE PLAN! I NEED TO REVIEW THE PLAN FIRST!
+<instruction>
+Create a **detailed** multi phased implementation plan in markdown format. 
+
+## Plan Structure
+- Include YAML frontmatter with the following fields:
+```yaml
+---
+filename: "_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+title: "Descriptive title of the plan"
+createdAt: YYYY-MM-DD HH:mm
+createdBy: {agentName} [{modelName}]
+updatedAt: YYYY-MM-DD HH:mm
+updatedBy: {agentName} [{modelName}]
+status: draft|in-progress|completed
+priority: low|medium|high|critical
+tags: [tag1, tag2, tag3]
+estimatedComplexity: simple|moderate|complex
+documentType: IMPLEMENTATION_PLAN
+---
+```
+- The first section of the plan briefly describes the problem to be solved.
+
+- The second section contains **Implementation Notes**:
+   - Analyze the current project structure and context to list relevant environment details.
+   - List relevant root directories.
+   - List commands needed for testing or migrations (if applicable to the current context).
+
+- The plan will be implemented by an AI coding agent.
+- Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change.
+- The plan should also include an update of the user documentation, if needed.
+- Please follow SOLID principles.
+
+## Report Structure
+The last phase of the plan should be to write a report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+
+Include YAML frontmatter with the following fields:
+```yaml
+---
+filename: "_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+title: "Report: {plan title}"
+createdAt: YYYY-MM-DD HH:mm
+createdBy: {agentName} [{modelName}]
+updatedAt: YYYY-MM-DD HH:mm
+updatedBy: {agentName} [{modelName}]
+planFile: "_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+project: "{project-name}"
+status: completed|partial|blocked
+filesCreated: 0
+filesModified: 0
+filesDeleted: 0
+tags: [tag1, tag2, tag3]
+documentType: IMPLEMENTATION_REPORT
+---
+```
+
+The report content should include:
+1. **Summary**: Brief overview of what was accomplished (2-3 sentences)
+2. **Files Changed**:
+   - List of new files created with brief descriptions
+   - List of modified files with summary of changes
+   - List of deleted files (if any)
+3. **Key Changes**: Bullet points of the main technical changes made
+4. **Technical Decisions**: Important design decisions or trade-offs made during implementation
+5. **Testing Notes**: How the changes can be verified or tested
+6. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs
+7. **Documentation Updates**: Summary of any documentation changes made
+8. **Next Steps** (optional): Any follow-up work or improvements that could be made
+   </instruction>
+
+IMPORTANT: Do NOT execute the plan. Just save it to the disk.
