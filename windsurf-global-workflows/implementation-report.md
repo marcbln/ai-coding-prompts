@@ -11,7 +11,7 @@ when you done with your task, write a report.
 ## Report Structure
 <!-- Section: Defines the standard report structure and naming convention -->
 
-The last phase of the plan should be to write a report to `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}
+The last phase of the plan should be to write a report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}
 
 ### YAML Frontmatter
 <!-- Section: Required metadata fields for all implementation reports -->
@@ -19,7 +19,7 @@ The last phase of the plan should be to write a report to `ai-backlog/reports/{Y
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+filename: "_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm

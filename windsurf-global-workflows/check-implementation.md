@@ -31,7 +31,7 @@ Compare the **Evidence** against the **Plan**:
 ### 4. Generate Report
 **CRITICAL:** You must create a new file for the report. Do not just output text in the chat.
 
-Create the file defined in the plan's `Report Structure` section (e.g., `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name}.md`).
+Create the file defined in the plan's `Report Structure` section (e.g., `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name}.md`).
 
 **Content Requirements for the Report:**
 - **Frontmatter:** Must match the schema provided in the Plan (fill in actual `filesCreated`, `filesModified` counts).
