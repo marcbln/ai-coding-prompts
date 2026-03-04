@@ -16,7 +16,7 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
+filename: "_ai/backlog/active/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
 title: "Descriptive title of the plan"
 createdAt: YYYY-MM-DD HH:mm
 status: draft|in-progress|completed
@@ -32,15 +32,15 @@ estimatedComplexity: simple|moderate|complex
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+filename: "_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
+planFile: "_ai/backlog/active/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 filesCreated: 0
 filesModified: 0
@@ -79,7 +79,7 @@ The report content should include:
 Create a **detailed** multi phased implementation plan in markdown format. 
 
 ## Plan Structure
-- The First line of the plan should be the filename of the plan in format `ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
+- The First line of the plan should be the filename of the plan in format `_ai/backlog/active/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
 - Include YAML frontmatter with the following fields:
 ```yaml
   ---
@@ -98,14 +98,14 @@ Create a **detailed** multi phased implementation plan in markdown format.
 - Please follow SOLID principles
 
 ## Report Structure
-The last phase of the plan should be to write a report to `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
+The last phase of the plan should be to write a report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md`
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
+planFile: "_ai/backlog/active/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md"
 status: completed|partial|blocked
 filesCreated: 0
 filesModified: 0
@@ -132,12 +132,12 @@ The report content should include:
 ## --------------- CREATE PLAN V1 -----------------
 <instruction>
 Create a **detailed** multi phased implementation plan in markdown format. 
-- The First line of the plan should be the filename of the plan in format `ai-backlog/plans/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
+- The First line of the plan should be the filename of the plan in format `_ai/backlog/active/{YYMMDD_HHmm}__PLAN__{name-of-the-plan}.md`
 - The first section of the plan briefly describes the problem to be solved.
 - The plan will be implemented by an AI coding agent. 
 - Include source code in the plan, mark each code block as [NEW FILE], [MODIFY], or [DELETE] to show the type of change
 - The plan should also include an update of the user documentation, if needed.
-- The last phase of the plan should be to write a report of the changes that were made to a file in the `ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
+- The last phase of the plan should be to write a report of the changes that were made to a file in the `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md` directory.
 - Please follow SOLID principles
 </instruction>
 

@@ -10,12 +10,12 @@
     <requirements>
         <plan_specification>
             <file_naming_convention>
-                ai-backlog/plans/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md
+                _ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md
             </file_naming_convention>
 
             <frontmatter_template type="yaml">
 ---
-filename: "ai-backlog/plans/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+filename: "_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 title: "Descriptive title of the plan"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
@@ -50,16 +50,16 @@ documentType: IMPLEMENTATION_PLAN
             </instruction>
             
             <file_naming_convention>
-                ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md
+                _ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md
             </file_naming_convention>
 
             <frontmatter_template type="yaml">
 ---
-filename: "ai-backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
+filename: "_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-the-plan}.md"
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
-planFile: "ai-backlog/plans/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
+planFile: "_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{name-of-the-plan}.md"
 project: "{project-name}"
 status: completed|partial|blocked
 filesCreated: 0

@@ -9,14 +9,14 @@ When you are done with your research, investigation, or architectural analysis, 
 
 ## Report Structure
 
-The report should be saved to `ai-backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__{name-of-the-analysis}.md`
+The report should be saved to `_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__{name-of-the-analysis}.md`
 
 ### YAML Frontmatter
 
 Include YAML frontmatter with the following fields:
 ```yaml
 ---
-filename: "ai-backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__{name-of-the-analysis}.md"
+filename: "_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__{name-of-the-analysis}.md"
 title: "Analysis: {analysis title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
