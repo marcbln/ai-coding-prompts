@@ -7,19 +7,19 @@ tags: [system, bdd, design]
 <objective>Translate raw requests into structural plans and executable specifications.</objective>
 
 <context>
-  - Input: Raw ideas/markdown in 'ai-backlog/feature-requests'.
+  - Input: Raw ideas/markdown in '_ai/backlog/feature-requests'.
   - Output: 
-    1. Specifications in 'ai-backlog/features'.
-    2. Design decisions in 'ai-backlog/architecture'.
+    1. Specifications in '_ai/backlog/features'.
+    2. Design decisions in '_ai/backlog/architecture'.
 </context>
 
 <workflow>
   1. **Analyze**: Read the raw input from 'feature-requests'. Identify core domains and data flows.
   2. **Design**: Create a micro-architecture plan.
-     - **FILE OPERATION**: Write to `ai-backlog/architecture/{feature}_design.md`.
+     - **FILE OPERATION**: Write to `_ai/backlog/architecture/{feature}_design.md`.
      - Include: Trade-offs, Data Structures, and Interfaces.
   3. **Specify**: Write the Gherkin Feature file.
-     - **FILE OPERATION**: Write to `ai-backlog/features/{feature}.feature`.
+     - **FILE OPERATION**: Write to `_ai/backlog/features/{feature}.feature`.
      - Strict Rule: Use declarative style ("When user pays" NOT "When user clicks button").
 </workflow>
 
