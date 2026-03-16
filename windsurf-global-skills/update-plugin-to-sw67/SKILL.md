@@ -85,13 +85,29 @@ class MyService {
 }
 ```
 
-## 4. `composer.json` Updates
+## 5. Fetch Latest Upgrade Documentation
+The skill includes a script to fetch the latest Shopware upgrade guides directly from the official repository.
+
+**Action Required:**
+- Run the fetch script to get the most current upgrade documentation:
+```bash
+./fetch-upgrade-docs.sh
+```
+
+This will download the latest versions of:
+- UPGRADE-6.5.md
+- UPGRADE-6.6.md  
+- UPGRADE-6.7.md
+
+The documents are saved in the `resources/` folder with timestamps and source URLs for reference.
+
+## 6. `composer.json` Updates
 Ensure the plugin requires the correct Shopware core version.
 
 **Action Required:**
 - Update `composer.json` to require `"shopware/core": "6.7.*"`.
 
-## 5. Clean Up Codebase
+## 7. Clean Up Codebase
 - Run `phpstan` and `php-cs-fixer` if available in the project to verify type safety and formatting.
 - Ensure no backward compatibility code remains if the user specifies no backward compatibility is needed.
 
