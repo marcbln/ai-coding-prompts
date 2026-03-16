@@ -11,8 +11,21 @@ This skill outlines the critical tasks required to upgrade a Shopware 6 plugin f
 Shopware 6.6 (via Symfony 6/7) completely removed support for `@Route` annotations in favor of PHP 8 `#[Route(...)]` attributes.
 
 **Action Required:**
+- Update `src/Resources/config/routes.xml` to change import type from `annotation` to `attribute`.
 - Replace `use Symfony\Component\Routing\Annotation\Route;` with `use Symfony\Component\Routing\Attribute\Route;` in all controller files.
 - Convert all class-level and method-level doctrine annotations to PHP 8 attributes.
+
+*routes.xml Update:*
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing
+        https://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <import resource="../../Controller/**/*Controller.php" type="attribute" />
+</routes>
+```
 
 *Example Before:*
 ```php

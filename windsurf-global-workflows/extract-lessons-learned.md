@@ -1,4 +1,4 @@
----
+U---
 description: Extract Lessons Learned from the current conversation/context window and write them to a structured file.
 auto_execution_mode: 1
 ---
