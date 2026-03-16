@@ -1,13 +1,3 @@
-
-
-
-Here is the **Backend Equivalent** of your ULTRATHINK workflow. 
-
-It mirrors the exact structure and intensity of your frontend prompt but translates the "Avant-Garde UI" concepts into "Bulletproof Systems Architecture" (focusing on concurrency, security, Big O complexity, and fault tolerance).
-
-Save this as `.windsurf/workflows/ultrathink-backend.md`:
-
-```markdown
 # ULTRATHINK Backend Protocol
 
 Invokes the ULTRATHINK protocol for backend engineering: Overrides standard brevity to engage in exhaustive, multi-dimensional reasoning, strict architectural pragmatism, and fault-tolerant system design before outputting code.

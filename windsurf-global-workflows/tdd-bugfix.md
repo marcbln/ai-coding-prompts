@@ -46,3 +46,4 @@ When executing this workflow, explicitly structure your responses using these he
 - Test one behavior per test.
 - If stuck, write a smaller test or break the problem into smaller steps.
 
+check @_ai/knowledge/guides/backend/HOWTO__php-unit-testing.md for about the phpunit testing.
