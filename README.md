@@ -2,6 +2,44 @@
 
 A collection of AI coding prompts, templates, and workflows for various development tasks and IDE integrations.
 
+## Ruler Integration
+
+This repository is compatible with [Ruler](https://github.com/intellectronica/ruler) – a tool that
+centralises AI agent instructions and distributes them to every supported AI coding assistant
+(GitHub Copilot, Claude Code, Cursor, Windsurf, Aider, and many more).
+
+### Quick start
+
+```bash
+# Install Ruler globally
+npm install -g @intellectronica/ruler
+
+# Clone this repo and apply rules to all default agents
+git clone https://github.com/marcbln/ai-coding-prompts
+cd ai-coding-prompts
+ruler apply
+```
+
+The `ruler apply` command reads `.ruler/AGENTS.md` (and any other `.md` files in `.ruler/`) and
+writes the appropriate config files for each enabled AI agent.
+
+### Per-platform adapters
+
+The `adapters/` directory contains a `ruler.toml` for each supported platform so you can target
+only the agents you care about:
+
+| Platform | Command |
+|----------|---------|
+| All defaults | `ruler apply` |
+| Windsurf only | `ruler apply --config adapters/windsurf/ruler.toml` |
+| Cursor only | `ruler apply --config adapters/cursor/ruler.toml` |
+| Claude only | `ruler apply --config adapters/claude/ruler.toml` |
+
+Each adapter folder also has a `README.md` with any additional manual steps (e.g. symlinking
+skills or workflow directories).  See [`adapters/README.md`](adapters/README.md) for an overview.
+
+---
+
 ## Windsurf Global Workflows
 
 The `windsurf-global-workflows/` directory contains global system prompts (workflows) for the Windsurf IDE (Cascade).

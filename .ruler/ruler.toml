@@ -1,0 +1,25 @@
+# Ruler configuration for ai-coding-prompts
+# https://github.com/intellectronica/ruler
+
+# Apply to the most common AI agents by default.
+# Override per-platform using the adapter-specific configs in adapters/.
+default_agents = ["copilot", "claude", "cursor", "windsurf", "aider"]
+
+[gitignore]
+enabled = true
+
+[agents.copilot]
+enabled = true
+
+[agents.claude]
+enabled = true
+output_path = "CLAUDE.md"
+
+[agents.cursor]
+enabled = true
+
+[agents.windsurf]
+enabled = true
+
+[agents.aider]
+enabled = true
