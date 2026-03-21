@@ -1,8 +1,8 @@
 # Ruler configuration for ai-coding-prompts
 # https://github.com/intellectronica/ruler
-
-# Apply to the most common AI agents by default.
-# Override per-platform using the adapter-specific configs in adapters/.
+#
+# Run `ruler apply` to distribute rules to all default agents.
+# For a broader set of agents, use: ruler apply --config adapters/ruler/ruler.toml
 default_agents = ["copilot", "claude", "cursor", "windsurf", "aider"]
 
 [gitignore]

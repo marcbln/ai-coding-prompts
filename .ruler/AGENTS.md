@@ -38,9 +38,9 @@ Workflow files in `windsurf-global-workflows/` use YAML frontmatter:
 
 ## Adapters
 
-The `adapters/` directory contains per-platform configurations and instructions
-for wiring the content of this library into specific AI coding tools via ruler.
-See `adapters/README.md` for an overview.
+The `adapters/ruler/` directory contains a single adapter that connects this
+library to every ruler-supported agent at once.
+See `adapters/ruler/README.md` for the full setup guide.
 
 ## Contribution Guidelines
 
@@ -49,5 +49,4 @@ See `adapters/README.md` for an overview.
 3. Place new convention files in `conventions/`.
 4. Place new Windsurf skills in `windsurf-global-skills/<skill-name>/`.
 5. Place new Windsurf workflows in `windsurf-global-workflows/`.
-6. Run `ruler apply` (with the appropriate adapter config) to regenerate agent
-   config files after editing `.ruler/` content.
+6. Run `ruler apply` to regenerate agent config files after editing `.ruler/` content.

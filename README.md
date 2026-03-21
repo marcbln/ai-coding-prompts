@@ -23,20 +23,16 @@ ruler apply
 The `ruler apply` command reads `.ruler/AGENTS.md` (and any other `.md` files in `.ruler/`) and
 writes the appropriate config files for each enabled AI agent.
 
-### Per-platform adapters
+### Ruler adapter
 
-The `adapters/` directory contains a `ruler.toml` for each supported platform so you can target
-only the agents you care about:
+The `adapters/ruler/` directory contains a single, unified adapter that works with every
+ruler-supported agent at once.  See [`adapters/ruler/README.md`](adapters/ruler/README.md)
+for the full setup guide, including how to connect the skills library to all agents:
 
-| Platform | Command |
-|----------|---------|
-| All defaults | `ruler apply` |
-| Windsurf only | `ruler apply --config adapters/windsurf/ruler.toml` |
-| Cursor only | `ruler apply --config adapters/cursor/ruler.toml` |
-| Claude only | `ruler apply --config adapters/claude/ruler.toml` |
-
-Each adapter folder also has a `README.md` with any additional manual steps (e.g. symlinking
-skills or workflow directories).  See [`adapters/README.md`](adapters/README.md) for an overview.
+```bash
+# Apply rules to all agents at once
+ruler apply --config adapters/ruler/ruler.toml
+```
 
 ---
 
