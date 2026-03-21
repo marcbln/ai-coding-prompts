@@ -88,9 +88,33 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
    mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "C:\path\to\ai-coding-prompts\global-workflows"
    ```
 
-## Skills Installation
+## Management CLI
 
-This repository also includes a collection of AI agent skills in the `global-skills/` directory. To install these skills:
+This repository includes a `prompts` CLI tool to help manage skills and workflows.
+
+**Requirements:**
+- [uv](https://github.com/astral-sh/uv) (Python package manager)
+- Python 3.12+
+
+**Available Commands:**
+```bash
+# List all commands
+./prompts --help
+
+# Manage skills
+./prompts skill list
+./prompts skill new "my-new-skill" --desc "Description of the skill"
+
+# Manage workflows
+./prompts workflow list
+./prompts workflow new "my-workflow" --desc "Description" --auto
+
+# Sync with Ruler
+./prompts sync apply
+./prompts sync apply --dry-run
+```
+
+The CLI handles creating the correct directory structures and scaffold files automatically.
 
 **Mac/Linux:**
 

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Wrapper script for the prompts management CLI
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLI_DIR="$REPO_ROOT/cli"
+
+# Ensure uv is installed
+if ! command -v uv &> /dev/null; then
+    echo "Error: 'uv' is required but not installed." >&2
+    echo "Please install it: curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
+    exit 1
+fi
+
+# Ensure project is setup if it doesn't exist
+if [ ! -d "$CLI_DIR/.venv" ]; then
+    echo "Initializing CLI environment..."
+    cd "$CLI_DIR" && uv venv && uv pip install -e ".[dev]"
+    cd "$REPO_ROOT"
+fi
+
+# Run the CLI
+cd "$CLI_DIR" && uv run prompts "$@"
