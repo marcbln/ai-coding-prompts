@@ -1,0 +1,44 @@
+# Ruler adapter – all supported agents
+# https://github.com/intellectronica/ruler
+#
+# Run from the repository root:
+#   ruler apply --config adapters/ruler/ruler.toml
+
+default_agents = [
+  "copilot", "claude", "cursor", "windsurf", "aider",
+  "cline", "codex", "gemini-cli", "jules", "amp"
+]
+
+[gitignore]
+enabled = true
+
+[agents.copilot]
+enabled = true
+
+[agents.claude]
+enabled = true
+output_path = "CLAUDE.md"
+
+[agents.cursor]
+enabled = true
+
+[agents.windsurf]
+enabled = true
+
+[agents.aider]
+enabled = true
+
+[agents.cline]
+enabled = true
+
+[agents.codex]
+enabled = true
+
+[agents.gemini-cli]
+enabled = true
+
+[agents.jules]
+enabled = true
+
+[agents.amp]
+enabled = true

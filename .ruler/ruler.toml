@@ -1,0 +1,25 @@
+# Ruler configuration for ai-coding-prompts
+# https://github.com/intellectronica/ruler
+#
+# Run `ruler apply` to distribute rules to all default agents.
+# For a broader set of agents, use: ruler apply --config adapters/ruler/ruler.toml
+default_agents = ["copilot", "claude", "cursor", "windsurf", "aider"]
+
+[gitignore]
+enabled = true
+
+[agents.copilot]
+enabled = true
+
+[agents.claude]
+enabled = true
+output_path = "CLAUDE.md"
+
+[agents.cursor]
+enabled = true
+
+[agents.windsurf]
+enabled = true
+
+[agents.aider]
+enabled = true
