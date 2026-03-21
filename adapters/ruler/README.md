@@ -38,7 +38,7 @@ ruler apply --agents claude,cursor
 
 ## 2 – Connect the skills library
 
-The `windsurf-global-skills/` directory contains skills in the universal
+The `global-skills/` directory contains skills in the universal
 [`SKILL.md`](https://agentskills.io) format.  Because Ruler uses the same
 format when distributing skills to agents (`.claude/skills/`, `.cursor/skills/`,
 etc.), these skills work with **every** ruler-supported agent — not just
@@ -51,12 +51,12 @@ this repo:
 
 ```bash
 # From the repository root (Mac / Linux)
-ln -s "$(pwd)/windsurf-global-skills" .ruler/skills
+ln -s "$(pwd)/global-skills" .ruler/skills
 ```
 
 ```cmd
 REM Windows (as Administrator) — from the repository root
-mklink /D ".ruler\skills" "%CD%\windsurf-global-skills"
+mklink /D ".ruler\skills" "%CD%\global-skills"
 ```
 
 Then apply rules with skills enabled (the default):
@@ -74,24 +74,24 @@ If you only use Windsurf and prefer to keep the existing symlink approach:
 
 ```bash
 # Mac / Linux
-ln -s "$(pwd)/windsurf-global-skills" ~/.codeium/windsurf-next/skills
+ln -s "$(pwd)/global-skills" ~/.codeium/windsurf-next/skills
 ```
 
 ```cmd
 REM Windows (as Administrator)
-mklink /D "%APPDATA%\Codeium\Windsurf\global_skills" "%CD%\windsurf-global-skills"
+mklink /D "%APPDATA%\Codeium\Windsurf\global_skills" "%CD%\global-skills"
 ```
 
 ## 3 – Distribute global workflows (Windsurf)
 
 ```bash
 # Mac / Linux
-ln -s "$(pwd)/windsurf-global-workflows" ~/.codeium/windsurf-next/global_workflows
+ln -s "$(pwd)/global-workflows" ~/.codeium/windsurf-next/global_workflows
 ```
 
 ```cmd
 REM Windows (as Administrator)
-mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "%CD%\windsurf-global-workflows"
+mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "%CD%\global-workflows"
 ```
 
 Restart Windsurf after creating the symlink.

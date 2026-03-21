@@ -36,9 +36,9 @@ ruler apply --config adapters/ruler/ruler.toml
 
 ---
 
-## Windsurf Global Workflows
+## Global Workflows
 
-The `windsurf-global-workflows/` directory contains global system prompts (workflows) for the Windsurf IDE (Cascade).
+The `global-workflows/` directory contains global system prompts (workflows) for AI coding agents.
 
 ## Available Workflows
 
@@ -73,7 +73,7 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
 
 2. Create the symlink:
    ```bash
-   ln -s ~/devel/ai-coding-prompts/windsurf-global-workflows ~/.codeium/windsurf-next/global_workflows
+   ln -s ~/devel/ai-coding-prompts/global-workflows ~/.codeium/windsurf-next/global_workflows
    ```
 
 **Windows:**
@@ -85,12 +85,12 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
 
 2. Create the symlink (as Administrator):
    ```cmd
-   mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "C:\path\to\ai-coding-prompts\windsurf-global-workflows"
+   mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "C:\path\to\ai-coding-prompts\global-workflows"
    ```
 
 ## Skills Installation
 
-This repository also includes a collection of Windsurf skills in the `windsurf-global-skills/` directory. To install these skills:
+This repository also includes a collection of AI agent skills in the `global-skills/` directory. To install these skills:
 
 **Mac/Linux:**
 
@@ -101,7 +101,7 @@ This repository also includes a collection of Windsurf skills in the `windsurf-g
 
 2. Create the symlink:
    ```bash
-   ln -s ~/devel/ai-coding-prompts/windsurf-global-skills ~/.codeium/windsurf-next/skills
+   ln -s ~/devel/ai-coding-prompts/global-skills ~/.codeium/windsurf-next/skills
    ```
 
 **Windows:**
@@ -113,7 +113,7 @@ This repository also includes a collection of Windsurf skills in the `windsurf-g
 
 2. Create the symlink (as Administrator):
    ```cmd
-   mklink /D "%APPDATA%\Codeium\Windsurf\global_skills" "C:\path\to\ai-coding-prompts\windsurf-global-skills"
+   mklink /D "%APPDATA%\Codeium\Windsurf\global_skills" "C:\path\to\ai-coding-prompts\global-skills"
    ```
 
 ## Available Skills

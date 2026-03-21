@@ -7,8 +7,8 @@ workflows, and skills for use across multiple AI coding assistants.
 
 ```
 conventions/              # Language- and framework-specific coding conventions
-windsurf-global-skills/   # Windsurf Cascade skills (SKILL.md format)
-windsurf-global-workflows/ # Windsurf Cascade workflow prompts
+global-skills/   # Global AI agent skills (SKILL.md format)
+global-workflows/ # Global AI agent workflow prompts
 iamhenry/                 # Additional AI agent modes and prompt collections
 _ai/knowledge/            # Reference knowledge files for AI context
 adapters/                 # Per-platform adapter configs for ruler and other tools
@@ -26,13 +26,13 @@ with the style of the existing files.
 
 ## Windsurf Skills
 
-Each skill lives in `windsurf-global-skills/<skill-name>/` and must contain:
+Each skill lives in `global-skills/<skill-name>/` and must contain:
 - `SKILL.md` with YAML frontmatter (`name`, `description`)
 - Any supporting resource files referenced by `SKILL.md`
 
 ## Windsurf Workflows
 
-Workflow files in `windsurf-global-workflows/` use YAML frontmatter:
+Workflow files in `global-workflows/` use YAML frontmatter:
 - `description`: one-line summary shown in the Windsurf UI
 - `auto_execution_mode`: set to `1` for automatic execution
 
@@ -47,6 +47,6 @@ See `adapters/ruler/README.md` for the full setup guide.
 1. Keep prompts general and reusable – avoid project-specific details.
 2. Add frontmatter to every new file.
 3. Place new convention files in `conventions/`.
-4. Place new Windsurf skills in `windsurf-global-skills/<skill-name>/`.
-5. Place new Windsurf workflows in `windsurf-global-workflows/`.
+4. Place new global skills in `global-skills/<skill-name>/`.
+5. Place new global workflows in `global-workflows/`.
 6. Run `ruler apply` to regenerate agent config files after editing `.ruler/` content.

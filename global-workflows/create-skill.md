@@ -23,7 +23,7 @@ Once you understand the requirements, help me determine:
 
 1. **Skill Type**: 
    - **Workspace Skill** → `.windsurf/skills/<skill-name>/` (project-specific)
-   - **Global Skill** → `windsurf-global-skills/<skill-name>/` (cross-project)
+   - **Global Skill** → `global-skills/<skill-name>/` (cross-project)
 2. **Skill Name**: Follow naming conventions:
    - Lowercase letters, digits, hyphens only
    - ≤64 characters
