@@ -6,7 +6,8 @@ from rich.console import Console
 
 from ..utils.file_ops import get_repo_root
 
-app = typer.Typer(help="Sync configurations using Ruler.")
+app = typer.Typer(help="Sync configurations using Ruler.", no_args_is_help=True)
+
 console = Console()
 
 @app.command("apply")

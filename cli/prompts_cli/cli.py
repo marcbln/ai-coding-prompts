@@ -9,6 +9,7 @@ from .commands import skill_cmd, workflow_cmd, sync_cmd
 app = typer.Typer(
     context_settings=CLI_CONTEXT_SETTINGS,
     help="Management CLI for the ai-coding-prompts repository.",
+    no_args_is_help=True,
 )
 
 app.add_typer(skill_cmd.app, name="skill")
