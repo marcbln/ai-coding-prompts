@@ -41,6 +41,7 @@ updatedBy: {agentName} [{modelName}]
 status: draft|in-progress|completed
 priority: low|medium|high|critical
 tags: [tag1, tag2, tag3]
+project: some-project-name
 estimatedComplexity: simple|moderate|complex
 documentType: IMPLEMENTATION_PLAN
 ---
