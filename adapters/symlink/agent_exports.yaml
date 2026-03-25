@@ -26,3 +26,7 @@ agents:
   pi:
     skills: ~/.config/pi/skills
     workflows: ~/.config/pi/workflows
+
+  claude-code:
+    skills: ~/.claude/skills
+    workflows: ~/.claude/workflows
