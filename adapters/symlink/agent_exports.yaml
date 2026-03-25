@@ -1,0 +1,28 @@
+sources:
+  skills: global-skills
+  workflows: global-workflows
+
+agents:
+  windsurf:
+    skills: ~/.codeium/windsurf/skills
+    workflows: ~/.codeium/windsurf/global_workflows
+
+  windsurf-next:
+    skills: ~/.codeium/windsurf-next/skills
+    workflows: ~/.codeium/windsurf-next/global_workflows
+
+  github-copilot:
+    skills: ~/.config/github-copilot/skills
+    workflows: ~/.config/github-copilot/workflows
+
+  opencode:
+    skills: ~/.config/opencode/skills
+    workflows: ~/.config/opencode/workflows
+
+  codex:
+    skills: ~/.codex/skills
+    workflows: ~/.codex/workflows
+
+  pi:
+    skills: ~/.config/pi/skills
+    workflows: ~/.config/pi/workflows

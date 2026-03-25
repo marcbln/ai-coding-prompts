@@ -6,10 +6,10 @@ from typing import Dict, Any, Optional
 import yaml
 
 def get_repo_root() -> Path:
-    """Find the repository root by looking for .git or .ruler."""
+    """Find the repository root by looking for .git."""
     current = Path.cwd()
     while current != current.parent:
-        if (current / ".git").exists() or (current / ".ruler").exists():
+        if (current / ".git").exists():
             return current
         current = current.parent
     # Fallback to current directory if not found

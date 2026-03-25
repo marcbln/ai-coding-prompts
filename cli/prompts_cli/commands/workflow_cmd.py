@@ -8,7 +8,7 @@ from rich.table import Table
 from ..config import GLOBAL_WORKFLOWS_DIR
 from ..utils.file_ops import get_repo_root, parse_frontmatter
 
-app = typer.Typer(help="Manage global workflows.")
+app = typer.Typer(help="Manage global workflows.", no_args_is_help=True)
 console = Console()
 
 @app.command("list")
