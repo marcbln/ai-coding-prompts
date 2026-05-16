@@ -50,11 +50,12 @@ The report content should include:
     - List of modified files with summary of changes
     - List of deleted files (if any)
 3. **Key Changes**: Bullet points of the main technical changes made
-4. **Technical Decisions**: Important design decisions or trade-offs made during implementation
-5. **Testing Notes**: How the changes can be verified or tested
-6. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementa
-7. **Documentation Updates**: Summary of any documentation changes made
-8. **Next Steps** (optional): Any follow-up work or improvements that could be made
+4. **Deviations from Plan**: What broke, what performance issues were hit, and why a different approach was taken
+5. **Technical Decisions**: Important design decisions or trade-offs made during implementation
+6. **Testing Notes**: How the changes can be verified or tested
+7. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementa
+8. **Documentation Updates**: Summary of any documentation changes made
+9. **Next Steps** (optional): Any follow-up work or improvements that could be made
 
 <!-- 
 Note: This template ensures all implementation reports follow a consistent format

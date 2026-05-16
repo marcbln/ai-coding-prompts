@@ -37,7 +37,7 @@ Create the file defined in the plan's `Report Structure` section (e.g., `_ai/bac
 **Content Requirements for the Report:**
 - **Frontmatter:** Must match the schema provided in the Plan (fill in actual `filesCreated`, `filesModified` counts).
 - **Status:** Mark as `completed` if all phases look good, or `partial` if things are missing.
-- **Content:** Fill in the Summary, Key Changes, and Technical Decisions based on your analysis of the `git diff`.
+- **Content:** Fill in the Summary, Key Changes, Deviations from Plan, and Technical Decisions based on your analysis of the `git diff`.
 
 ### 5. Final Output
 - If the implementation looks correct and the report is generated, simply output: "✅ Implementation verified and Report generated at [link to file]."
