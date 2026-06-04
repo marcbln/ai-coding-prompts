@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "pillow>=12.2.0",
+#     "python-pptx>=1.0.2",
+# ]
+# ///
 """
 Extract structured text content from PowerPoint presentations.
 

@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "pillow>=12.2.0",
+#     "python-pptx>=1.0.2",
+#     "six>=1.17.0",
+# ]
+# ///
 """
 Rearrange PowerPoint slides based on a sequence of indices.
 

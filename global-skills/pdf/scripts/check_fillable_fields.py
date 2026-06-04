@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "pypdf>=6.12.2",
+# ]
+# ///
 import sys
 from pypdf import PdfReader
 

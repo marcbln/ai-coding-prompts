@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "imageio>=2.37.3",
+#     "numpy>=2.4.6",
+#     "pillow>=12.2.0",
+# ]
+# ///
 """
 GIF Builder - Core module for assembling frames into GIFs optimized for Slack.
 

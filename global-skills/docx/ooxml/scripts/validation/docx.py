@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "lxml>=6.1.1",
+# ]
+# ///
 """
 Validator for Word document XML files against XSD schemas.
 """

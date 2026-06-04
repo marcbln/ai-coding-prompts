@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "python-pptx>=1.0.2",
+# ]
+# ///
 """Apply text replacements to PowerPoint presentation.
 
 Usage:

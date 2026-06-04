@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "anthropic>=0.105.2",
+# ]
+# ///
 """MCP Server Evaluation Harness
 
 This script evaluates MCP servers by running test questions against them using Claude.

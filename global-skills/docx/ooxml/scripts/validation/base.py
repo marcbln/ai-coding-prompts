@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "lxml>=6.1.1",
+# ]
+# ///
 """
 Base validator with common validation logic for document files.
 """
