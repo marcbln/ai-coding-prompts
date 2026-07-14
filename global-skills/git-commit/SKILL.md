@@ -1,11 +1,11 @@
 ---
 name: git-commit
-description: Create atomic commits prepended with emojis
+description: Create atomic commits with conventional commit messages
 ---
 
 # Commit
 
-Create atomic commits prepended with emojis using only non-interactive commands.
+Create atomic commits with conventional commit messages using only non-interactive commands.
 
 ## Process
 
@@ -23,11 +23,11 @@ Create atomic commits prepended with emojis using only non-interactive commands.
 - **Atomic**: One concern per commit.
 - **Split big changes**: Separate features, fixes, refactors, docs, etc. when they are independent.
 - **Subject line**:
-  - Format: `<emoji> <description>`
+  - Format: `type(scope): description` or `type: description` if scope is unclear.
+  - Types: `feat`, `fix`, `refactor`, `test`, `docs`, `style`, `chore`, `perf`, `revert`.
   - Imperative, present tense (e.g. "Add…", "Fix…").
   - Under 72 characters.
   - No trailing period.
-  - Do not add explicit scopes like `feat:`, `network:`, `chore:`.
 - Always ensure the commit message accurately reflects the diff.
 
 ## Splitting Commits
@@ -41,11 +41,11 @@ Split into multiple commits when:
 
 ## Examples
 
-- ✨ Add user authentication system
-- 🐛 Resolve memory leak in rendering process
-- 📝 Update API documentation with new endpoints
-- ♻️ Simplify error handling logic in parser
-- 🎨 Reorganize component structure for better readability
-- 🔥 Remove deprecated legacy code
-- 💚 Resolve failing CI pipeline tests
-- ♿️ Improve form accessibility for screen readers
+- `feat(auth): add user authentication system`
+- `fix(render): resolve memory leak in rendering process`
+- `docs(api): update API documentation with new endpoints`
+- `refactor(parser): simplify error handling logic`
+- `style(components): reorganize component structure`
+- `chore: remove deprecated legacy code`
+- `ci: resolve failing CI pipeline tests`
+- `fix(a11y): improve form accessibility for screen readers`
