@@ -36,7 +36,9 @@ Create a single `.html` file following these conventions:
 **CRITICAL Requirements:**
 1. Single `.html` file only — no separate CSS, JS, or asset files.
 2. Use D3.js via CDN script tag (no bundlers, no ES modules, no import statements).
-3. The visualization must be **interactive** — tooltips, transitions, zoom, or click interactions.
+3. The visualization must be **interactive** — include ALL of the following:
+   - **Help widget:** a `?` icon button in the corner that toggles an overlay panel explaining what the visualization shows, how to interpret the data, and what each visual element represents.
+   - **Animation controls:** Start, Pause, and Reset buttons that control the visualization's transitions and animations (e.g., pausing ongoing transitions, resetting to initial state).
 4. Include a title overlay or legend.
 5. Use a dark background with a cohesive, accessible color palette.
 6. Data used in the visualization should be embedded directly in the file (as JS objects/arrays).

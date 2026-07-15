@@ -37,7 +37,10 @@ Create a single `.html` file following these conventions:
 **CRITICAL Requirements:**
 1. Single `.html` file only — no separate CSS, JS, or asset files.
 2. Use Three.js via CDN script tag (no bundlers, no ES modules, no import statements).
-3. The scene must be **interactive** — user can rotate/pan/zoom (OrbitControls) or click/hover interactions.
+3. The scene must be **interactive** — include ALL of the following:
+   - **Mouse navigation:** OrbitControls for rotate/pan/zoom (left-drag to orbit, scroll to zoom, right-drag to pan).
+   - **Help widget:** a `?` icon button in the corner that toggles an overlay panel explaining what the visualization shows, how to interact with it, and what each visual element represents.
+   - **Animation controls:** Start, Pause, and Reset buttons that control the scene's animation loop (rotation, movement, particles, etc.).
 4. Include a title/overlay that names the topic.
 5. Use a dark background with vibrant, thematically-appropriate colors.
 6. Ensure `requestAnimationFrame` render loop and window resize handler.
