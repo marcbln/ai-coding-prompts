@@ -22,7 +22,7 @@ Your goal is to create a single self-contained HTML file using D3.js (loaded fro
 ### 2. Generate the D3.js Visualization
 Create a single `.html` file following these conventions:
 
-**File:** `/home/marc/devel/ai-generated-webgl/<topic-slug>/<topic-slug>-d3.html`
+**File:** `/home/marc/devel/ai-generated-visualizations<topic-slug>/<topic-slug>-d3.html`
 - Use a descriptive kebab-case slug based on the topic (e.g., `neural-network-d3`, `microservices-dependencies-d3`).
 - Create the parent directory if it does not exist.
 

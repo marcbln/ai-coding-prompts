@@ -4,7 +4,7 @@ description: "U---"
 ---
 
 U---
-description: Create an interactive 3D WebGL scene (single HTML file using Three.js) that represents the discussed topic, saved to /home/marc/devel/ai-generated-webgl/.
+description: Create an interactive 3D WebGL scene (single HTML file using Three.js) that represents the discussed topic, saved to /home/marc/devel/ai-generated-visualizations.
 auto_execution_mode: 1
 ---
 
@@ -22,7 +22,7 @@ Your goal is to create a single self-contained HTML file that uses Three.js (loa
 ### 2. Generate the 3D Scene
 Create a single `.html` file following these conventions:
 
-**File:** `/home/marc/devel/ai-generated-webgl/<topic-slug>/<topic-slug>.html`
+**File:** `/home/marc/devel/ai-generated-visualizations<topic-slug>/<topic-slug>.html`
 - Use a descriptive kebab-case slug based on the topic (e.g., `neural-network`, `microservices-architecture`, `git-workflow`).
 - Create the parent directory if it does not exist.
 
