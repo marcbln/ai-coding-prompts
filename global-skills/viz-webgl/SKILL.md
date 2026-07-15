@@ -1,5 +1,5 @@
 ---
-name: webgl-3d-scene
+name: viz-webgl
 description: "U---"
 ---
 

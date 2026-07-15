@@ -1,5 +1,5 @@
 ---
-name: d3-viz
+name: viz-d3
 description: "U---"
 ---
 
