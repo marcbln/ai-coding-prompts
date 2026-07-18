@@ -1,10 +1,6 @@
 ---
 name: extract-lessons-learned
-description: "U---"
----
-
-U---
-description: Extract Lessons Learned from the current conversation/context window and write them to a structured file.
+description: Extract lessons learned from the current conversation and write them to a structured file. Use after completing a task to capture insights, bug fixes, patterns, and decisions for future reference.
 auto_execution_mode: 1
 ---
 

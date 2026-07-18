@@ -1,10 +1,6 @@
 ---
 name: viz-webgl
-description: "U---"
----
-
-U---
-description: Create an interactive 3D WebGL scene (single HTML file using Three.js) that represents the discussed topic, saved to /home/marc/devel/ai-generated-visualizations.
+description: Create an interactive 3D WebGL scene (single HTML file using Three.js) that represents the discussed topic. Use when the user asks for a 3D scene, immersive visualization, or spatial/physical representation of a concept.
 auto_execution_mode: 1
 ---
 

@@ -1,10 +1,6 @@
 ---
 name: viz
-description: "U---"
----
-
-U---
-description: Meta-skill that analyzes the user's topic and selects the best visualization approach from viz-static-svg, viz-d3, or viz-webgl, then delegates accordingly.
+description: Meta-skill that analyzes the user's topic and selects the best visualization approach from viz-static-svg, viz-d3, or viz-webgl, then delegates accordingly. Use when the user asks for a visualization, diagram, chart, or 3D scene.
 auto_execution_mode: 1
 ---
 

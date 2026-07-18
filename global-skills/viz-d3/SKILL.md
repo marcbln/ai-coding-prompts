@@ -1,10 +1,6 @@
 ---
 name: viz-d3
-description: "U---"
----
-
-U---
-description: Create a D3.js visualization (single HTML file) that represents the discussed topic as an interactive data visualization.
+description: Create a D3.js visualization (single HTML file) that represents the discussed topic as an interactive data visualization. Use when the user asks for an interactive chart, graph, network diagram, or data visualization with tooltips, zoom, and animations.
 auto_execution_mode: 1
 ---
 

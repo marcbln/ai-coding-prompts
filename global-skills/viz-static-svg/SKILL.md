@@ -1,10 +1,6 @@
 ---
 name: viz-static-svg
-description: "U---"
----
-
-U---
-description: Create a static SVG visualization (single raw .svg file) representing the discussed topic, saved to /home/marc/devel/ai-generated-visualizations. No JavaScript, no interactivity, no dependencies — pure SVG markup only.
+description: Create a static SVG visualization (single raw .svg file) representing the discussed topic. No JavaScript, no interactivity, no dependencies — pure SVG markup only. Use when the user asks for a diagram, flowchart, architecture map, timeline, or any static visual.
 auto_execution_mode: 1
 ---
 
