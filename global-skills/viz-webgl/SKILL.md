@@ -42,7 +42,7 @@ Create a single `.html` file following these conventions:
    - **Help widget:** a `?` icon button in the corner that toggles an overlay panel explaining what the visualization shows, how to interact with it, and what each visual element represents.
    - **Animation controls:** Start, Pause, and Reset buttons that control the scene's animation loop (rotation, movement, particles, etc.).
 4. Include a title/overlay that names the topic.
-5. Use a dark background with vibrant, thematically-appropriate colors.
+5. Use a light background with cohesive, thematically-appropriate colors (default to light unless the user explicitly requests a dark theme).
 6. Ensure `requestAnimationFrame` render loop and window resize handler.
 
 ### 3. Final Output

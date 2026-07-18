@@ -34,7 +34,7 @@ Create a single `.svg` file following these conventions:
 - Responsive via `viewBox` and `width="100%" height="100%"`.
 
 **Design Requirements:**
-1. **Dark background** with a cohesive, accessible color palette.
+1. **Light background** with a cohesive, accessible color palette (default to light unless the user explicitly requests a dark theme).
 2. Apply a gentle background fill (e.g., rounded `<rect>`) so it works well on both light and dark viewing contexts.
 3. Use a readable sans-serif font (e.g., `font-family="system-ui, -apple-system, sans-serif"`).
 4. Include a title/label identifying the topic.

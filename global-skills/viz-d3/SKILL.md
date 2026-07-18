@@ -40,7 +40,7 @@ Create a single `.html` file following these conventions:
    - **Help widget:** a `?` icon button in the corner that toggles an overlay panel explaining what the visualization shows, how to interpret the data, and what each visual element represents.
    - **Animation controls:** Start, Pause, and Reset buttons that control the visualization's transitions and animations (e.g., pausing ongoing transitions, resetting to initial state).
 4. Include a title overlay or legend.
-5. Use a dark background with a cohesive, accessible color palette.
+5. Use a light background with a cohesive, accessible color palette (default to light unless the user explicitly requests a dark theme).
 6. Data used in the visualization should be embedded directly in the file (as JS objects/arrays).
 7. Include smooth D3 transitions/animations where appropriate.
 
