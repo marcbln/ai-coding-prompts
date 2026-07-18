@@ -1,6 +1,6 @@
 ---
 name: implementation-report
-description: "Overview: This document defines the standard structure and format for implementation reports."
+description: Standard structure and format for implementation reports. Use when documenting what was built, deviations from plan, and validation results after completing implementation work.
 ---
 
 # Implementation Report Guidelines

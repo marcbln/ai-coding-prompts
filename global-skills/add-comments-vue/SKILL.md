@@ -1,6 +1,6 @@
 ---
 name: add-comments-vue
-description: "Adds comments to Vue.js files (Script & Template)"
+description: Adds comments to Vue.js files (Script & Template). Use when asked to document Vue components, add section markers, or improve code readability with JSDoc and inline comments.
 ---
 
 # Add Comments (Vue)

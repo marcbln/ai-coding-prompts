@@ -1,6 +1,6 @@
 ---
 name: compare-repos
-description: "compare two repositories and create a report"
+description: Compare two repositories and create a report. Use when asked to analyze differences between two codebases, evaluate migration impact, or audit structural divergence.
 ---
 
 # Comparative Analysis Report Guidelines: Software Repositories

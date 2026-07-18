@@ -1,6 +1,6 @@
 ---
 name: architect
-description: "Acts as a Senior PM/Architect to interview the user and generate requirements"
+description: Acts as a Senior PM/Architect to interview the user and generate requirements. Use at the start of a project or feature to define scope, requirements, and architecture before any code is written.
 auto_execution_mode: 1
 ---
 

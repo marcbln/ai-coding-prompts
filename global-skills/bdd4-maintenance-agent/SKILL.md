@@ -1,6 +1,6 @@
 ---
 name: bdd4-maintenance-agent
-description: "Phase 4: Maintenance & Reporting"
+description: "Phase 4 of BDD workflow: analyze execution logs to fix regressions or update tests for code/UI changes. Use after implementation when tests fail or the system behavior changes and existing tests need updating."
 tags: [system, qa, debugging]
 ---
 

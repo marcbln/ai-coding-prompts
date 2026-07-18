@@ -1,6 +1,6 @@
 ---
 name: todoist-cli
-description: Manage Todoist tasks, projects, labels, comments, and more via the td CLI
+description: Manage Todoist tasks, projects, labels, comments, and more via the td CLI. Use when asked to create, update, list, or organize Todoist tasks and projects.
 ---
 
 # Todoist CLI (td)

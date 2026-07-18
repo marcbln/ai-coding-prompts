@@ -1,6 +1,6 @@
 ---
 name: add-tests-python
-description: "Generate, execute, and refine unit tests for Python modules using `pytest`. Ensure the generated tests strictly adher..."
+description: Generate, execute, and refine unit tests for Python modules using pytest. Use when a Python module needs test coverage, or when asked to add, fix, or improve tests.
 ---
 
 # Workflow: Add Python Tests (pytest)

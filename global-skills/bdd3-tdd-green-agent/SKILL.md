@@ -1,6 +1,6 @@
 ---
 name: bdd3-tdd-green-agent
-description: "Phase 3: Implementation"
+description: "Phase 3 of BDD workflow: implement the minimal logic required to make failing tests pass. Use after the TDD red phase when tests are written and need implementation to pass."
 tags: [system, developer, implementation]
 ---
 

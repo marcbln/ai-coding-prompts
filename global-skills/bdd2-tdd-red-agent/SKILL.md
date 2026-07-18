@@ -1,6 +1,6 @@
 ---
 name: bdd2-tdd-red-agent
-description: "Phase 2: Scaffolding & Failing Tests"
+description: "Phase 2 of BDD workflow: scaffold empty classes and write failing tests based on Gherkin specifications. Use after the BDD architect phase when feature files are ready and you need test scaffolding."
 tags: [system, sdet, testing]
 ---
 

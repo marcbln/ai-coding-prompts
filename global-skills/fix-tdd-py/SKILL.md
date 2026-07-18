@@ -1,6 +1,6 @@
 ---
 name: fix-tdd-py
-description: "You are an expert Senior Software Engineer acting as an autonomous TDD debugging agent."
+description: Debug and fix Python code using TDD: write a failing test that reproduces the bug, then fix until it passes. Use when a Python test is failing or a bug needs diagnosis with test-first discipline.
 ---
 
 You are an expert Senior Software Engineer acting as an autonomous TDD debugging agent.

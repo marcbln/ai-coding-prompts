@@ -1,6 +1,6 @@
 ---
 name: analysis-report
-description: "Overview: This document defines the standard structure and format for analysis reports."
+description: Standard structure and format for analysis reports. Use when documenting findings from codebase analysis, root cause investigations, or technical research.
 ---
 
 # Analysis Report Guidelines

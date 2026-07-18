@@ -1,7 +1,7 @@
 ---
 name: docker-mariadb-query
 description: |
-  Executes SQL SELECT queries against MariaDB databases running inside local Docker containers.
+  Executes SQL SELECT queries against MariaDB databases running inside local Docker containers. Use when you need to query a MariaDB database without connecting through an external client.
   Typically used with containers following the naming pattern {shortName}-mariadb.
   Use this skill when a user asks questions requiring database queries.
 ---

@@ -1,6 +1,6 @@
 ---
 name: add-comments-python
-description: "Adds Docstrings and comments to Python files"
+description: Adds Docstrings and comments to Python files. Use when asked to document Python code, add module/class/function docstrings, or improve code readability with inline comments.
 ---
 
 # Add Comments (Python)

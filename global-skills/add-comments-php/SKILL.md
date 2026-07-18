@@ -1,6 +1,6 @@
 ---
 name: add-comments-php
-description: "Adds PHPDoc and section comments to PHP code"
+description: Adds PHPDoc and section comments to PHP code. Use when asked to document PHP classes, methods, or functions with docblocks and inline comments.
 ---
 
 # Add Comments (PHP)

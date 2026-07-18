@@ -1,6 +1,6 @@
 ---
 name: add-comments-ts
-description: "Adds JSDoc and section markers to TypeScript/JS files"
+description: Adds JSDoc and section markers to TypeScript/JS files. Use when asked to document TypeScript or JavaScript code with type annotations, JSDoc, and inline comments.
 ---
 
 # Add Comments (TypeScript)

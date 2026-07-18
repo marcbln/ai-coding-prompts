@@ -1,6 +1,6 @@
 ---
 name: super-linter
-description: Analyzes and fixes linting errors across multiple languages (PHP, TypeScript, Vue, HTML, CSS, Bash) using GitHub Super Linter. Supports linting single files or uncommitted git changes.
+description: Analyzes and fixes linting errors across multiple languages (PHP, TypeScript, Vue, HTML, CSS, Bash) using GitHub Super Linter. Use when linting errors need fixing or when asked to check code quality across the project.
 ---
 
 # Super Linter Cleanup Instructions

@@ -1,6 +1,6 @@
 ---
 name: piv-slice-epic
-description: Slice an epic (with its architecture decisions) into PIV-sized tickets, then create them as GitHub Issues with a dependency graph wired into the epic issue. The GitHub-native bridge from a strategic doc to the PIV loop.
+description: Slice an epic (with its architecture decisions) into PIV-sized tickets, then create them as GitHub Issues with a dependency graph wired into the epic issue. Use when you have an epic or strategic doc that needs to be broken into actionable, dependency-ordered tickets.
 argument-hint: "[path to the epic / architecture doc] · [optional: --epic-issue <n> to reuse an existing epic issue]"
 ---
 

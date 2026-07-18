@@ -1,6 +1,6 @@
 ---
 name: add-comments-twig
-description: "Adds comments to Twig templates"
+description: Adds comments to Twig templates. Use when asked to document Twig templates with section markers, block descriptions, or inline comments.
 ---
 
 # Add Comments (Twig)

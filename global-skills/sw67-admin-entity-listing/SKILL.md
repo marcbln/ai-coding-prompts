@@ -1,7 +1,7 @@
 ---
 name: sw67-admin-entity-listing
 description: |
-  Patterns and gotchas for creating admin entity listing pages in Shopware 6.7 plugins.
+  Patterns and gotchas for creating admin entity listing pages in Shopware 6.7 plugins. Use when creating a new admin list page, debugging a listing that loads forever, or fixing SQL errors about missing updated_at columns.
 
   Use this when:
   - Creating a new admin list page with `sw-entity-listing` and the `listing` mixin

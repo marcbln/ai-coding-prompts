@@ -1,6 +1,6 @@
 ---
 name: review-plan-php
-description: "review a plan"
+description: Review a PHP implementation plan for correctness, completeness, and adherence to PHP 8.3+ best practices. Use when a PHP implementation plan needs technical review before coding begins.
 ---
 
 **Act as a Senior PHP Software Architect and Lead Developer.**

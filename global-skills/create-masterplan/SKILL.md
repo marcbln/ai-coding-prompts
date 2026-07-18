@@ -1,6 +1,6 @@
 ---
 name: create-masterplan
-description: "Acts as a Consultant to interview you about a new app idea and generate a Masterplan."
+description: Acts as a Consultant to interview you about a new app idea and generate a Masterplan. Use when starting a new project or feature and you need a comprehensive plan before implementation.
 auto_execution_mode: 1
 ---
 

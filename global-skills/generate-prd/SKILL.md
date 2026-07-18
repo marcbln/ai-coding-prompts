@@ -1,6 +1,6 @@
 ---
 name: generate-prd
-description: "Generates a formal Product Requirements Document (PRD) with user stories and acceptance criteria."
+description: Generates a formal Product Requirements Document (PRD) with user stories and acceptance criteria. Use when starting a new feature or project that needs documented requirements before implementation.
 auto_execution_mode: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ultrathink-be
-description: "Invokes the ULTRATHINK protocol for backend engineering: Overrides standard brevity to engage in exhaustive, multi-di..."
+description: Invokes the ULTRATHINK protocol for backend engineering — exhaustive multi-dimensional reasoning and fault-tolerant system design. Use when designing database schemas, writing API routes, setting up webhooks, or debugging server-side performance.
 ---
 
 # ULTRATHINK Backend Protocol

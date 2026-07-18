@@ -1,6 +1,6 @@
 ---
 name: review-code-language-agnostic
-description: "review a code implementation plan (language-agnostic)"
+description: Review a code implementation plan for correctness, completeness, and adherence to best practices (language-agnostic). Use when an implementation plan needs technical review before coding begins.
 ---
 
 **Act as a Senior Software Architect and Lead Developer.**

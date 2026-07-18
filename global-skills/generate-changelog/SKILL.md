@@ -1,6 +1,6 @@
 ---
 name: generate-changelog
-description: "Analyzes git diffs to generate a semantic versioned CHANGELOG entry."
+description: Analyzes git diffs to generate a semantic versioned CHANGELOG entry. Use before a release or when asked to update the changelog with recent changes.
 auto_execution_mode: 1
 ---
 

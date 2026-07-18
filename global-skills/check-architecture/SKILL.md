@@ -1,6 +1,6 @@
 ---
 name: check-architecture
-description: Analyzes the codebase structure and imports/namespaces (mainly PHP or Python) against Clean Architecture, SOLID, and DDD principles. It evaluates domain boundaries, detects tight framework/DB coupling, and outputs an evaluation with structural reasoning and a step-by-step refactoring plan.
+description: Analyzes the codebase structure and imports/namespaces (mainly PHP or Python) against Clean Architecture, SOLID, and DDD principles. Use when asked to evaluate architecture quality, detect framework coupling, or plan a refactoring toward cleaner boundaries.
 ---
 
 # Skill: Codebase Architecture Evaluation & Improvement (check-architecture)

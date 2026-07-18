@@ -1,6 +1,6 @@
 ---
 name: check-implementation
-description: "Verify the current unstaged git changes against the selected Implementation Plan and generate the Implementation Report."
+description: Verify the current unstaged git changes against the selected Implementation Plan and generate the Implementation Report. Use after implementing to validate that changes match the plan.
 auto_execution_mode: 1
 ---
 

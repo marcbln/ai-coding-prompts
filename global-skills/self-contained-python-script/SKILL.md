@@ -1,6 +1,6 @@
 ---
 name: self-contained-python-script
-description: Write self-installing autocontained Python scripts using uv and PEP 723
+description: Write self-installing, self-contained Python scripts using uv and PEP 723. Use when creating a Python script that should manage its own dependencies without a separate virtualenv or requirements file.
 ---
 
 Use this to write Python tools / scripts / clis as single files.

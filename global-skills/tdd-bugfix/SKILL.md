@@ -1,6 +1,6 @@
 ---
 name: tdd-bugfix
-description: "You are working in **strict TDD mode**. Your goal is to fix the reported issue or implement a feature by strictly adh..."
+description: Fix a bug using strict Test-Driven Development: write a failing test first, then implement the fix. Use when fixing a reported bug and you want TDD discipline to ensure regression coverage.
 ---
 
 # TDD Bugfix Workflow (Red → Green → Refactor)

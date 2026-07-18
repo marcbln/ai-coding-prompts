@@ -1,6 +1,6 @@
 ---
 name: review-architect
-description: "Acts as a Senior Architect to conduct a deep-dive feasibility review of a plan or existing code."
+description: Acts as a Senior Architect to conduct a deep-dive feasibility review of a plan or existing code. Use when a plan or codebase needs architectural scrutiny before implementation proceeds.
 auto_execution_mode: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: save-plan
-description: "Generate a detailed implementation plan and save it to _ai/backlog/active"
+description: Generate a detailed implementation plan and save it to _ai/backlog/active. Use when a feature or task needs a structured plan before implementation begins.
 auto_execution_mode: 1
 ---
 

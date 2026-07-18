@@ -1,6 +1,6 @@
 ---
 name: generate-manual
-description: "Analyzes source code to generate comprehensive user documentation (README and Manual)."
+description: Analyzes source code to generate comprehensive user documentation (README and Manual). Use when a project needs user-facing docs generated from its source code.
 auto_execution_mode: 1
 ---
 

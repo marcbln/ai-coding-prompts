@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: Create atomic commits with conventional commit messages
+description: Create atomic commits with conventional commit messages. Use when work is ready to be committed and you need a properly formatted, conventional commit.
 ---
 
 # Commit

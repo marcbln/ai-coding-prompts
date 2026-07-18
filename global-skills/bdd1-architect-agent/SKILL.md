@@ -1,6 +1,6 @@
 ---
 name: bdd1-architect-agent
-description: "Phase 1: Requirements & Architecture"
+description: "Phase 1 of BDD workflow: translate raw requests into Gherkin feature files and architecture plans. Use at the start of a feature to define requirements, user stories, and acceptance criteria before any code is written."
 tags: [system, bdd, design]
 ---
 

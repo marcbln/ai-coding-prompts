@@ -1,6 +1,6 @@
 ---
 name: add-comments
-description: "Auto-detects language and adds comments to the current file"
+description: Auto-detects language and adds comments to the current file. Use when asked to add documentation comments, section markers, or improve code readability with inline comments in any language.
 ---
 
 # Add Comments (Auto)

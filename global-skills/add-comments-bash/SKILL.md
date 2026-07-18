@@ -1,6 +1,6 @@
 ---
 name: add-comments-bash
-description: "Add documentation headers and section separators to bash scripts."
+description: Add documentation headers and section separators to bash scripts. Use when asked to document shell scripts with headers, usage info, and section comments.
 auto_execution_mode: 1
 ---
 

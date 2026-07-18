@@ -1,6 +1,6 @@
 ---
 name: tdd-feature
-description: "You are working in **strict TDD mode**. Your goal is to implement a new feature by strictly adhering to the Test-Driv..."
+description: Implement a new feature using strict Test-Driven Development: write failing tests first, then implement. Use when building a new feature and you want TDD discipline with incremental test-first development.
 ---
 
 # TDD Feature Workflow (Red → Green → Refactor)

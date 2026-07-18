@@ -1,6 +1,6 @@
 ---
 name: ultrathink-fe
-description: "Invokes the ULTRATHINK protocol: Overrides standard brevity to engage in exhaustive, multi-dimensional reasoning, str..."
+description: Invokes the ULTRATHINK protocol for frontend engineering — exhaustive multi-dimensional reasoning and avant-garde UI design. Use when building components, tweaking UI, or dealing with React/Vue state where deeper analysis is needed.
 ---
 
 # ULTRATHINK Frontend Protocol

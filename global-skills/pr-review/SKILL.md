@@ -1,6 +1,6 @@
 ---
 name: pr-review
-description: "Identify relevant PRs, analyze changes and dependencies, draft feedback, and generate gh CLI commands to submit a batched review."
+description: Identify relevant PRs, analyze changes and dependencies, draft feedback, and generate gh CLI commands to submit a batched review. Use when asked to review a pull request or when changes need code review before merging.
 auto_execution_mode: 1
 ---
 

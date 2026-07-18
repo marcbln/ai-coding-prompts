@@ -1,6 +1,6 @@
 ---
 name: add-tests-go
-description: "You are an expert Go developer. Your task is to add comprehensive tests to this Go project."
+description: Add comprehensive tests to a Go project. Use when a Go module needs unit tests, table-driven tests, or test coverage improvements.
 ---
 
 You are an expert Go developer. Your task is to add comprehensive tests to this Go project.
