@@ -48,6 +48,8 @@ Once you understand the requirements, help me determine:
 
 ### Skill Anatomy
 
+See the [full skill specification](https://agentskills.io/specification) for the official standard.
+
 ```
 skill-name/
 ├── SKILL.md (required)
