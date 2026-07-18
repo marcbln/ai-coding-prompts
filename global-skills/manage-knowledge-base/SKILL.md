@@ -1,14 +1,34 @@
 ---
 name: manage-knowledge-base
-description: Use this skill to search, read, create, or update markdown files in the _ai/ knowledge base. Use this whenever asked to document architecture, update specs, create manuals, or save context.
+description: Search, read, create, or update markdown files in the _ai/ knowledge base. Use when asked to document architecture, update specs, create manuals, or save context for future AI sessions.
 ---
 
-# Knowledge Base Management Skill
+# Knowledge Base Management
 
-You are the maintainer of the `_ai/` knowledge base. This repository of markdown files acts as the project's second brain, compatible with Obsidian.
+Maintain the `_ai/` knowledge base — a collection of markdown files that serves as the project's second brain.
 
-## Core Responsibilities
-1. **Routing**: Place new documentation in the exact correct subfolder (see `kb-structure.md`).
-2. **Formatting**: Use Obsidian-flavored markdown. Use `[[wikilinks]]` for internal linking between documents instead of standard markdown links when referencing internal files.
-3. **Frontmatter**: Ensure every new file has YAML frontmatter containing `title`, `date`, and relevant `tags`.
-4. **Tooling**: Use the provided `./kb-helper.sh` script to query the database, or simply use standard bash commands (`grep`, `find`) to manipulate files.[Reference supporting files in this directory for structure guidelines and helper tools.]
+## Workflow
+
+### 1. Determine the target location
+
+Use `kb-structure.md` to route content to the correct subfolder:
+
+| Directory | Purpose |
+|---|---|
+| `_ai/context-definitions/` | Core concepts, integrations, shared features |
+| `_ai/knowledge/` | General wiki, component behaviors, devops guides |
+| `_ai/specs/` | Strict specification documents |
+| `_ai/technical_decisions/` | Architecture Decision Records (ADRs) |
+| `_ai/manuals/` | How-to guides for humans |
+| `_ai/backlog/` | Project management, epics, tasks |
+
+### 2. Create or update the file
+
+- Use Obsidian-flavored markdown with `[[wikilinks]]` for internal references
+- Include YAML frontmatter with `title`, `date`, and `tags`
+- Place files in the correct subfolder per `kb-structure.md`
+
+### 3. Validate
+
+- Run `./kb-helper.sh` from the skill directory for tag search or frontmatter queries
+- Ensure wikilinks reference existing files where possible
