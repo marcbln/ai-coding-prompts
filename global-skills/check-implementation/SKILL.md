@@ -1,44 +1,91 @@
 ---
 name: check-implementation
-description: Verify the current unstaged git changes against the selected Implementation Plan and generate the Implementation Report. Use after implementing to validate that changes match the plan.
+description: Verify the implementation by reviewing ALL uncommitted changes (staged, unstaged, and untracked files) against the implementation plan. Provides structured feedback (blockers/notes/ok) — use after implementing to catch errors before committing.
 auto_execution_mode: 1
 ---
 
-# Implementation Verification & Reporting
+# Implementation Check
 
-You are an expert **Code Reviewer and Quality Assurance Agent**. 
-Your goal is to verify that the changes currently present in the working directory (unstaged git changes) match the requirements and specifications defined in the attached **Implementation Plan**.
+You are an **Implementation Auditor**. The user has just finished implementing changes and wants you to inspect **all uncommitted changes** — staged, unstaged, and untracked files — and give structured feedback before they commit.
 
-## Process Steps
+## Scope
 
-### 1. Analyze Context
-1. Read the attached **Implementation Plan** file carefully.
-2. Identify the **expected** file changes (Create/Modify/Delete).
-3. Identify the target path for the **Implementation Report** (defined in the last phase of the plan).
+Capture the full set of uncommitted changes:
+- **Staged** — `git diff --cached`
+- **Unstaged** — `git diff`
+- **Untracked (new)** — files not yet tracked by git
+- **Deleted** — files removed from the working tree
 
-### 2. Gather Evidence
-Run the following terminal commands to understand the current state:
-1. `git status` (To see which files have been created, modified, or deleted).
-2. `git diff --stat` (To see a summary of lines changed).
-3. `git diff` (To read the actual code changes - perform a shallow review of logic).
+You do NOT compare against the last commit. The "before" state is a clean working tree (the user starts implementation from a clean state). Everything that differs from that clean state is what this skill evaluates.
 
-### 3. Verify Implementation
-Compare the **Evidence** against the **Plan**:
-- **Completeness:** Were all requested files created?
-- **Accuracy:** Do the code changes match the logic described in the plan?
-- **Standards:** Does the code follow SOLID principles as requested?
-- **Safety:** Are there any obvious errors or hallucinations?
+## Workflow
 
-### 4. Generate Report
-**CRITICAL:** You must create a new file for the report. Do not just output text in the chat.
+### 1. Gather the full diff
 
-Create the file defined in the plan's `Report Structure` section (e.g., `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name}.md`).
+Run these commands:
 
-**Content Requirements for the Report:**
-- **Frontmatter:** Must match the schema provided in the Plan (fill in actual `filesCreated`, `filesModified` counts).
-- **Status:** Mark as `completed` if all phases look good, or `partial` if things are missing.
-- **Content:** Fill in the Summary, Key Changes, Deviations from Plan, and Technical Decisions based on your analysis of the `git diff`.
+```bash
+git status --porcelain        # summary of all changes
+git diff --stat               # unstaged changes summary
+git diff --cached --stat      # staged changes summary
+git diff                      # full unstaged diff
+git diff --cached             # full staged diff
+```
 
-### 5. Final Output
-- If the implementation looks correct and the report is generated, simply output: "✅ Implementation verified and Report generated at [link to file]."
-- If there are issues (missing files, logic errors), list them clearly in the chat and mark the Report status as `partial` or `blocked`.
+For untracked files, read them individually (they have no diff).
+
+If an **implementation plan** exists (typically under `_ai/backlog/active/`), read it too. Otherwise the skill still works — it reviews the raw diff for correctness.
+
+### 2. Inspect every changed file
+
+For each file in the diff (created, modified, deleted), evaluate:
+
+- **Syntax / compilation** — does the code parse? Are there obvious type errors?
+- **Imports** — are all referenced classes/functions imported? No dead imports?
+- **Naming conventions** — does the code match the project's naming patterns (files, classes, methods, variables)?
+- **Pattern fit** — does it follow conventions visible in neighboring files (e.g. same framework choices, same error handling style, same directory layout)?
+- **Plan fidelity** — if a plan exists, does the change match what the plan specified? (Files created, modified, deleted; method signatures; wiring)
+- **Drift** — any changes that are NOT in the plan (unplanned modifications, scope creep)?
+- **Security / safety** — hardcoded secrets, SQL injection, missing validation, unprotected endpoints (only if project conventions require them).
+- **Dead code** — unused variables, unreachable branches, commented-out code.
+
+### 3. Categorize findings
+
+- **🔴 Blocker** — would crash, produce wrong results, violate a hard project convention, or introduce a security issue. Must fix before commit.
+- **🟡 Note** — inconsistency, dead code, minor style drift, or a deviation from the plan that won't crash but reduces quality. Fix if cheap.
+- **🟢 OK** — change is correct and matches expectations. Briefly list to show breadth of coverage.
+
+### 4. Return verdict
+
+Output a structured verdict in this exact shape:
+
+```
+## Verdict: [PASS] / [PASS_WITH_NOTES] / [BLOCKED]
+
+### Blockers (must fix before commit)
+1. [blocker-1 — file:line — what's wrong — concrete fix]
+2. ...
+
+### Notes (fix if cheap)
+1. [note-1 — file:line — what to improve]
+2. ...
+
+### Verified OK
+1. [file — change type (created/modified/deleted) — brief description]
+2. ...
+
+### Summary
+- Files changed: N (X created, Y modified, Z deleted)
+- Unplanned changes: [list any drift from the plan]
+- ${Verdict reason}
+```
+
+## Rules
+
+- **All states, one review.** Staged, unstaged, and untracked are reviewed together. Don't treat them separately unless the split matters for a finding.
+- **Plan-optional.** If no plan exists, skip plan-fidelity checks and focus on code quality / conventions.
+- **Verify, don't paraphrase.** Every OK must cite the file. Every Blocker must cite the exact issue and the fix.
+- **Respect project conventions.** If `AGENTS.md` says "no CSRF" don't flag missing CSRF.
+- **Show concrete fixes.** For each blocker, provide the corrected code snippet (3-10 lines).
+- **No generic advice.** Skip "consider adding tests" / "use SOLID" unless the plan explicitly required it.
+- Be concise — the user wants a go/no-go for committing, not a lecture.
