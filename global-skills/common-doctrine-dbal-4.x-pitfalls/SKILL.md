@@ -87,7 +87,27 @@ $row    = $result->fetchAssociative();
 foreach ($result->iterateAssociative() as $row) { ... }
 ```
 
-### 6. Named parameters with explicit types — every named param gets visited
+### 6. QueryBuilder::select() accepts variadic strings, not an array
+
+In DBAL 4.x, `QueryBuilder::select()` changed from accepting an array to variadic string arguments:
+
+```php
+use Doctrine\DBAL\Connection;
+
+$qb = $this->connection->createQueryBuilder();
+
+// BROKEN — TypeError in DBAL 4.x:
+$qb->select(['m.id', 'm.name', 'LOWER(m.name) as name_lower']);
+
+// CORRECT — pass as separate arguments:
+$qb->select('m.id', 'm.name', 'LOWER(m.name) as name_lower');
+
+// Also correct — splat an array:
+$columns = ['m.id', 'm.name', 'LOWER(m.name) as name_lower'];
+$qb->select(...$columns);
+```
+
+### 7. Named parameters with explicit types — every named param gets visited
 
 When you pass an explicit `$types` array with named parameters, DBAL's
 `ExpandArrayParameters` visitor processes **all** named parameters, not just
