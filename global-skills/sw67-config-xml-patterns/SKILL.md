@@ -46,12 +46,13 @@ Entity-based selectors (e.g., category or manufacturer pickers) are **not** in t
     <label>Mode</label>
     <options>
         <option>
-            <value>option_a</value>
-            <label>Option A</label>
+            <id>option_a</id>
+            <name>Option A</name>
+            <name lang="de-DE">Option A Deutsch</name>
         </option>
         <option>
-            <value>option_b</value>
-            <label>Option B</label>
+            <id>option_b</id>
+            <name>Option B</name>
         </option>
     </options>
     <defaultValue>option_a</defaultValue>
@@ -77,5 +78,20 @@ Entity-based selectors (e.g., category or manufacturer pickers) are **not** in t
 <input-field type="text">
     <name>categoryId</name>
     <entity>category</entity>
+</input-field>
+
+<!-- ❌ value/label inside option is silently dropped in SW 6.7 -->
+<!-- ConfigReader::optionsToArray() calls getElementsByTagName('id'), -->
+<!-- so <value> returns null and the option is skipped via continue. -->
+<!-- The admin dropdown appears empty. -->
+<input-field type="single-select">
+    <name>emptyBrandHandling</name>
+    <label>Empty Brand Handling</label>
+    <options>
+        <option>
+            <value>show</value>
+            <label>Show all</label>
+        </option>
+    </options>
 </input-field>
 ```
