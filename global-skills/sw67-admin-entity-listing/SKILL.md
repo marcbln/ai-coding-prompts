@@ -15,6 +15,7 @@ description: |
   - Debugging why the Edit button is missing from the context menu
   - Debugging why the Edit button navigates away instead of opening a modal
   - Debugging why `$t()` interpolation with `{variable}` shows empty strings
+  - Debugging a page that shows the header/button but no entity list (no console errors)
 ---
 
 # SW67 Admin Entity Listing
@@ -56,6 +57,39 @@ Without this migration, your list page crashes with:
 The `listing` mixin provides a **no-op stub** for `getList()`. You must implement it yourself.
 
 See `references/component-patterns.md` for the full pattern.
+
+## Admin Page Template — `sw-page` Must Be the Root Element
+
+In SW 6.7 admin, `<sw-page>` must be the **single root element** of the page component's Twig template. It is not a regular component — Shopware's page/layout system relies on it being the top-level tag.
+
+**Symptom:** the page looks "half-broken" — the smart bar header title and the action button render, but the entity listing (and everything else in `#content`) never appears. No console errors.
+
+**Cause:** wrapping `<sw-page>` in a `<div>` (or a `{% block %}` / other wrapper) breaks the layout detection.
+
+```html
+<!-- ✅ Correct — sw-page is the root element -->
+<sw-page class="topdata-es-search-log-list-page">
+    <template #smart-bar-header>
+        <h2>{{ $tc('TopdataEnhancedSearchSW6.topdata-es-search-log.title') }}</h2>
+    </template>
+    <template #content>
+        <sw-entity-listing ... />
+    </template>
+</sw-page>
+```
+
+```html
+<!-- ❌ Wrong — wrapper div/block prevents the page from mounting its layout -->
+<div class="topdata-es-suggestion-list">
+    {% block topdata_es_suggestion_list %}
+    <sw-page class="topdata-es-suggestion-list-page">
+        ...
+    </sw-page>
+    {% endblock %}
+</div>
+```
+
+Also drop the surrounding `{% block %}`: the template is imported directly as the component template, so a top-level block tag adds unwanted structure. Compare with working pages in the same plugin (e.g. `search-log-list.html.twig`) — they place `<sw-page>` directly at the top.
 
 ## Admin Build
 
