@@ -1,51 +1,39 @@
 #!/usr/bin/env python3
-"""Suggest the next free ADR ID for a given category range.
+"""Suggest the next free ADR sequence number for a given decision date.
 
 Usage:
-    next_adr_id.py <adr-directory> <category>
+    next_adr_id.py <adr-directory> [yyyymmdd]
 
-Categories:
-    architecture   (1000-1999)
-    backend        (2000-2999)
-    frontend       (3000-3999)
-    integrations   (4000-4999)
-    devops         (5000-5999)
-
-Prints the next suggested ID (highest existing in range + 10, or the
-range start if none exist) and the target filename prefix.
+ADRs are named `ADR__YYMMDD-N__kebab-case-title.md`, where N is a per-day
+sequence number starting at 1. This script prints the next N for the given
+date (highest existing N of that day + 1; defaults to today if omitted).
 """
 import os
 import re
 import sys
-
-RANGES = {
-    "architecture": (1000, 1999),
-    "backend": (2000, 2999),
-    "frontend": (3000, 3999),
-    "integrations": (4000, 4999),
-    "devops": (5000, 5999),
-}
+from datetime import date
 
 
-def next_id(adr_dir, category):
-    if category not in RANGES:
-        raise SystemExit(f"Unknown category '{category}'. Choose from: {', '.join(RANGES)}")
-    lo, _ = RANGES[category]
-    ids = []
-    pat = re.compile(r"^ADR__(\d{4})-")
+def next_id(adr_dir: str, datestr: str | None = None) -> int:
+    d = date.today() if datestr is None else date.fromisoformat(datestr)
+    stamp = d.strftime("%y%m%d")
+    pat = re.compile(rf"^ADR__{stamp}-(\d+)__")
+    nums = []
     for name in os.listdir(adr_dir):
         m = pat.match(name)
-        if not m:
-            continue
-        nid = int(m.group(1))
-        if lo <= nid <= RANGES[category][1]:
-            ids.append(nid)
-    nxt = (max(ids) + 10) if ids else lo
-    print(nxt)
-    return nxt
+        if m:
+            nums.append(int(m.group(1)))
+    return (max(nums) + 1) if nums else 1
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        raise SystemExit("Usage: next_adr_id.py <adr-directory> <category>")
-    next_id(sys.argv[1], sys.argv[2])
+    if len(sys.argv) not in (2, 3):
+        raise SystemExit("Usage: next_adr_id.py <adr-directory> [yyyymmdd]")
+    stamp_arg = None
+    if len(sys.argv) == 3:
+        stamp_arg = sys.argv[2]
+        try:
+            date.fromisoformat(stamp_arg)
+        except ValueError:
+            raise SystemExit("Invalid date argument, expected YYYYMMDD")
+    print(next_id(sys.argv[1], stamp_arg))

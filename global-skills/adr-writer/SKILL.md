@@ -19,20 +19,15 @@ trade-off. Also when asked to create/update/supersede an "ADR".
 1. **Locate the ADR directory.** Common location: `<repo>/_ai/technical_decisions/`.
    If unsure, ask the user or search for an existing `ADR__*.md` file.
 
-2. **Pick the category** and assign the next free ID. Use the helper:
+2. **Assign the next ID.** ADRs are numbered per decision date: `YYMMDD-N`, where `YYMMDD`
+   is the decision date and `N` is a per-day sequence number starting at 1. Use the helper:
    ```bash
-   python3 scripts/next_adr_id.py <adr-directory> <category>
+   python3 scripts/next_adr_id.py <adr-directory> <yyyymmdd>
    ```
-   Categories and number ranges:
-   * `architecture`  (1000-1999) — Architecture & Infrastructure
-   * `backend`       (2000-2999) — Backend Core & Data Logic
-   * `frontend`      (3000-3999) — Frontend & UI
-   * `integrations`  (4000-4999) — External Integrations
-   * `devops`        (5000-5999) — DevOps & Workflows
+   It returns the next `N` for that date (highest existing N of the day + 1). If a
+   directory does not exist yet, the next ID is `1`.
 
-   IDs step by 10 (e.g. 1000, 1005, 1015) to leave room for inserts; never reuse an ID.
-
-3. **Name the file** `ADR__<ID>-<kebab-case-title>.md` (e.g. `ADR__1070-server-driven-entity-refresh.md`).
+3. **Name the file** `ADR__<YYMMDD-N>__<kebab-case-title>.md` (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
 
 4. **Copy the template** `assets/ADR_TEMPLATE.md` into the ADR directory and fill it in.
 
@@ -41,10 +36,10 @@ trade-off. Also when asked to create/update/supersede an "ADR".
    * `Decision` — the chosen solution; be specific and explain *how* it works.
    * `Consequences` — honest positive **and** negative outcomes / trade-offs.
    * `Alternatives Considered` — each rejected option named with the reason it was rejected.
-   * `Related Decisions` — cross-references by ID (e.g. `1015-legacy-tenant-isolation-sso.md`).
+   * `Related Decisions` — cross-references by filename (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
 
-6. **Update the README index** in that directory (the `## Index` section lists files per
-   category). Add the new ADR under its category and keep the `## Taxonomy` ranges in sync.
+6. **Update the README index** in that directory (the `## Index` section lists ADRs per
+   year). Add the new ADR under its year.
 
 7. **To supersede** an existing ADR: set its `status` to `Superseded`, and in the new ADR's
    `Related Decisions` reference the superseded one.
