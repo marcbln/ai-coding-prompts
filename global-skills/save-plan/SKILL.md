@@ -44,6 +44,7 @@ priority: low|medium|high|critical
 tags: [tag1, tag2, tag3]
 project: some-project-name
 estimatedComplexity: simple|moderate|complex
+documentRevision: 1
 documentType: IMPLEMENTATION_PLAN
 ---
 ```
