@@ -7,6 +7,8 @@ description: Upgrades a Shopware 6 plugin from an older version (like 6.4/6.5) t
 
 This skill outlines the critical tasks required to upgrade a Shopware 6 plugin for compatibility with Shopware 6.7. Shopware 6.6 and 6.7 introduce significant breaking changes, especially regarding Symfony updates and removed core interfaces.
 
+> **Scheduled tasks:** The `ScheduledTaskHandler` constructor gained a mandatory `LoggerInterface $exceptionLogger` argument (6.6+). For the full pattern, audit commands, registration/lifecycle, dynamic rescheduling (6.7.13+), and debugging, see the `sw67-scheduled-tasks` skill.
+
 ## 1. Routing: Migrating from Annotations to Attributes
 Shopware 6.6 (via Symfony 6/7) completely removed support for `@Route` annotations in favor of PHP 8 `#[Route(...)]` attributes.
 
