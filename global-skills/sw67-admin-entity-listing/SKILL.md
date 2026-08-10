@@ -153,4 +153,5 @@ this.$tc('MyFancyPluginSW6.my-module.deleteConfirmText').replace('{term}', item.
 
 ## Related
 
+- `sw67-admin-global-search` — search functionality / global search bar integration for the listing page
 - `_ai/lessons-learned.md` in this plugin — captures real debugging session
