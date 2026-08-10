@@ -64,6 +64,14 @@ Output a **GO / NO-GO** decision in this exact shape:
 ### Next action
 [If GO: "Plan is ready. Start Phase 1."]
 [If NO-GO: "Apply the N blocker fixes above, then re-run this check."]
+
+### Ask before you act
+Close the verdict by asking the user **one question** that offers to perform the next action yourself — do NOT just print the instruction and stop, and do NOT start applying fixes without permission:
+
+- If NO-GO: *"Shall I apply the blocker fixes (briefly list them) and re-run this check?"*
+- If GO: *"Shall I start implementing (Phase 1 | the plan)?"*
+
+Wait for the user's answer. If they say yes, do exactly the stated next action, then re-run this check (for fixes) or proceed with the plan. If they decline or redirect, stop and follow their instruction.
 ```
 
 ## Rules
@@ -73,4 +81,5 @@ Output a **GO / NO-GO** decision in this exact shape:
 - **Respect project conventions.** If `AGENTS.md` says "no CSRF on admin forms" or "no Symfony Forms", do NOT flag their absence. The plan is wrong only when it deviates from the *actual* repo conventions.
 - **YAGNI applies to the review too.** Don't demand pagination / static analysis / service interfaces if the project deliberately omits them.
 - **Show concrete fixes.** For each blocker, provide the corrected code snippet (3-10 lines) so the user can apply it directly.
+- **Always end with the offer.** The final line must be the single question offering to perform the next action — never leave the user to copy your "Next action" text back into the chat.
 - Be concise — the user wants a gate decision, not a lecture.
