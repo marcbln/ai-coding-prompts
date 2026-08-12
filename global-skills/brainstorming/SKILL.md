@@ -35,7 +35,7 @@ Start by understanding the current project context, then ask questions one at a 
 ## After the Design
 
 **Documentation:**
-- Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
+- Write the validated design to `_ai/backlog/active/YYYYMMDD_HHMM__DESIGN__<topic>.md` (plans belong in `_ai/backlog/active/` or `_ai/epics/`, not `docs/plans/`)
 - Use elements-of-style:writing-clearly-and-concisely skill if available
 - Commit the design document to git
 
