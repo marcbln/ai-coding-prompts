@@ -128,6 +128,7 @@ Key guidelines:
 - Use imperative/infinitive form
 - See [references/workflows.md](references/workflows.md) for multi-step and conditional workflow patterns
 - See [references/output-patterns.md](references/output-patterns.md) for template and example patterns
+- See [references/missing-manual.md](references/missing-manual.md) for the 4-part Skill Checklist (Trigger, Structure, Steering, Pruning) from "The Missing Manual: How to Write Great Skills"
 
 ## Phase 4: Supporting Files
 
