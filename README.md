@@ -111,6 +111,7 @@ The CLI handles creating the correct directory structures and scaffold files aut
 
 The skills collection includes specialized tools for:
 
+- **Grasp Family** (understanding-first, inspired by Geoffrey Litt): `grasp-diff` (educational diff walkthrough + comprehension quiz), `grasp-microworld` (interactive state playgrounds that teach by playing), `grasp-shared` (discussion-ready change proposals for teams)
 - **Algorithmic Art**: Generate artistic patterns and visualizations
 - **Brand Guidelines**: Create and manage brand style guides
 - **Canvas Design**: Web-based design tools and utilities
