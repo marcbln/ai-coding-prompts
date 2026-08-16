@@ -37,7 +37,7 @@ git log origin/{base}..HEAD --oneline
 
 - Commits: `git log origin/{base}..HEAD --pretty=format:"- %s"`
 - Files: `git diff --stat origin/{base}..HEAD`
-- **Implementation report** (if `piv-implement` wrote one — `.claude/reports/<…>-report.md`): pull the summary,
+- **Implementation report** (if `piv-implement` wrote one — `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__<plan-slug>.md`): pull the summary,
   validation results, and **documented deviations** (these belong in the PR body — they tell the reviewer what
   was intentional).
 - Linked ticket / issue: look for `ACC-…`, `#123`, `Fixes #…` in the commits/branch name.

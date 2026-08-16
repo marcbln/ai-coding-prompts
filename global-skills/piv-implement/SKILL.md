@@ -83,7 +83,7 @@ Before completing:
 
 ## Output — write an implementation report
 
-Write a short report to `.claude/reports/<plan-slug>-report.md` (and print the summary). This is what the PR body
+Write a short report to `_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__<plan-slug>.md` (and print the summary). This is what the PR body
 and the `piv-review-pr` gate read — especially the **deviations** (a documented deviation is an *intentional*
 decision the reviewer should not flag):
 

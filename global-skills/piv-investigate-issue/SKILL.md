@@ -85,7 +85,7 @@ handling, integration mismatches.
 
 ## Output: Create RCA Document
 
-Save analysis as: `docs/issues/issue-$ARGUMENTS.md`
+Save analysis as: `_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__issue-$ARGUMENTS.md`
 
 ### Required RCA Document Structure
 

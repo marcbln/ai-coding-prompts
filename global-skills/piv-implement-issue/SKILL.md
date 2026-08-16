@@ -11,12 +11,12 @@ allowed-tools: Read, Write, Edit, Bash(ruff:*), Bash(mypy:*), Bash(pytest:*), Ba
 
 **This skill implements fixes for GitHub issues based on RCA documents:**
 - Working in a local Git repository with GitHub origin
-- RCA document exists at `docs/issues/issue-$ARGUMENTS.md`
+- RCA document exists at `_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__issue-$ARGUMENTS.md` (find it via glob `_ai/backlog/reports/*__ANALYSIS_REPORT__issue-$ARGUMENTS.md`)
 - GitHub CLI installed and authenticated (optional, for status updates)
 
 ## RCA Document to Reference
 
-Read RCA: `docs/issues/issue-$ARGUMENTS.md`
+Read RCA: the latest `_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__issue-$ARGUMENTS.md` (glob `_ai/backlog/reports/*__ANALYSIS_REPORT__issue-$ARGUMENTS.md` if there are multiple revisions)
 
 **Optional - View GitHub issue for context:**
 ```bash

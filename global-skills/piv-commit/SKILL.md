@@ -25,6 +25,6 @@ After the commit succeeds, print two clearly labelled summaries:
 One short paragraph (3–6 sentences) describing the feature/fix/refactor that was committed — what problem it solves and what files were the key touch points. Write for a developer skimming the git log.
 
 ### AI Layer Changes
-Only include this section if any files under `.claude/` were modified or added (CLAUDE.md, `.claude/references/`, `.claude/skills/`, `.claude/agents/`, etc.).
+Only include this section if any files under `_ai/` were modified or added (AGENTS.md, `_ai/backlog/`, `_ai/technical_decisions/`, `_ai/lessons_learned/`, etc.).
 
-List each changed AI-layer file with a one-line note on what evolved and why. If nothing in `.claude/` changed, omit this section entirely.
+List each changed AI-layer file with a one-line note on what evolved and why. If nothing in `_ai/` changed, omit this section entirely.

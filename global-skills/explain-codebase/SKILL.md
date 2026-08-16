@@ -57,7 +57,7 @@ line references so the user can follow along.
 
 If the user wants a record of the walkthrough:
 - Summarize the key findings and the map of the areas covered
-- Offer to write it to `docs/notes/YYYY-MM-DD-<topic>-codebase-notes.md`
+- Offer to write it to `_ai/backlog/reports/{YYMMDD_HHmm}__ANALYSIS_REPORT__<topic>-codebase-notes.md`
 
 ## Key Principles
 

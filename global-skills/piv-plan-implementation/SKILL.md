@@ -72,13 +72,13 @@ So that <benefit/value>
   - Logging patterns and standards
 - Extract common patterns for the feature's domain
 - Document anti-patterns to avoid
-- Check CLAUDE.md for project-specific rules and conventions
+- Check AGENTS.md (or CLAUDE.md) for project-specific rules and conventions
 
 **3. Dependency Analysis**
 
 - Catalog external libraries relevant to feature
 - Understand how libraries are integrated (check imports, configs)
-- Find relevant documentation in docs/, ai_docs/, .claude/references or ai-wiki if available
+- Find relevant documentation in docs/, ai_docs/, _ai/ or ai-wiki if available
 - Note library versions and compatibility requirements
 
 **4. Testing Patterns**
@@ -206,7 +206,7 @@ So that <benefit/value>
 
 **Back-references** (plans this builds on or inherits decisions from):
 
-- `.claude/plans/<prior-plan>.md` - Why: shares the auth seam / reuses the X service
+- `_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__<prior-plan>.md` (or `_ai/backlog/archive/` if already executed) - Why: shares the auth seam / reuses the X service
 
 **Forward-references** (plans that extend or supersede this — append as follow-ups get created):
 
@@ -426,12 +426,12 @@ Execute every command to ensure zero regressions and 100% feature correctness.
 
 ## Output Format
 
-**Filename**: `.claude/plans/{kebab-case-descriptive-name}.md`
+**Filename**: `_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-descriptive-name}.md`
 
-- Replace `{kebab-case-descriptive-name}` with short, descriptive feature name
-- Examples: `add-user-authentication.md`, `implement-search-api.md`, `refactor-database-layer.md`
+- Replace `{YYMMDD_HHmm}` with the current timestamp, `{kebab-case-descriptive-name}` with short, descriptive feature name
+- Examples: `260722_1430__IMPLEMENTATION_PLAN__add-user-authentication.md`, `260722_1430__IMPLEMENTATION_PLAN__implement-search-api.md`, `260722_1430__IMPLEMENTATION_PLAN__refactor-database-layer.md`
 
-**Directory**: Create `.claude/plans/` if it doesn't exist
+**Directory**: Create `_ai/backlog/active/` if it doesn't exist
 
 ## Quality Criteria
 

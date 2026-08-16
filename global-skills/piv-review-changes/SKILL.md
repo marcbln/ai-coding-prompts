@@ -22,10 +22,10 @@ Start by gathering codebase context to understand the codebase standards and pat
 
 Start by examining:
 
-- CLAUDE.md
+- AGENTS.md / CLAUDE.md
 - README.md
 - Key files in the core module
-- Documented standards in the docs directory (and any `.claude/references/` docs)
+- Documented standards in the docs directory (and any `_ai/` knowledge base docs)
 
 After you have a good understanding, run these commands:
 
@@ -83,7 +83,7 @@ For each changed file or new file, analyze for:
 
 ## Output Format
 
-Save a new file to `.claude/code-reviews/[appropriate-name].md`
+Save a new file to `_ai/backlog/reports/{YYMMDD_HHmm}__CODE_REVIEW__[appropriate-name].md`
 
 **Stats:**
 
