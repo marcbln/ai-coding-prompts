@@ -34,14 +34,15 @@ Start by understanding the current project context, then ask questions one at a 
 
 ## After the Design
 
-**Documentation:**
-- Write the validated design to `_ai/backlog/active/{YYMMDD_HHmm}__DESIGN__{kebab-case-topic}.md` — all LLM artifacts live under `_ai/`: designs & plans in `_ai/backlog/active/`, epics in `_ai/backlog/epics/`, reports in `_ai/backlog/reports/`, ADRs in `_ai/technical_decisions/`, lessons in `_ai/lessons_learned/`
-- Commit the design document to git
+**Documentation & Planning:**
+- For major architectural decisions, write an ADR to `_ai/technical_decisions/{YYMMDD_HHmm}__ADR__{topic}.md`.
+- For features and tasks, consolidate the design and steps into a single implementation plan: `_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-topic}.md`.
+- All LLM artifacts live under `_ai/`: plans in `_ai/backlog/active/`, epics in `_ai/backlog/epics/`, reports in `_ai/backlog/reports/`, ADRs in `_ai/technical_decisions/`, and lessons in `_ai/lessons_learned/`.
+- Commit the document to git.
 
 **Implementation (if continuing):**
-- Ask: "Ready to set up for implementation?"
-- Use `worktree-create` skill to create an isolated workspace
-- Use `save-plan` skill to create the detailed implementation plan in `_ai/backlog/active/`
+- Ask: "Ready to begin implementation?"
+- Use the consolidated plan in `_ai/backlog/active/` to guide the work in the current branch.
 
 ## Key Principles
 
