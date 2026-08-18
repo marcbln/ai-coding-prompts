@@ -71,6 +71,8 @@ Close the verdict by asking the user **one question** that offers to perform the
 - If NO-GO: *"Shall I apply the blocker fixes (briefly list them) and re-run this check?"*
 - If GO: *"Shall I start implementing (Phase 1 | the plan)?"*
 
+When asking, name the plan file explicitly — e.g. *"Shall I start implementing `_ai/backlog/active/260818_planname.md` (Phase 1)?"* — so the user knows exactly which document is being greenlit.
+
 Wait for the user's answer. If they say yes, do exactly the stated next action, then re-run this check (for fixes) or proceed with the plan. If they decline or redirect, stop and follow their instruction.
 ```
 
