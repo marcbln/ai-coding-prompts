@@ -41,10 +41,14 @@ The artifact must be a *teaching instrument*, not a generic chart. Add ALL of th
 3. **What-if knobs:** sliders, toggles, or inputs bound to the extracted knobs — changing one recomputes the state and updates the readout and visuals immediately.
 4. **Code anchoring:** each step displays a short snippet (or function/line name) of the real code it corresponds to, so the learner maps visualization → code.
 5. **Guided tour (optional):** a "Show me" mode that auto-steps and narrates each transition once.
-6. Single self-contained `.html` (or `.svg`) file, written to the path the delegated skill specifies; title it `Micro-world: <what this teaches>`.
+6. **Introduction modal:** shown automatically on first open — a plain-language welcome that explains (a) what the underlying code/system does, (b) what the playground shows and how to read it, and (c) how to use it (buttons, knobs, tour). Include a "don't show again" checkbox persisted via `localStorage` (guarded in `try/catch` so `file://` fails gracefully).
+7. **Contextual help modals:** a small round `?` icon button next to each section title, knob group, and the code-anchor panel, each opening a modal with *that section's* explanation (what it shows, how to interpret it, which code/state variable it maps to). Plus a fixed corner `?` button with the global overview. All modals close via ✕, click-outside, or `Esc`. Implement one generic modal + a help-content map keyed by section, not N duplicated modals.
+8. Single self-contained `.html` (or `.svg`) file, written to the path the delegated skill specifies; title it `Micro-world: <what this teaches>`.
 
 ## Step 4: Verify and Hand Off
 
 - Re-read the artifact once for correctness of the state transitions against the real code.
+- **Open the artifact for the user** once it is written, by launching it in the default browser in the background:
+  `xdg-open <path-to-file.html> >/dev/null 2>&1 &`
 - Confirm the file path to the user and suggest `grasp-diff` if they also want the structured walkthrough, or `grasp-shared` to build team understanding.
 - Also offer to regenerate with fewer/more steps (`--steps N`) if the granularity feels wrong.
