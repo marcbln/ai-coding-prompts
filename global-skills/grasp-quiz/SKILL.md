@@ -1,6 +1,6 @@
 ---
 name: grasp-quiz
-description: Builds a self-contained interactive HTML quiz that teaches a concept in existing code — plain-English explainer plus annotated real-code snippets in Learn mode, then code-anchored multiple-choice questions with instant feedback and scoring in Quiz mode. Use when you want to actually learn a codebase, class, or feature you don't fully understand yet (e.g. "I want to understand this plugin"), as the standalone entry point of the grasp-* family, or after a grasp-diff when you want to actively self-test your mental model.
+description: Builds a self-contained interactive HTML quiz that teaches a concept in existing code — plain-English explainer plus annotated real-code snippets in Learn mode, then code-anchored multiple-choice questions with instant feedback and scoring in Quiz mode. Use when you want to actually learn a codebase, class, or feature you don't fully understand yet (e.g. "I want to understand this plugin") — the standalone entry point of the grasp-* family.
 argument-hint: "[code-path] [concept] [--questions N] [--no-open]"
 ---
 
@@ -45,7 +45,7 @@ Single self-contained `.html` — **vanilla JS/CSS only, no CDN, no external dep
 
 ## Step 4: Output and Hand Off
 
-- Write to `/home/marc/devel/ai-generated-visualizations/<topic-slug>/<topic-slug>-quiz.html` (create the folder if missing) — the sibling-folder convention next to `ai-generated-visualizations`.
+- Write to `/home/marc/devel/ai-generated-quizzes/<topic-slug>/<topic-slug>-quiz.html` (create the folder if missing) — a sibling folder of `ai-generated-visualizations`, mirroring its one-folder-per-topic convention.
 - Open it with `xdg-open` unless `--no-open` was passed.
 - Re-read the artifact once against the real code and correct any wrong facts or `file:line` references.
 - Confirm the path, then offer, in one line each:
