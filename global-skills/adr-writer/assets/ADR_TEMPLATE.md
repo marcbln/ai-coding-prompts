@@ -4,6 +4,7 @@ status: [Accepted | Deprecated | Superseded]
 date: [YYYY-MM-DD]
 deciders: [Team/Person]
 tags: [comma, separated, tags]
+adrId: [YYMMDD-N, e.g. 260821-1]
 ---
 
 # [Title Again]

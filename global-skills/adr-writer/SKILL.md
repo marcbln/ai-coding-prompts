@@ -27,9 +27,13 @@ trade-off. Also when asked to create/update/supersede an "ADR".
    It returns the next `N` for that date (highest existing N of the day + 1). If a
    directory does not exist yet, the next ID is `1`.
 
-3. **Name the file** `ADR__<YYMMDD-N>__<kebab-case-title>.md` (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
+ 3. **Name the file** `ADR__<YYMMDD-N>__<kebab-case-title>.md` (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
 
-4. **Copy the template** `assets/ADR_TEMPLATE.md` into the ADR directory and fill it in.
+ 4. **Copy the template** `assets/ADR_TEMPLATE.md` into the ADR directory and fill it in.
+    Put the ADR number in the **filename** (step 3) and in the frontmatter `adrId:`
+    key (from the template). **Never write an `id:` key** — the control plane reserves
+    `id` for its own UUID primary key, so a non-UUID `id` (like `260821-1`) makes the
+    doc fail to sync.
 
 5. **Write the body** — every section is required except `Related Decisions` (omit if none):
    * `Context` — the problem and why a decision was needed.
@@ -46,6 +50,7 @@ trade-off. Also when asked to create/update/supersede an "ADR".
 
 ## Notes
 
-* Frontmatter order and keys (`title`, `status`, `date`, `deciders`, `tags`) must be preserved.
+* Frontmatter order and keys (`title`, `status`, `date`, `deciders`, `tags`, `adrId`) must be preserved.
+* The `id` frontmatter key is reserved by the control plane for its UUID primary key. Do not add `id:` to an ADR — the ADR number belongs in `adrId:` (and the filename).
 * `date` uses `YYYY-MM-DD`; `status` is one of `Accepted | Deprecated | Superseded`.
 * Keep ADRs factual and concise (target ~30-50 lines). Prefer listing over prose.
