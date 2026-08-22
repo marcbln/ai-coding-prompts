@@ -1,7 +1,7 @@
 ---
 name: prime-codebase
-description: Primes the agent with deep codebase understanding by analyzing structure, documentation, and key files. Use when starting work on a codebase, at the beginning of a session, or when you need a fast orientation before planning or implementing. Optionally pulls external task context from Jira issues and Confluence pages first.
-argument-hint: [jira-issue-keys] [confluence-page-ids]
+description: Primes the agent with deep codebase understanding by analyzing structure, documentation, and key files. Use when starting work on a codebase, at the beginning of a session, or when you need a fast orientation before planning or implementing. Optionally pulls external task context from ai-control-plane tickets, documents, and activity first.
+argument-hint: [project-id] [ticket-ids-or-doc-refs]
 ---
 
 # Prime: Load Project Context
@@ -14,21 +14,30 @@ Build comprehensive understanding of the codebase by analyzing structure, docume
 
 ### Step 0: Load External Context
 
-**Run this step BEFORE the codebase analysis.** It accepts optional arguments: `[jira-issue-keys] [confluence-page-ids]`.
+**Run this step BEFORE the codebase analysis.** It accepts optional arguments: `[project-id] [ticket-ids-or-doc-refs]`.
 
-- Jira keys may be a single key (`ACC-2`) or comma-separated (`ACC-2,ACC-3`).
-- Confluence page ids are numeric page ids.
+- `project-id` is the ai-control-plane project id (usually the repository name).
+- Ticket ids / doc refs may be a single id or comma-separated (e.g. `#123,#124` ticket UUIDs, or document titles/filenames).
 
-**If Jira issue keys are provided:**
+All of these tools are provided by the `ai-control-plane` MCP server. If the
+server is not connected, skip this step entirely and proceed to Step 1.
 
-1. Call `mcp__atlassian__getAccessibleAtlassianResources` to obtain the `cloudId`.
-2. For each Jira key, call `mcp__atlassian__getJiraIssue` with that `cloudId`, the issue key, and `responseContentFormat: "markdown"`.
-3. Treat the returned issue summary, description, and acceptance criteria as the task context for everything that follows.
+**If a project id is provided:**
 
-**If Confluence page ids are provided:**
+1. Call `ai-control-plane_get_project_context` for the project profile and matching conventions.
+2. Call `ai-control-plane_search_docs` to see what documents exist (brainstorms, plans, conventions).
+3. Call `ai-control-plane_get_activity` (limit ~10) to see what has been happening recently.
+4. Treat the returned profile, conventions, and activity as background context for everything that follows.
 
-1. Call `mcp__atlassian__getConfluencePage` for each page id with `contentFormat: "markdown"` (use the `cloudId` from above, fetching it via `mcp__atlassian__getAccessibleAtlassianResources` if it was not already retrieved).
-2. Treat the returned page content as supporting context (specs, design docs, requirements).
+**If ticket ids are provided:**
+
+1. For each ticket, call `ai-control-plane_get_ticket` and `ai-control-plane_list_posts`.
+2. Treat the returned description and discussion as the task context — goal, acceptance criteria, decisions made in discussion.
+
+**If doc refs are provided:**
+
+1. Call `ai-control-plane_get_document_toc` for an overview, then `ai-control-plane_get_section_content` on relevant sections.
+2. Treat the returned content as supporting context (specs, design docs, requirements).
 
 **If no arguments are provided:** Skip this step entirely and proceed to Step 1.
 
@@ -47,6 +56,10 @@ On Linux, run: `tree -L 3 -I 'node_modules|__pycache__|.git|dist|build'`
 - Read CLAUDE.md or similar global rules file
 - Read README files at project root and major directories
 - Read any architecture documentation
+- If the project runs a dev server or service, check the port registry
+  (`~/devel/port-map/ports-private.yaml` for `~/devel`, `ports-topdata.yaml`
+  for `/topdata`). Never use the trap defaults `8000`, `5173`, `5432`,
+  `8001`; new services must claim a reserved port from the registry.
 
 ### 3. Identify Key Files
 
@@ -69,8 +82,9 @@ Check current branch and status:
 Provide a concise summary covering:
 
 ### External Task Context (if loaded)
-- Jira issue(s): key, title, one-line goal, acceptance criteria
-- Confluence page(s): title and what they specify
+- Project: profile, tech stack, applicable conventions
+- Ticket(s): id, title, one-line goal, discussion highlights
+- Document(s): title and what they specify
 
 ### Project Overview
 - Purpose and type of application
