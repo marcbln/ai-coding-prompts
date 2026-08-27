@@ -37,9 +37,10 @@ To avoid overwhelming me, ask the most important questions first and follow up a
 
 Once you understand the requirements, help me determine:
 
-1. **Skill Type**:
-   - **Workspace Skill** → project-specific, placed at project root
-   - **Global Skill** → `global-skills/<skill-name>/` (cross-project, shared in repo)
+1. **Skill Location**: Ask the user where the skill should be created, presenting both options and letting them decide:
+   - **Current project** (Workspace Skill) → project-specific, placed at project root (e.g., `.opencode/skills/<skill-name>/`), scoped to that project only
+   - **Global skills directory** (Global Skill) → `/home/marc/devel/ai-coding-prompts/global-skills/<skill-name>/`, cross-project, shared in repo
+   Recommend the global directory for generic, cross-project skills and the project directory for project-specific patterns, but always let the user make the final call.
 2. **Skill Name**: Follow naming conventions:
    - Lowercase letters, digits, hyphens only
    - ≤64 characters
