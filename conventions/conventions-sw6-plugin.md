@@ -51,6 +51,27 @@ documentType: CONVENTIONS
 
 ## Twig Templates
 - Use `path('some.action-name')` when referencing controller actions
+- **Always use `ignore missing` when including a template that lives in another plugin** (see below).
+
+### Theme ↔ Plugin Template Decoupling (`ignore missing`)
+
+When a theme (or any plugin) includes a template that lives in **another** plugin, always use `ignore missing`:
+
+```twig
+{% sw_include '@OtherPluginSW6/storefront/component/foo.html.twig' ignore missing %}
+```
+
+**Why:** the `@PluginName` Twig namespace is only registered while that plugin's bundle is active. If the plugin is
+deactivated or uninstalled, the namespace (and the template) disappear. A plain `sw_include` then throws
+"template not found" and **crashes the storefront**. With `ignore missing`, the include simply renders nothing — the
+feature degrades gracefully (e.g. a button/modal just doesn't appear) and the theme keeps compiling and rendering.
+
+**Rules:**
+- The plugin must **NOT** be a hard dependency of the theme. Keep the *decision* logic (e.g. "show when availability == 4") in the theme; only move the markup/partial into the plugin.
+- A form whose action route is provided by the plugin also disappears when the plugin is off; since its markup comes from the same plugin, there is no dangling POST target.
+- Prefer `sw_include ... ignore missing` for optional UI over a hard `sw_extends` of another plugin's template.
+- **Verify:** after implementing, deactivate the target plugin and reload the affected page — it must render without error.
+- This pattern is already used in the Topdata codebase (e.g. `@BilobaAdGoogleGtagsjs/...' ignore missing`).
 
 ## Snippet Files
 - **Always use a flat file structure** for storefront snippets, with the locale as part of the filename. This avoids unnecessary subdirectories and keeps all translation files in one place.
