@@ -31,8 +31,16 @@ Cover these components during the review:
 - **Correct Patterns:** Clear, copy-pasteable code examples or configuration templates.
 - **Anti-patterns to Avoid:** What the agent must not write.
 
-### 4. Create the Skill File Structure
-Once validated, write the files to the designated skills directory.
+### 4. Choose the Skill Location
+Ask the user where the skill should be created, presenting both options and letting them decide:
+
+1. **Current project:** Create it in the project's local skills directory (e.g., `.opencode/skills/<skill-name>/`), scoped to that project only.
+2. **Global skills directory:** Create it in `/home/marc/devel/ai-coding-prompts/global-skills/<skill-name>/`, making it available across all projects.
+
+Recommend the global directory for generic, cross-project lessons and the project directory for project-specific patterns, but always let the user make the final call.
+
+### 5. Create the Skill File Structure
+Once validated and the location is chosen, write the files to the chosen skills directory.
 
 #### Folder Layout
 Create a dedicated folder matching the kebab-case name of the skill:
@@ -69,7 +77,7 @@ Technical context and why this matters.
 
 *Note: Ensure there are no raw angle brackets (`<` or `>`) within the YAML frontmatter of the generated file.*
 
-### 5. Final Confirmation
+### 6. Final Confirmation
 Confirm the successful creation of the skill folder and its `SKILL.md` file, providing a brief summary of what was saved.
 ```
 
