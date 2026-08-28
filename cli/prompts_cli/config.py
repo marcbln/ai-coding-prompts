@@ -6,4 +6,4 @@ CLI_CONTEXT_SETTINGS = {
 
 # Repository paths relative to project root
 GLOBAL_SKILLS_DIR = "global-skills"
-GLOBAL_WORKFLOWS_DIR = "global-workflows"
+GLOBAL_WORKFLOWS_DIR = "global-commands"

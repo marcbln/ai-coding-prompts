@@ -11,7 +11,7 @@ documentType: IMPLEMENTATION_PLAN
 ---
 
 # Problem Statement
-The user needs a new CLI command to automatically install dependencies and configurations (like `global-skills` and `global-workflows`) for Windsurf. To make this robust, the solution needs to be generic and extensible to easily support other AI coding tools in the future by defining their configuration mappings.
+The user needs a new CLI command to automatically install dependencies and configurations (like `global-skills` and `global-commands`) for Windsurf. To make this robust, the solution needs to be generic and extensible to easily support other AI coding tools in the future by defining their configuration mappings.
 
 # Project Environment Details
 - Project Name: ai-coding-prompts
@@ -47,7 +47,7 @@ INTEGRATIONS = {
             "target": "~/.codeium/windsurf-next/skills",
         },
         {
-            "source": "global-workflows",
+            "source": "global-commands",
             "target": "~/.codeium/windsurf-next/global_workflows",
         },
     ]

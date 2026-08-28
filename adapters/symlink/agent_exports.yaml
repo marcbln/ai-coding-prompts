@@ -1,6 +1,6 @@
 sources:
   skills: global-skills
-  workflows: global-workflows
+  workflows: global-commands
 
 agents:
   windsurf:

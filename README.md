@@ -4,7 +4,7 @@ A collection of AI coding prompts, templates, and workflows for various developm
 
 ## Global Workflows
 
-The `global-workflows/` directory contains global system prompts (workflows) for AI coding agents.
+The `global-commands/` directory contains global system prompts (workflows) for AI coding agents.
 
 ## Available Workflows
 
@@ -39,7 +39,7 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
 
 2. Create the symlink:
    ```bash
-   ln -s ~/devel/ai-coding-prompts/global-workflows ~/.codeium/windsurf-next/global_workflows
+   ln -s ~/devel/ai-coding-prompts/global-commands ~/.codeium/windsurf-next/global_workflows
    ```
 
 **Windows:**
@@ -51,7 +51,7 @@ To use these workflows in Windsurf, symlink this directory to your local Windsur
 
 2. Create the symlink (as Administrator):
    ```cmd
-   mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "C:\path\to\ai-coding-prompts\global-workflows"
+   mklink /D "%APPDATA%\Codeium\Windsurf\global_workflows" "C:\path\to\ai-coding-prompts\global-commands"
    ```
 
 ## Management CLI
