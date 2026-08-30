@@ -15,4 +15,6 @@ Execute the given implementation plan across all phases without asking for confi
 3. After completion, write an implementation report to `_ai/backlog/reports/`
 4. If the repo maintains a `CHANGELOG.md`, update it with user-facing changes (use the `changelog` skill)
 5. If the repo has an ADR log (`_ai/technical_decisions/ADR__*.md`) and the plan introduces a significant, hard-to-reverse decision, record it with the `adr-writer` skill
-6. Archive the plan using the `finish-plan` skill
+6. Review all changes with `git status` and `git diff`, then create one or more logical commits using the `git-commit` skill
+7. Ask the user if they want to push the commits to the remote; only push if confirmed
+8. Archive the plan using the `finish-plan` skill
