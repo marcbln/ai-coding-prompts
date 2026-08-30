@@ -112,3 +112,28 @@ Keep the domain model isolated from I/O, databases, frameworks, and UI:
 | **Giant Aggregates** (Whole object graphs locked together) | **Small Aggregates:** Keep aggregates small (often 1-3 entities). Reference by ID and use eventual consistency. |
 | **Database-Driven Design** (Designing tables before domain concepts) | **Domain-First:** Model domain behavior first; map persistence to the model, not vice-versa. |
 | **Leaking External Models** | Use an **Anti-Corruption Layer (ACL)** to translate external DTOs into domain concepts. |
+
+---
+
+## 6. DDD in a Synchronous Microservices Ecosystem
+
+These sections adapt the book principles to a landscape of **synchronous** (REST/JSON, gRPC) service-to-service microservices **without Event-Driven Architecture**.
+
+### 6.1 One Microservice ≈ One Bounded Context
+* The microservice boundary **is** the bounded context boundary. No shared kernel across processes; context maps become API contracts.
+* Each microservice owns its database exclusively — never query another service's database directly.
+* The ubiquitous language stops at the service boundary: the same business term may (and will) mean different things in different services.
+
+### 6.2 Synchronous Anti-Corruption Layers (ACL)
+* When Service A calls Service B over REST/JSON, Service A **must**:
+  1. Deserialize B's response into an internal DTO (a plain data structure owned by A).
+  2. Map that DTO into A's own domain model inside an ACL adapter.
+* **Never let Service B's schema dictate Service A's domain model.** B's field names, units, or nesting are implementation details of B.
+* The ACL is a driven port in A's hexagonal architecture: the domain defines the interface, the infrastructure adapter does the translation.
+* Treat B's error payloads the same way: translate HTTP error responses into typed domain errors understood by A's use cases.
+
+### 6.3 Consistency Without Events
+* Without asynchronous domain events / eventual consistency across services, transactions are **strictly local to each microservice's database**.
+* Cross-service workflows require **synchronous orchestration**: an application service (orchestrator) calls downstream services in sequence and manages the workflow state.
+* Explicit **compensating actions** are required for partial failures — there is no outbox/event replay to heal inconsistencies automatically.
+* Apply the dual-write rule: commit the local transaction first; if the outbound call fails afterward, record a pending-sync state for a background worker (see `microservice-patterns` skill).

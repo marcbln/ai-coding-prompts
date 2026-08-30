@@ -95,7 +95,58 @@ Nothing in an inner circle can know anything at all about something in an outer 
 
 ---
 
-## 6. Code Review Checklist for Clean Architecture
+## 6. Driving vs. Driven Ports (Ports & Adapters)
+
+Clean Architecture's boundary crossing is made concrete by naming *who drives* and *who is driven*:
+
+* **Driving (Primary) Ports** — *initiate* use cases; owned by the application core, implemented by the outside world:
+  * HTTP Controllers (Symfony, FastAPI, Gin).
+  * CLI commands (`bin/console` / Symfony, `click` / Python, `cobra` / Go).
+  * Message/queue consumers, scheduled jobs.
+  * The driving port is usually an interface the use case exposes (e.g. `OrderService`), and the controller is an adapter for it.
+* **Driven (Secondary) Ports** — *required by* the application core to do its job; the core defines the interface, infrastructure implements it:
+  * Repository interfaces (Doctrine, GORM, SQLAlchemy adapters).
+  * HTTP Client adapters (calling external microservices).
+  * Cache, Mailer, File Storage, Time/Clock.
+  * The driven port is an interface **defined in the core** (e.g. `OrderRepository`), and the DB/HTTP adapter lives in infrastructure.
+
+**Rule of thumb**: the port (interface) always belongs to the side that *needs* it. Driving ports sit on the use-case boundary; driven ports sit on the repository/gateway boundary. Dependencies point inward in both cases.
+
+---
+
+## 7. Multi-Language Project Conventions
+
+Concrete directory layouts that realize the dependency rule in the common backend languages:
+
+* **Go**:
+  * `internal/domain` — entities, value objects, repository interfaces. Zero external imports.
+  * `internal/usecase` (or `internal/application`) — use cases, ports.
+  * `internal/adapter/http` — Gin/Echo handlers (driving adapters).
+  * `internal/adapter/postgres` (or `.../repository`) — driven adapters.
+  * Keep interfaces **next to the consumer**, not the implementer: an interface used by a use case lives in the use case package; the implementation imports it, not vice versa.
+* **PHP (Symfony)**:
+  * `src/Domain` — entities, value objects, repository **interfaces**. Zero framework imports (no Doctrine annotations, no Symfony components).
+  * `src/Application` — use cases / command handlers, port interfaces.
+  * `src/Infrastructure` — Doctrine repositories, API clients, Symfony controllers (thin), mailer, cache.
+* **Python**:
+  * Use **Pydantic models only at the boundaries** (adapters/DTOs, request/response schemas).
+  * Keep pure `dataclasses` / domain entities in `domain/` — no framework dependency.
+  * FastAPI routers in `adapter/http`, repositories in `adapter/db`, business logic in `application/` + `domain/`.
+
+---
+
+## 8. Microservice Boundary Crossing
+
+When two services of the same ecosystem communicate (REST/JSON, gRPC), the boundary must be crossed deliberately:
+
+* Route every cross-service call through a dedicated **Gateway Adapter** (driven port), never ad-hoc `curl`/`guzzle`/raw HTTP calls scattered through business code.
+* The gateway adapter is responsible for: URL/route resolution, auth (tokens/API keys), timeouts, serialization, and error translation into domain terms.
+* Deserialize the response into an **internal DTO**, never leak the remote service's raw schema into the domain model (see `domain-driven-design` skill, Synchronous ACLs).
+* Each service keeps its own source of truth; a remote call is treated like any other I/O boundary — mockable at the port, testable in isolation.
+
+---
+
+## 9. Code Review Checklist for Clean Architecture
 
 - [ ] Does the domain/entity layer have zero imports of external frameworks, libraries, or UI components?
 - [ ] Are use cases driving business rules rather than acting as pass-throughs to database ORMs?

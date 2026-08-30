@@ -85,12 +85,34 @@ This guide provides core principles, rules, and heuristics from Robert C. Martin
 ---
 
 ## 7. Error Handling
-- **Prefer Exceptions to Return Error Codes**: Separates business logic from error-handling logic.
+- **Prefer Exceptions to Return Error Codes** *(in exception-capable languages)*: Separates business logic from error-handling logic.
+- **Language-Appropriate Error Semantics** — the "exceptions everywhere" rule is Java-centric; adapt it to the stack:
+  - **Go**: No exceptions. Return explicit errors (`if err != nil`), define custom domain error types, unwrap with `errors.Is` / `errors.As`, and add context via `fmt.Errorf("...: %w", err)`. Never swallow errors; never return `(nil, nil)`.
+  - **TypeScript / Python / PHP**: Use typed domain exceptions or monadic `Result<T, E>` types for *expected* domain branches (validation failures, not-found, conflicts). Reserve raw runtime exceptions for *unexpected* system failures (network, I/O, bugs). At microservice boundaries, translate downstream error payloads into typed domain errors instead of re-throwing HTTP error objects.
 - **Write `try-catch-finally` Statements First**: Defines what the caller of the code can expect.
 - **Use Unchecked Exceptions**: Checked exceptions violate the Open/Closed Principle when thrown deep in the stack.
 - **Provide Context with Exceptions**: Include informative error messages and the failing operation.
 - **Don't Return Null**: Return empty collections/objects or use `Optional` / `NullObject` pattern to avoid `NullPointerException` clutter.
 - **Don't Pass Null**: Forbid passing `null` into methods unless explicitly required by an external API.
+
+---
+
+## 7b. Modern Language Idioms
+
+The 2008 Java heuristics translate into these current idioms per language:
+
+* **PHP 8.3**:
+  * Constructor promotion (`public function __construct(private readonly Foo $foo)`) instead of manual property + assignment boilerplate.
+  * `readonly` classes/properties and DTOs for immutable value objects.
+  * `declare(strict_types=1);` at the top of every file.
+  * `match` expressions over `switch`, enums over constants.
+* **TypeScript**:
+  * Strict null checking (`strict: true`); model state with **discriminated unions** instead of boolean flag soup.
+  * Immutability via `Readonly<T>` / `readonly` modifiers; avoid `any` and loose `as` assertions.
+* **Python**:
+  * Full type annotations; `dataclasses(frozen=True)` for value objects.
+  * Avoid mutable default arguments (`def f(x=[])` is a bug — use `field(default_factory=list)` or `None`).
+  * `match`/`case` (3.10+) over if-chains where it reads better.
 
 ---
 
