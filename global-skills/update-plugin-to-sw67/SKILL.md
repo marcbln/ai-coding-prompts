@@ -87,6 +87,27 @@ class MyService {
 }
 ```
 
+## 4. `system_config` Column Rename (since SW 6.5)
+Shopware renamed `system_config.value` → `system_config.configuration_value` in **SW 6.5**. The value is now stored as a JSON object (e.g. `{"_value": "de-DE"}`), so `value` does not exist in 6.6/6.7. Any migration or query referencing the old column dies on the first `plugin:update`/`cpup` run with:
+
+```
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'value' in 'field list'
+```
+
+**Action Required:**
+- Grep the plugin for `system_config` and any bare `value` column reads.
+- Rewrite reads to unwrap the JSON:
+
+```php
+$defaultLocale = $connection->fetchOne(
+    "SELECT JSON_UNQUOTE(JSON_EXTRACT(`configuration_value`, '$._value'))
+     FROM `system_config`
+     WHERE `configuration_key` = 'core.locale.default' LIMIT 1"
+);
+```
+
+- When deriving a value from an (optional) config row, validate it in PHP (`is_string`, format check) and use a parameterised UPDATE, so a missing/invalid row can't silently write empty data into the migrated column.
+
 ## 5. Fetch Latest Upgrade Documentation
 The skill includes a script to fetch the latest Shopware upgrade guides directly from the official repository.
 
