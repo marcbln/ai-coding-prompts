@@ -20,16 +20,13 @@ trade-off. Also when asked to create/update/supersede an "ADR".
    If unsure, ask the user or search for an existing `ADR__*.md` file.
 
 2. **Assign the next ID.** ADRs are numbered per decision date: `YYMMDD-N`, where `YYMMDD`
-   is the decision date and `N` is a per-day sequence number starting at 1. Use the helper:
-   ```bash
-   python3 scripts/next_adr_id.py <adr-directory> <yyyymmdd>
-   ```
-   It returns the next `N` for that date (highest existing N of the day + 1). If a
-   directory does not exist yet, the next ID is `1`.
+   is the decision date and `N` is a per-day sequence number starting at 1. Glob
+   `<adr-directory>/ADR__<YYMMDD>-*__*.md` and take the highest existing `N` of that day
+   plus 1; if the directory does not exist yet (or no ADR exists for that date), `N` is `1`.
 
- 3. **Name the file** `ADR__<YYMMDD-N>__<kebab-case-title>.md` (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
+3. **Name the file** `ADR__<YYMMDD-N>__<kebab-case-title>.md` (e.g. `ADR__260731-1__central-email-dispatch-pipeline.md`).
 
- 4. **Copy the template** `assets/ADR_TEMPLATE.md` into the ADR directory and fill it in.
+4. **Copy the template** `assets/ADR_TEMPLATE.md` into the ADR directory and fill it in.
     Put the ADR number in the **filename** (step 3) and in the frontmatter `adrId:`
     key (from the template). **Never write an `id:` key** — the control plane reserves
     `id` for its own UUID primary key, so a non-UUID `id` (like `260821-1`) makes the
