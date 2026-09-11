@@ -91,6 +91,20 @@ In SW 6.7 admin, `<sw-page>` must be the **single root element** of the page com
 
 Also drop the surrounding `{% block %}`: the template is imported directly as the component template, so a top-level block tag adds unwanted structure. Compare with working pages in the same plugin (e.g. `search-log-list.html.twig`) — they place `<sw-page>` directly at the top.
 
+## Date Columns — Use `sw-time-ago` By Default
+
+Render entity date columns with `<sw-time-ago>` **by default** — do not output raw/absolute date strings from the entity:
+
+```html
+<template #column-createdAt="{ item }">
+    <sw-time-ago v-if="item.createdAt" :date="item.createdAt" />
+</template>
+```
+
+- Always `v-if` the (nullable) date, otherwise the component renders nothing.
+- Even `datetime-local`/absolute display is usually not wanted in list columns — relative "2 hours ago" with a full-date tooltip is the default pattern.
+- See `sw67-sw-time-ago` for format overrides and the full `sw-time-ago` API.
+
 ## Admin Build
 
 If `bin/build-administration.sh` doesn't pick up your plugin:

@@ -44,6 +44,8 @@ Override the tooltip format with an `Intl.DateTimeFormat` options object:
 
 ## In Entity Listing Columns
 
+Use `sw-time-ago` **by default** for date columns in `sw-entity-listing` pages — do not render raw/absolute date strings unless the column explicitly needs the exact timestamp:
+
 ```vue
 <template #column-createdAt="{ item }">
     <sw-time-ago v-if="item.createdAt" :date="item.createdAt" />

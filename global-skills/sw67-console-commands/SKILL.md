@@ -23,6 +23,11 @@ Console commands are NOT auto-registered by `#[AsCommand]` alone — add a `<tag
 
 Extend `Topdata\TopdataFoundationSW6\Command\AbstractTopdataCommand` and call `parent::__construct()`.
 
+## Options
+
+- Provide a short alias for frequently used options: `--debug`/`-d`, `--strategy`/`-s` (`addOption('strategy', 's', …)`).
+- Options are registered via `addOption()` in `configure()` (Symfony `InputOption`), not `getInputDefinition()->addOption()`.
+
 ## Output & logging
 
 - Use the `Topdata\TopdataFoundationSW6\Util\CliLogger` static facade: `CliLogger::info/warning/error/success/note`.
