@@ -131,6 +131,10 @@ $connection->executeStatement('
 new UpdatedAtField(), // NOT nullable - DAL expects value on every write
 ```
 
+## Related
+
+- `sw67-migrations` — version-bump rule (every migration requires a `composer.json` bump) and full migration conventions
+
 ## Quick Checklist for New Entities
 
 - [ ] Extend `EntityDefinition`
