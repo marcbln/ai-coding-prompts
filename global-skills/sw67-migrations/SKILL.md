@@ -64,6 +64,11 @@ namespace Topdata\TopdataExamplePluginSW6\Migration;
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Migration\MigrationStep;
 
+/**
+ * What: adds the `tdep_foo` table storing per-product feature flags.
+ * Why: feature flags were previously hardcoded in the subscriber; they now need
+ *      to be editable per shop via the admin UI.
+ */
 class Migration1753000000AddFoo extends MigrationStep
 {
     public function getCreationTimestamp(): int
@@ -85,6 +90,12 @@ class Migration1753000000AddFoo extends MigrationStep
 
 - Class/file name: `Migration` + timestamp merged with a CamelCase description (`Migration1753000000AddFoo`).
 - `getCreationTimestamp()`: use a **unique, ascending** unix timestamp — it determines execution order.
+- Get the real timestamp of now, don't invent one: `date +%s` (the number must be unique across all
+  migrations and **ascending relative to existing ones** — a hand-picked value can silently land in the
+  past and collide, e.g. an AI that guesses `1765200000` while `date +%s` reports `1789462125`).
+- Document the migration with a class docblock: short **What** (schema/data change) and **Why**
+  (the driver/rationale, e.g. the feature or bugfix that requires it). A one- to two-line docblock is
+  enough; the existing `update()`/`updateDestructive()` bodies show the how.
 
 ## Gotchas
 
@@ -111,12 +122,15 @@ class Migration1753000000AddFoo extends MigrationStep
 - ❌ Bumping the version several commits AFTER the migration/update call lands — the first deploy skips it.
 - ❌ Editing an already-executed migration to "fix" it — it won't re-run; add a new migration.
 - ❌ Reusing a timestamp from an existing migration — execution order becomes non-deterministic.
+- ❌ Guessing a timestamp instead of running `date +%s` — invented values (e.g. `1765200000`) may be in the
+  past or collide with existing ones; use real now and verify it's greater than the last used timestamp.
 - ❌ Skipping a version bump "because the migration is trivial" (`ADD COLUMN`, backfill, index) — the lifecycle fires per version, not per change size.
 
 ## Quick Checklist When Adding a Migration
 
 - [ ] New class: `src/Migration/Migration<timestamp><Description>.php` extends `MigrationStep`
-- [ ] `getCreationTimestamp()` is unique, ascending, within `1 .. 2147483647`
+- [ ] Timestamp = `date +%s` (real now), unique, ascending after the last used one, within `1 .. 2147483647`
+- [ ] Class docblock explains **What** (change) and **Why** (rationale), e.g. the feature/bugfix driving it
 - [ ] `update()` and `updateDestructive()` are symmetric
 - [ ] `version` in `composer.json` is bumped in the same change as the migration
 - [ ] Migrations run via plugin update in the focus-* Docker: `docker exec focus-www php bin/console plugin:update <TechnicalName>`
