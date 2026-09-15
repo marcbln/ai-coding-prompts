@@ -32,6 +32,11 @@ LINK_RE = re.compile(r"\]\(([^)]+)\)")
 FRONTMATTER_SPLIT = re.compile(r"^---\s*\n", re.MULTILINE)
 
 
+def is_reserved(rel):
+    """Reserved filenames keep their meaning at every level (spec §3.1)."""
+    return Path(rel).name in RESERVED
+
+
 def parse_frontmatter(text):
     if not text.startswith("---"):
         return None, "missing frontmatter delimiter"
@@ -102,10 +107,16 @@ def validate(bundle_dir, strict):
 
     for path in concepts:
         rel = path.relative_to(bundle).as_posix()
-        data, err = parse_frontmatter(path.read_text(encoding="utf-8", errors="replace"))
+        text = path.read_text(encoding="utf-8", errors="replace")
+        data, err = parse_frontmatter(text)
         metadata[rel] = data
         if err:
-            errors.append("%s: %s" % (rel, err))
+            if not is_reserved(rel):
+                errors.append("%s: %s" % (rel, err))
+            continue
+        if is_reserved(rel):
+            for target in collect_link_targets(text):
+                referenced.add(resolve_target(rel, target))
             continue
         type_ = data.get("type")
         if not isinstance(type_, str) or not type_.strip():
@@ -122,7 +133,7 @@ def validate(bundle_dir, strict):
 
     if strict:
         for rel, data in metadata.items():
-            if data is None:
+            if data is None or is_reserved(rel):
                 continue
             for field in ("title", "description"):
                 if field not in data:
@@ -134,7 +145,7 @@ def validate(bundle_dir, strict):
                 elif not target.endswith(".md") and not target.endswith("/"):
                     warnings.append("%s: link missing .md extension -> %s" % (rel, target))
         for rel in sorted(metadata):
-            if rel in RESERVED:
+            if is_reserved(rel):
                 continue
             if rel not in referenced:
                 warnings.append("%s: orphan concept (referenced from nowhere)" % rel)
