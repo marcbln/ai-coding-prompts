@@ -7,6 +7,16 @@ description: Create git commits with conventional commit messages (split into lo
 
 Inspect uncommitted changes and either create conventional commits or draft message(s) only — always with non-interactive commands.
 
+## No Branches, No PRs
+
+**Never create a branch. Never open a pull request. This is not a default to override — it is a standing rule.**
+
+- Commit directly on the current branch (normally `main`) and push that branch: `git push origin <branch>`.
+- Do not `git checkout -b`, do not create a feature/fix branch, do not suggest one.
+- Do not open a PR, and do not offer to "rework this onto a branch" or ask whether the repo "expects PRs for review".
+- Splitting into several logical commits on `main` is the only decomposition mechanism — it replaces the review step a PR would otherwise provide. Get the split right instead of deferring it to a PR.
+- When unsure whether to split, prefer splitting. A clean linear history on `main` is what is wanted.
+
 ## Modes
 
 | Mode | When to use | Behavior |
