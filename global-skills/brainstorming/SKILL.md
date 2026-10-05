@@ -85,9 +85,11 @@ requirements.
 Close with one line naming what should come next and why. Do not branch on the
 answer and do not start it:
 
-- New capability, or anything still uncertain about behavior → `/create-spec`
-- Well-understood change, or mostly mechanical work → `/create-implementation-plan`
-- Large effort that needs slicing first → `/create-epic`
+- New capability, or anything still uncertain about behavior → run the
+  `create-spec` prompt
+- Well-understood change, or mostly mechanical work → run the
+  `create-implementation-plan` prompt
+- Large effort that needs slicing first → use the `create-epic` skill
 - Genuinely nothing to build yet → stop
 
 Commit the document to git.
