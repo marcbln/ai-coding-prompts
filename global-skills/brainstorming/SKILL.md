@@ -7,9 +7,11 @@ description: "You MUST use this before any creative work - creating features, bu
 
 ## Overview
 
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
+Help turn ideas into fully formed designs through natural collaborative dialogue.
 
 Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+
+**This skill ends at a design handoff file. It does not write a plan, a spec, or code.** It captures what was decided so the next artifact can be produced from it — in this session or a later one.
 
 ## The Process
 
@@ -34,15 +36,61 @@ Start by understanding the current project context, then ask questions one at a 
 
 ## After the Design
 
-**Documentation & Planning:**
-- For major architectural decisions, write an ADR to `_ai/technical_decisions/{YYMMDD_HHmm}__ADR__{topic}.md`.
-- For features and tasks, consolidate the design and steps into a single implementation plan: `_ai/backlog/active/{YYMMDD_HHmm}__IMPLEMENTATION_PLAN__{kebab-case-topic}.md`.
-- All LLM artifacts live under `_ai/`: plans in `_ai/backlog/active/`, epics in `_ai/backlog/epics/`, reports in `_ai/backlog/reports/`, ADRs in `_ai/technical_decisions/`, and lessons in `_ai/lessons_learned/`.
-- Commit the document to git.
+### 1. Promote durable decisions to ADRs
 
-**Implementation (if continuing):**
-- Ask: "Ready to begin implementation?"
-- Use the consolidated plan in `_ai/backlog/active/` to guide the work in the current branch.
+A decision becomes an ADR when it **constrains future work beyond this feature** — a
+chosen pattern, a dependency rule, a boundary, a convention future changes must
+respect. Everything else stays in the handoff.
+
+For each such decision write `_ai/technical_decisions/{YYMMDD_HHmm}__ADR__{topic}.md`.
+Do not promote decisions that only matter here; they belong in the handoff, and
+duplicating them in both places guarantees they drift.
+
+### 2. Write the design handoff
+
+Write the conversation's durable output to
+`_ai/backlog/active/{YYMMDD_HHmm}__DESIGN_HANDOFF__{kebab-case-topic}.md`:
+
+```yaml
+---
+filename: "_ai/backlog/active/{YYMMDD_HHmm}__DESIGN_HANDOFF__{kebab-case-topic}.md"
+title: "Design Handoff: {topic}"
+createdAt: YYYY-MM-DD HH:mm
+updatedAt: YYYY-MM-DD HH:mm
+status: validated
+tags: [tag1, tag2]
+documentType: DESIGN_HANDOFF
+---
+```
+
+Body sections, in this order:
+
+- **Context** — what was being designed and where the discussion started.
+- **Decisions** — one entry per decision: the decision, the rationale, and what it
+  rules out.
+- **Rejected Alternatives** — what was considered and dropped, and why. This is the
+  most valuable section in the file: without it the same options get re-proposed
+  later.
+- **Constraints Discovered** — facts about the codebase or project surfaced during
+  the discussion that any implementation must respect.
+- **Open Questions** — unresolved items, each with a named owner.
+- **Scope Boundary** — explicitly in, explicitly out.
+
+Keep it a record of decisions, not a narrative of the conversation and not a
+specification. It describes intent and constraints; it does not enumerate
+requirements.
+
+### 3. Recommend the next artifact, then stop
+
+Close with one line naming what should come next and why. Do not branch on the
+answer and do not start it:
+
+- New capability, or anything still uncertain about behavior → `/create-spec`
+- Well-understood change, or mostly mechanical work → `/create-implementation-plan`
+- Large effort that needs slicing first → `/create-epic`
+- Genuinely nothing to build yet → stop
+
+Commit the document to git.
 
 ## Key Principles
 
@@ -51,4 +99,5 @@ Start by understanding the current project context, then ask questions one at a 
 - **YAGNI ruthlessly** - Remove unnecessary features from all designs
 - **Explore alternatives** - Always propose 2-3 approaches before settling
 - **Incremental validation** - Present design in sections, validate each
+- **Record rejections** - An alternative you rejected without writing down will be proposed again
 - **Be flexible** - Go back and clarify when something doesn't make sense
