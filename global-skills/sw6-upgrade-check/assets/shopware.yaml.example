@@ -1,0 +1,36 @@
+# .topdata/shopware.yaml — Shopware compatibility state for this plugin.
+# Owned by the sw6-upgrade-check skill. Do not confuse with .topdata/meta.yaml
+# (owned by sw6-motion).
+schema: 1
+
+# Mirrors composer.json require.shopware/core. Bump only as far as verified.
+supported: ">=6.7.0 <6.8.0"
+
+# Newest entry per "line" is the anchor for that line.
+verified:
+  - line: "6.7"                  # tracked release line
+    shopware: "6.7.15.1"         # exact tag that was checked, not a range
+    tested_on: "2026-10-14"
+    by: agent                    # agent | human
+    level: tests                 # static | smoke | tests | qa (omit when result: assumed)
+    result: pass                 # pass | partial | fail | assumed
+    commit: "a1b2c3d"            # plugin commit that was validated (optional)
+    report: ".topdata/upgrades/2026-10-14__6.7.15.1.md"
+
+# Bootstrap entry example (first run, nothing verified yet):
+#  - line: "6.7"
+#    shopware: "6.7.0.0"        # derived from composer constraint, not checked
+#    tested_on: "2026-10-14"
+#    by: agent
+#    result: assumed
+
+# Exact tags with known blockers; do not claim support for them.
+blocked: []
+#  - shopware: "6.7.16.0"
+#    reason: "breaks Foo; see NEXT-12345"
+
+# Optional: present only while a check is running (crash-safe resume).
+# in_progress:
+#   line: "6.7"
+#   shopware: "6.7.16.0"
+#   started: "2026-10-14"
