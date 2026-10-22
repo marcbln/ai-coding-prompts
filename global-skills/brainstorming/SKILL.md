@@ -11,7 +11,10 @@ Help turn ideas into fully formed designs through natural collaborative dialogue
 
 Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
 
-**This skill ends at a design handoff file. It does not write a plan, a spec, or code.** It captures what was decided so the next artifact can be produced from it — in this session or a later one.
+**This skill ends at the design record. It does not write a plan, a spec, or code.**
+It promotes durable decisions to ADRs. It writes a design handoff only when the
+next artifact will be produced outside this conversation; in the same conversation,
+the conversation is the source and the plan/spec carries the decisions forward.
 
 ## The Process
 
@@ -40,13 +43,28 @@ Start by understanding the current project context, then ask questions one at a 
 
 A decision becomes an ADR when it **constrains future work beyond this feature** — a
 chosen pattern, a dependency rule, a boundary, a convention future changes must
-respect. Everything else stays in the handoff.
+respect. Everything else stays in the conversation; when a plan is written, the
+plan's `Design Decisions & Rejected Alternatives` section records it. It goes into
+a handoff only when one is written.
 
 For each such decision write `_ai/technical_decisions/{YYMMDD_HHmm}__ADR__{topic}.md`.
-Do not promote decisions that only matter here; they belong in the handoff, and
-duplicating them in both places guarantees they drift.
+Do not promote decisions that only matter here; they belong in the plan's design
+record (or the handoff, when one is written), and duplicating them in both the ADR
+and the plan guarantees they drift.
 
-### 2. Write the design handoff
+### 2. Ask where the next artifact will be produced
+
+Ask exactly one question before writing anything:
+
+> Will the spec/plan be created in this conversation, or are you handing the design off?
+
+- **Same conversation** — do not write a handoff. The conversation is the source;
+  the plan/spec prompt reads it directly. Tell the user in one line: "No handoff
+  written — this design lives only in this conversation. If you switch sessions,
+  ask for a handoff explicitly."
+- **Handoff** — continue with step 3.
+
+### 3. Write the design handoff (handoff branch only)
 
 Write the conversation's durable output to
 `_ai/backlog/active/{YYMMDD_HHmm}__DESIGN_HANDOFF__{kebab-case-topic}.md`:
@@ -80,10 +98,9 @@ Keep it a record of decisions, not a narrative of the conversation and not a
 specification. It describes intent and constraints; it does not enumerate
 requirements.
 
-### 3. Recommend the next artifact, then stop
+### 4. Recommend the next artifact, then stop
 
-Close with one line naming what should come next and why. Do not branch on the
-answer and do not start it:
+Close with one line naming what should come next and why. Do not start it:
 
 - New capability, or anything still uncertain about behavior → run the
   `create-spec` prompt
@@ -92,7 +109,7 @@ answer and do not start it:
 - Large effort that needs slicing first → use the `create-epic` skill
 - Genuinely nothing to build yet → stop
 
-Commit the document to git.
+Do not commit unless the user asks.
 
 ## Key Principles
 
