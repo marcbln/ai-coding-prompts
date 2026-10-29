@@ -75,10 +75,8 @@ This repository includes a `prompts` CLI tool to help manage skills and workflow
 ./prompts workflow list
 ./prompts workflow new "my-workflow" --desc "Description" --auto
 
-# Export skills/workflows via symlinks
-./prompts sync export
-./prompts sync export --dry-run
-./prompts sync export --agent windsurf-next --agent github-copilot
+# Syncing skills into agent directories is handled by skillman:
+# ~/devel/skillman -> `skillman scan`, `skillman select NAME`, `skillman sync`
 ```
 
 The CLI handles creating the correct directory structures and scaffold files automatically.

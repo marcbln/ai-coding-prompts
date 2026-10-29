@@ -4,7 +4,7 @@ import typer
 from rich.console import Console
 
 from .config import CLI_CONTEXT_SETTINGS
-from .commands import skill_cmd, workflow_cmd, sync_cmd
+from .commands import skill_cmd, workflow_cmd
 
 app = typer.Typer(
     context_settings=CLI_CONTEXT_SETTINGS,
@@ -14,7 +14,6 @@ app = typer.Typer(
 
 app.add_typer(skill_cmd.app, name="skill")
 app.add_typer(workflow_cmd.app, name="workflow")
-app.add_typer(sync_cmd.app, name="sync")
 
 console = Console()
 
