@@ -7,7 +7,8 @@ When instructed to document something, use the following rules to decide where t
 - `_ai/context-definitions/`: Core foundational concepts of the app (architecture, integrations like shopware, shared features).
 - `_ai/knowledge/`: General wiki. Component behaviors, devops guides, standards, and skill documentation.
 - `_ai/manuals/`: How-to guides for humans/users (admin, deployment, development).
-- `_ai/specs/`: Strict specification documents. 
+- `specs/` (repository root): Strict specification documents. Specs live at the
+  repo root, not under `_ai/`, to follow the GitHub Spec Kit convention.
   - `changes/`: Patch/Feature specific specs (often dated, e.g., `2026-01-11-add-v2-list-collection-page`).
   - `definitions/`: Current source of truth for major feature areas.
 - `_ai/technical_decisions/`: Architecture Decision Records (ADRs). Why a tool or pattern was chosen.

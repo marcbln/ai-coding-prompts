@@ -17,7 +17,7 @@ Use `kb-structure.md` to route content to the correct subfolder:
 |---|---|
 | `_ai/context-definitions/` | Core concepts, integrations, shared features |
 | `_ai/knowledge/` | General wiki, component behaviors, devops guides |
-| `_ai/specs/` | Strict specification documents |
+| `specs/` (repo root) | Strict specification documents |
 | `_ai/technical_decisions/` | Architecture Decision Records (ADRs) |
 | `_ai/manuals/` | How-to guides for humans |
 | `_ai/backlog/` | Project management, epics, tasks |

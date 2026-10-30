@@ -1,5 +1,5 @@
 ---
-filename: "_ai/specs/SPEC__<YYMMDD-N>__<kebab-case-title>.md"
+filename: "specs/SPEC__<YYMMDD-N>__<kebab-case-title>.md"
 title: "[Short Human Readable Title]"
 specId: [YYMMDD-N, e.g. 261016-1]
 status: Draft

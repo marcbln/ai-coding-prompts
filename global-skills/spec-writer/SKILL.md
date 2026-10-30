@@ -1,12 +1,12 @@
 ---
 name: spec-writer
-description: "Write a feature/capability specification as a standalone SPEC document in the repo's _ai/specs/ directory — one file per spec plus an index.md (ADR-style), YAML frontmatter with documentType of SPEC, and an OpenSpec-compatible Requirement/Scenario body. Use when asked to write/create/draft a spec, spec out a feature, write requirements, or capture what a system SHALL do before implementation planning."
+description: "Write a feature/capability specification as a standalone SPEC document in the repo's specs/ directory — one file per spec plus an index.md (ADR-style), YAML frontmatter with documentType of SPEC, and an OpenSpec-compatible Requirement/Scenario body. Use when asked to write/create/draft a spec, spec out a feature, write requirements, or capture what a system SHALL do before implementation planning."
 ---
 
 # Spec Writer
 
 Write **specifications** — precise, testable descriptions of *what* a system must do — as
-single SPEC documents in `_ai/specs/`, indexed like ADRs. A spec is the contract that an
+single SPEC documents in `specs/`, indexed like ADRs. A spec is the contract that an
 implementation plan and its tests are verified against.
 
 ## When to use
@@ -18,12 +18,12 @@ behavior, typos, or refactors with no observable change — those need no spec.
 
 ## Locations and naming
 
-- Directory: `<repo>/_ai/specs/`. Create it (plus `index.md` from
+- Directory: `<repo>/specs/`. Create it (plus `index.md` from
   `assets/INDEX_TEMPLATE.md`) if missing. If the repo already uses that path for
   something else (e.g. an OpenSpec root with `changes/` and `definitions/`), place
   standalone SPEC docs at its top level, next to those subfolders.
 - ID: specs are numbered per date like ADRs: `YYMMDD-N`, where `N` is a per-day sequence
-  number starting at 1. Glob `_ai/specs/SPEC__<YYMMDD>-*__*.md` and take the highest
+  number starting at 1. Glob `specs/SPEC__<YYMMDD>-*__*.md` and take the highest
   existing `N` of that day plus 1; if none exists, `N` is `1`.
 - Filename: `SPEC__<YYMMDD-N>__<kebab-case-title>.md`,
   e.g. `SPEC__261016-1__vsf-browser-api.md`.
@@ -31,7 +31,7 @@ behavior, typos, or refactors with no observable change — those need no spec.
 
 ## Workflow
 
-1. **Ground the spec.** Read existing specs (`rg -n "Requirement:" _ai/specs`), the
+1. **Ground the spec.** Read existing specs (`rg -n "Requirement:" specs`), the
    relevant code (Glob/Grep/Task), related ADRs in `_ai/technical_decisions/`, and open
    plans in `_ai/backlog/active/`. Prefer extending an existing spec over creating a duplicate.
 2. **Resolve ambiguity before writing.** Interview the user (one question at a time) about
@@ -49,7 +49,7 @@ behavior, typos, or refactors with no observable change — those need no spec.
 
 ```yaml
 ---
-filename: "_ai/specs/SPEC__<YYMMDD-N>__<kebab-case-title>.md"
+filename: "specs/SPEC__<YYMMDD-N>__<kebab-case-title>.md"
 title: "[Short Human Readable Title]"
 specId: [YYMMDD-N, e.g. 261016-1]
 status: [Draft | Accepted | Implemented | Deprecated | Superseded]
