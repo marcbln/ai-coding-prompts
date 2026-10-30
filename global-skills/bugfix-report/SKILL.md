@@ -58,6 +58,7 @@ filesDeleted: 0
 tags: [bugfix, {tag}, {tag}]
 documentType: BUGFIX_REPORT
 
+relatedBugReport: "_ai/backlog/reports/{...}__BUG_REPORT__{...}.md"
 relatedAnalysis: "_ai/backlog/reports/{...}__ANALYSIS_REPORT__{...}.md"
 relatedPlan: "_ai/backlog/active/{...}__IMPLEMENTATION_PLAN__{...}.md"
 ---
@@ -79,6 +80,9 @@ Field rules:
   Never restate `impact` under Blast radius.
 - Evidence lives inline (section 5); the full investigation lives in the linked
   ANALYSIS_REPORT.
+- If a BUG_REPORT exists, link it in `relatedBugReport` and point its
+  reproduction / expected-vs-actual instead of duplicating them here. The bug
+  report owns intake; this report owns the conclusion.
 - Root cause is the defect. The fix is not the root cause — do not blend them.
 
 ## Report sections
@@ -136,7 +140,8 @@ Field rules:
     ("did not patch core").
     *Guard:* "not changed" items are decisions, not apologies.
 
-13. **Links** — `relatedAnalysis`, `relatedPlan`, upstream issue/PR, docs touched.
+13. **Links** — `relatedBugReport`, `relatedAnalysis`, `relatedPlan`, upstream
+    issue/PR, docs touched.
 
 ### Appendix A — Incident timeline (only when `incident: true`)
 
