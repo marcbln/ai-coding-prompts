@@ -29,7 +29,7 @@ title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
 project: "{project-name}"
-status: completed|partial|blocked
+status: draft | complete
 filesCreated: 0
 filesModified: 0
 filesDeleted: 0

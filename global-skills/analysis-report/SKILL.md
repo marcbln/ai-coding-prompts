@@ -26,7 +26,7 @@ title: "Analysis: {analysis title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
 project: "{project-name}"
-status: completed|draft
+status: draft | complete
 tags: [analysis, research, {tag3}]
 documentType: ANALYSIS_REPORT
 ---
