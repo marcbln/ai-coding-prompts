@@ -28,6 +28,7 @@ filename: "_ai/backlog/reports/{YYMMDD_HHmm}__IMPLEMENTATION_REPORT__{name-of-th
 title: "Report: {plan title}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
+repoRoot: "/absolute/path/to/repo"
 project: "{project-name}"
 status: draft | complete
 filesCreated: 0
@@ -56,4 +57,25 @@ The report content should include:
 7. **Usage Examples** (if applicable): Provide specific CLI commands, arguments, and example outputs if the implementa
 8. **Documentation Updates**: Summary of any documentation changes made
 9. **Next Steps** (optional): Any follow-up work or improvements that could be made
+
+## File References
+<!-- Section: Absolute, copy-paste navigable file references (required) -->
+
+Every file reference in the report must be **absolute and copy-paste navigable** —
+never repo-relative paths like `src/foo.py`, never `~/...`:
+
+```markdown
+- `/abs/repo/src/foo.py:45` — added `resolve_editor()`
+```
+
+- `filename:` in the frontmatter is the absolute report path; `repoRoot:` is the
+  absolute repository root.
+- Backticked absolute path, followed by `:LINE` for the first changed line (or the
+  defining line of the symbol being discussed). Wrap in a markdown link only if the
+  host renders local links; the text inside backticks is what gets copied.
+- In Testing / Verification commands, use the absolute interpreter and test paths so
+  the block runs from any cwd.
+- `filesCreated` / `filesModified` / `filesDeleted` count project source files; list
+  out-of-repo docs and the report itself separately in the section body.
+- Do not add a machine-readable `files:` list — it duplicates the section and drifts.
 
