@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# post-commit
+# Refresh skillman after a commit that touches global-skills/ and warn on drift.
+#
+# This hook is installed by scripts/install-git-hooks.sh. It never blocks the
+# commit: every failure is reported as a warning and exits 0.
+
+# -e: exit on unhandled failure
+# -u: treat unset variables as an error
+# -o pipefail: fail a pipeline when any command fails
+set -euo pipefail
+
+readonly HOOK_NAME="post-commit"
+readonly SKILLS_PREFIX="global-skills/"
+
+# Print a prefixed status line to stderr.
+# Usage: log "message"
+log() {
+    printf '%s: %s\n' "$HOOK_NAME" "$*" >&2
+}
+
+# Print a prefixed warning to stderr.
+# Usage: warn "message"
+warn() {
+    printf '%s: warning: %s\n' "$HOOK_NAME" "$*" >&2
+}
+
+# Report whether the commit changed anything under global-skills/.
+# Returns 0 when at least one changed path is a skill source.
+commit_touches_skills() {
+    local repo_root="$1"
+    local changed
+
+    changed="$(git -C "$repo_root" diff-tree --root --no-commit-id --name-only -r -m HEAD 2>/dev/null)" || return 1
+    while IFS= read -r path; do
+        [[ "$path" == "$SKILLS_PREFIX"* ]] && return 0
+    done <<< "$changed"
+    return 1
+}
+
+main() {
+    local repo_root
+
+    if ! command -v skillman >/dev/null 2>&1; then
+        warn "skillman not found on PATH; skipping skill refresh."
+        return 0
+    fi
+
+    repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || return 0
+
+    if ! commit_touches_skills "$repo_root"; then
+        return 0
+    fi
+
+    if ! skillman scan --refresh >/dev/null 2>&1; then
+        warn "skillman scan --refresh failed; skills were not refreshed."
+        return 0
+    fi
+
+    local status_rc=0
+    skillman status >/dev/null 2>&1 || status_rc=$?
+
+    if (( status_rc == 2 )); then
+        warn "skillman reports drift after this commit. Run 'skillman status' to inspect and 'skillman sync --accept-changed' to relink."
+    elif (( status_rc != 0 )); then
+        warn "skillman status failed; run it manually to check for drift."
+    fi
+
+    return 0
+}
+
+main "$@"
