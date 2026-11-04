@@ -27,6 +27,9 @@ the running window and exits immediately.
    `fork` + `setsid`, so do not wait for output, poll the process, or wrap it in
    `nohup ... &`.
 
+If the direct call still blocks the shell (common under an agent command
+runner), re-run it once detached — see **Command blocks** under Troubleshooting.
+
 ## Commands
 
 | Goal | Command |
@@ -43,8 +46,10 @@ scan starts.
 ## Rules
 
 - Do **not** run `docdeck --help`; it is a GUI app and prints no usage.
-- Do **not** kill, restart, or background an existing docdeck process. The
-  single-instance plugin forwards CLI arguments to the running window.
+- Do **not** kill or restart an existing docdeck process. The single-instance
+  plugin forwards CLI arguments to the running window.
+- Do **not** background the call by default. The only permitted exception is the
+  `setsid -f` fallback when a direct invocation blocks the shell.
 - Do **not** edit `~/.config/docdeck/config.toml` just to open a file. The config
   is read once at startup and only controls persistent watches and excludes.
 - Do **not** use docdeck to edit content. It renders Markdown only.
@@ -73,8 +78,27 @@ the document back from the GUI.
 - **Window opens blank** — the machine is likely on the NVIDIA proprietary
   driver. Do not change flags by default; the binary already disables DMA-BUF.
   Only use `docdeck --accelerated <file>` when the user confirms it works.
-- **Command blocks** — the user or environment set `DOCDECK_FOREGROUND=1`.
-  Unset it for detached launches.
+- **Command blocks** — first check whether the user or environment set
+  `DOCDECK_FOREGROUND=1` and unset it:
+
+  ```bash
+  echo "${DOCDECK_FOREGROUND:-unset}"
+  command -v docdeck
+  ```
+
+  If it is unset, the display is available, and the call still hangs (observed
+  with a fresh instance under an agent's command runner, even with output
+  redirected), detach it explicitly:
+
+  ```bash
+  setsid -f docdeck /absolute/path/report.md >/dev/null 2>&1
+  echo "exit=$?"
+  ```
+
+  `setsid -f` forks and returns immediately, so the window opens while the shell
+  gets exit 0. Confirm with `pgrep -af docdeck` if the user asks whether it
+  opened; the process may appear a moment after the command returns. Do not
+  reach for `nohup`, a trailing `&`, or a kill of the existing instance.
 - **Config edits are ignored** — restart docdeck; the config is loaded once.
 
 ## Examples
@@ -91,6 +115,9 @@ docdeck /topdata/shop-hotfixes/_ai/backlog
 
 # User: "open it, but stay in the foreground so I can debug"
 DOCDECK_FOREGROUND=1 docdeck /abs/file.md
+
+# Direct call blocks the shell (agent runner): detach once
+setsid -f docdeck /abs/report.md >/dev/null 2>&1
 ```
 
 Source and full behavior reference: `/home/marc/devel/docdeck/README.md`.
