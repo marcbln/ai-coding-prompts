@@ -3,7 +3,8 @@ filename: "_ai/backlog/active/261104_1154__IMPLEMENTATION_PLAN__docx-to-markdown
 title: "Add a docx-to-markdown skill with local image extraction"
 createdAt: 2026-11-04 11:54
 updatedAt: 2026-11-04 11:54
-status: draft
+status: completed
+completedAt: 2026-11-04 12:39
 priority: medium
 tags: [skill, docx, markdown, pandoc, images, skillman]
 estimatedComplexity: moderate
