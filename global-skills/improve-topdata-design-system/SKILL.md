@@ -6,7 +6,8 @@ description: Add or change TopData design-system components, `--td-*` tokens, or
 # Improve TopData Design System
 
 Change the canonical monorepo
-(`github.com/topdata-software-gmbh/topdata-design-system`). If the task is only
+(`github.com/topdata-software-gmbh/topdata-design-system`), checked out locally at
+`/topdata/topdata-design-system/`. If the task is only
 about *using* the kit inside an app, use `use-topdata-design-system`; do not edit
 the monorepo from a consumer task.
 
@@ -33,7 +34,8 @@ the monorepo from a consumer task.
 
 ### 1. Locate and prime
 
-- Repo root: the directory whose `package.json` has `"name": "topdata-design-system"`.
+- Repo root: `/topdata/topdata-design-system/` (the directory whose `package.json`
+  has `"name": "topdata-design-system"`).
 - Read `.specify/memory/constitution.md`, `packages/ui-component-registry.yaml`,
   the ADRs in `_ai/technical_decisions/` that touch the area, and the relevant
   `_ai/specs/SPEC__*.md`.

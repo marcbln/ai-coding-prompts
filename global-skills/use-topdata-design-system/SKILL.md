@@ -12,8 +12,8 @@ description: >-
 # Use TopData Design System
 
 Apply the published packages in a consumer app. Do not edit the design-system
-monorepo from here; if the kit is missing or wrong, route to
-`improve-topdata-design-system`.
+monorepo (local checkout: `/topdata/topdata-design-system/`) from here; if the kit
+is missing or wrong, route to `improve-topdata-design-system`.
 
 ## Install and import
 
