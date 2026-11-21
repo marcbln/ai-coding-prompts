@@ -66,37 +66,9 @@ Ask exactly one question before writing anything:
 
 ### 3. Write the design handoff (handoff branch only)
 
-Write the conversation's durable output to
-`_ai/backlog/active/{YYMMDD_HHmm}__DESIGN_HANDOFF__{kebab-case-topic}.md`:
-
-```yaml
----
-filename: "_ai/backlog/active/{YYMMDD_HHmm}__DESIGN_HANDOFF__{kebab-case-topic}.md"
-title: "Design Handoff: {topic}"
-createdAt: YYYY-MM-DD HH:mm
-updatedAt: YYYY-MM-DD HH:mm
-status: validated
-tags: [tag1, tag2]
-documentType: DESIGN_HANDOFF
----
-```
-
-Body sections, in this order:
-
-- **Context** — what was being designed and where the discussion started.
-- **Decisions** — one entry per decision: the decision, the rationale, and what it
-  rules out.
-- **Rejected Alternatives** — what was considered and dropped, and why. This is the
-  most valuable section in the file: without it the same options get re-proposed
-  later.
-- **Constraints Discovered** — facts about the codebase or project surfaced during
-  the discussion that any implementation must respect.
-- **Open Questions** — unresolved items, each with a named owner.
-- **Scope Boundary** — explicitly in, explicitly out.
-
-Keep it a record of decisions, not a narrative of the conversation and not a
-specification. It describes intent and constraints; it does not enumerate
-requirements.
+Load the `handoff-writer` skill and write the handoff it specifies. That skill is
+the single owner of the file format, section order and quality rules; do not
+restate or improvise them here.
 
 ### 4. Recommend the next artifact, then stop
 
