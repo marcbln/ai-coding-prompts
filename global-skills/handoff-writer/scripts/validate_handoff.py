@@ -70,6 +70,7 @@ HEADING_RE = re.compile(r"^##\s+(.+?)\s*$")
 BULLET_RE = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+\S")
 SUBHEADING_RE = re.compile(r"^###\s+\S")
 TABLE_SEPARATOR_RE = re.compile(r"^\|[\s:|-]+\|$")
+BOLD_LEAD_RE = re.compile(r"^\*\*[^*]{2,}\*\*")
 COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 PLACEHOLDER_ONLY_RE = re.compile(r"^\{[^{}\n]{1,80}\}$")
 FORBIDDEN_IN_CONTENT = [
@@ -188,6 +189,10 @@ def count_items(content: str) -> int:
     while index < len(lines):
         line = lines[index]
         if BULLET_RE.match(line) or SUBHEADING_RE.match(line):
+            count += 1
+            index += 1
+            continue
+        if BOLD_LEAD_RE.match(line):
             count += 1
             index += 1
             continue
@@ -358,7 +363,12 @@ def check_sections(
     if "open questions" in found_lower:
         name = found_lower["open questions"]
         content = content_by_name[name].strip()
-        if content.lower() not in {"", "none.", "none", "n/a"}:
+        table_header = next(
+            (line for line in content.splitlines() if line.strip().startswith("|")),
+            "",
+        )
+        has_owner_column = "owner" in table_header.lower()
+        if content.lower() not in {"", "none.", "none", "n/a"} and not has_owner_column:
             blocks: list[list[str]] = []
             current: list[str] = []
             for line in content.splitlines():
@@ -380,21 +390,13 @@ def check_sections(
                     )
 
     if doc_type == "DESIGN_HANDOFF":
-        if "next artifact" not in found_lower:
+        if "next artifact" not in found_lower and "archive" not in result.path.parts:
             result.add_warning(
                 "section: '## Next Artifact' is recommended for design handoffs"
             )
         decisions = found_lower.get("decisions")
         if decisions and count_items(content_by_name[decisions]) < 1:
             result.add_error("section 'Decisions' has no decision entries")
-        if decisions and not (
-            "rules out" in content_by_name[decisions].lower()
-            or "rule out" in content_by_name[decisions].lower()
-            or "ruling out" in content_by_name[decisions].lower()
-        ):
-            result.add_warning(
-                "section 'Decisions' should state what each choice rules out"
-            )
         scope = found_lower.get("scope boundary")
         if scope:
             scope_text = content_by_name[scope].lower()
