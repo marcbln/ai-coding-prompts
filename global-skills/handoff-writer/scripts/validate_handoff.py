@@ -32,7 +32,7 @@ FRONTMATTER_REQUIRED = [
 TYPE_RULES = {
     "DESIGN_HANDOFF": {
         "title_prefix": "Design Handoff:",
-        "statuses": {"draft", "validated", "superseded"},
+        "statuses": {"draft", "validated", "implemented", "superseded"},
         "sections": [
             "Context",
             "Decisions",
@@ -68,6 +68,8 @@ FILENAME_RE = re.compile(
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$")
 HEADING_RE = re.compile(r"^##\s+(.+?)\s*$")
 BULLET_RE = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+\S")
+SUBHEADING_RE = re.compile(r"^###\s+\S")
+TABLE_SEPARATOR_RE = re.compile(r"^\|[\s:|-]+\|$")
 COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 PLACEHOLDER_ONLY_RE = re.compile(r"^\{[^{}\n]{1,80}\}$")
 FORBIDDEN_IN_CONTENT = [
@@ -109,14 +111,34 @@ def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
         end = next(i for i in range(1, len(lines)) if lines[i].strip() == "---")
     except StopIteration:
         raise ValueError("frontmatter is not closed with '---'") from None
+
     data: dict[str, str] = {}
-    for line in lines[1:end]:
+    index = 1
+    while index < end:
+        line = lines[index]
+        index += 1
         if not line.strip() or line.lstrip().startswith("#"):
             continue
-        if ":" not in line:
+        if line[0] in " \t" or ":" not in line:
             continue
         key, value = line.split(":", 1)
-        data[key.strip()] = value.strip()
+        key = key.strip()
+        value = value.strip()
+        if not value:
+            # Collect indented or flow-style continuation lines (e.g. tags: [ ... ]).
+            parts: list[str] = []
+            while index < end:
+                nxt = lines[index]
+                if nxt.startswith((" ", "\t")):
+                    parts.append(nxt.strip())
+                    index += 1
+                elif nxt.strip().startswith(("[", "{")):
+                    parts.append(nxt.strip())
+                    index += 1
+                else:
+                    break
+            value = " ".join(parts)
+        data[key] = value
     return data, "\n".join(lines[end + 1 :])
 
 
@@ -155,7 +177,34 @@ def strip_code(content: str) -> str:
 
 
 def count_items(content: str) -> int:
-    return sum(1 for line in meaningful_lines(content) if BULLET_RE.match(line))
+    """Count list items, decision subsections (### 1. ...) and table rows.
+
+    Legacy handoffs write decisions as numbered sub-headings or as tables;
+    all three shapes are valid entries.
+    """
+    lines = meaningful_lines(content)
+    count = 0
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if BULLET_RE.match(line) or SUBHEADING_RE.match(line):
+            count += 1
+            index += 1
+            continue
+        if line.startswith("|") and line.endswith("|"):
+            index += 1
+            if index < len(lines) and TABLE_SEPARATOR_RE.match(lines[index]):
+                index += 1  # header + separator are not entries
+            while (
+                index < len(lines)
+                and lines[index].startswith("|")
+                and lines[index].endswith("|")
+            ):
+                count += 1
+                index += 1
+            continue
+        index += 1
+    return count
 
 
 def check_frontmatter(meta: dict[str, str], path: Path, result: Result) -> str | None:
@@ -204,10 +253,20 @@ def check_frontmatter(meta: dict[str, str], path: Path, result: Result) -> str |
         result.add_error(
             f"frontmatter: filename '{declared}' does not match file '{path.name}'"
         )
-    if declared and "_ai/backlog/active/" not in declared:
-        result.add_error(
-            "frontmatter: filename must point at '_ai/backlog/active/'"
-        )
+    if declared:
+        declared_parts = Path(declared).parts
+        if "_ai" not in declared_parts or "backlog" not in declared_parts:
+            result.add_error(
+                "frontmatter: filename must point inside '_ai/backlog/'"
+            )
+        elif "_ai" in path.parts:
+            declared_tail = declared_parts[declared_parts.index("_ai") :]
+            actual_tail = path.parts[path.parts.index("_ai") :]
+            if declared_tail != actual_tail:
+                result.add_error(
+                    "frontmatter: filename path does not match the file's "
+                    f"location ('{Path(*declared_tail)}')"
+                )
 
     title = unquote(meta.get("title", ""))
     if title and doc_type in TYPE_RULES:
@@ -264,7 +323,8 @@ def check_sections(
 
     known = {name.lower() for name in rules["sections"] + rules["optional_sections"]}
     for name in found:
-        if name.lower() not in known:
+        lowered = name.lower()
+        if lowered not in known and not lowered.startswith("appendix"):
             result.add_warning(f"section: unexpected '## {name}'")
 
     canonical = [s.lower() for s in rules["sections"] if s.lower() in found_lower]
@@ -327,7 +387,11 @@ def check_sections(
         decisions = found_lower.get("decisions")
         if decisions and count_items(content_by_name[decisions]) < 1:
             result.add_error("section 'Decisions' has no decision entries")
-        if decisions and "rules out" not in content_by_name[decisions].lower():
+        if decisions and not (
+            "rules out" in content_by_name[decisions].lower()
+            or "rule out" in content_by_name[decisions].lower()
+            or "ruling out" in content_by_name[decisions].lower()
+        ):
             result.add_warning(
                 "section 'Decisions' should state what each choice rules out"
             )

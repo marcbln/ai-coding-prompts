@@ -35,7 +35,7 @@ normally applies.
 | **Owns** | Why this shape, what was rejected, what constrains the build | What is done, what is half-done, what to do next, what will bite |
 | **Does not own** | Requirements, task breakdown, code detail | Design rationale already in a handoff/ADR/plan |
 | **Sections** | Context, Decisions, Rejected Alternatives, Constraints Discovered, Open Questions, Scope Boundary, Next Artifact | Objective, Current State, Decisions Made, Dead Ends, Open Questions, Next Actions, Verification, Where Things Live, Handoff Notes |
-| **Status values** | `draft`, `validated`, `superseded` | `active`, `blocked`, `done`, `abandoned` |
+| **Status values** | `draft`, `validated`, `implemented`, `superseded` | `active`, `blocked`, `done`, `abandoned` |
 
 Both types live in the **repo that will own the next artifact** (or the repo
 where the work lives). When the design spans repos, write in the primary repo
@@ -121,7 +121,7 @@ filename: "_ai/backlog/active/{YYMMDD_HHmm}__{TYPE}__{kebab-topic}.md"
 title: "Design Handoff: {topic}"   # or "Session Handoff: {topic}"
 createdAt: YYYY-MM-DD HH:mm
 updatedAt: YYYY-MM-DD HH:mm
-status: draft | validated          # type-specific, see table
+status: draft | validated | implemented   # type-specific, see table
 tags: [tag1, tag2]
 documentType: DESIGN_HANDOFF       # or SESSION_HANDOFF
 ---
